@@ -7,20 +7,20 @@ task :import do
     sh "git clone https://github.com/soffes/blog.git tmp/blog"
   end
 
-  Rake::Task["import:local"].invoke
+  import_published
 end
 
 namespace :import do
   desc "Import all local posts"
   task :local do
     import_local
-    import_directory("tmp/blog/published", "blog/_posts")
+    import_published
   end
 
   desc "Import local drafts"
   task :drafts do
     import_local
-    import_directory("tmp/blog/drafts", "blog/_drafts")
+    import_drafts
   end
 end
 
@@ -97,4 +97,12 @@ def import_local
   system "rm -rf tmp/blog"
   system "mkdir -p tmp"
   system "cp -r ../blog tmp/blog"
+end
+
+def import_published
+  import_directory("tmp/blog/published", "blog/_posts")
+end
+
+def import_drafts
+  import_directory("tmp/blog/drafts", "blog/_drafts")
 end
