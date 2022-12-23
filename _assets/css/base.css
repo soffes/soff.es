@@ -25,7 +25,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   --mark-background: #fffeca;
   --horizontal-rule: #ddd;
   --blockquote-foreground: #555;
-  --blockquote-border: var(--horizontal-rule);
+  --blockquote-border: #ddd;
   --blockquote-link: #444;
   --brand-color: #f6291d;
   --h1-foreground: #000;
@@ -88,10 +88,6 @@ a:hover {
   transition-property: border;
   transition-duration: 0.2s;
   border-bottom: 1px solid;
-}
-
-a.tel {
-  white-space: nowrap;
 }
 
 strong, b {
@@ -223,7 +219,7 @@ body > header, main > section.posts, main > section.archive, main > nav, body > 
 
 body > header {
   color: var(--light-foreground);
-  margin: 4em auto 2em;
+  margin: 4em auto;
 }
 
 body > header p {
@@ -629,6 +625,8 @@ nav.pagination em {
   border: 0;
 }
 
+/* ---- Table ---- */
+
 article table {
   text-align: left;
   border: 1px solid var(--table-border);
@@ -646,7 +644,6 @@ article th {
   background: var(--table-header);
   font-weight: var(--semibold-font-weight);
 }
-
 
 /* ---- Home ---- */
 

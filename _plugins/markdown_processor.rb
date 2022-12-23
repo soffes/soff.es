@@ -2,7 +2,7 @@ require "rouge"
 require "redcarpet"
 
 # Custom markdown processor
-class MarkdownRenderer < Redcarpet::Render::HTML
+class CustomMarkdownRenderer < Redcarpet::Render::HTML
   def block_code(code, language)
     language = nil if %w[text txt].include?(language)
     language = "objective_c" if %w[objective-c objc].include?(language)
@@ -12,6 +12,13 @@ class MarkdownRenderer < Redcarpet::Render::HTML
     else
       "<pre>#{code}</pre>"
     end
+  end
+
+  def paragraph(text)
+    # For some custom tags, it thinks they are paragraphs. Fix that.
+    return text if text.start_with?('<')
+
+    "<p>#{text}</p>"
   end
 end
 
@@ -34,7 +41,7 @@ module Jekyll
         }.freeze
 
         def initialize(_config)
-          @processor = Redcarpet::Markdown.new(MarkdownRenderer, OPTIONS)
+          @processor = Redcarpet::Markdown.new(CustomMarkdownRenderer, OPTIONS)
         end
 
         def convert(content)
