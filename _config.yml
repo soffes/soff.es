@@ -6,7 +6,7 @@ fathom_id: JXPGBKDQ
 fathom_host: f.soffes.com
 encoding: UTF-8
 strict_front_matter: true
-permalink: pretty
+permalink: /blog/:title
 defaults:
   - scope:
       path: ""
@@ -24,13 +24,24 @@ defaults:
       sitemap: false
       is_trip: false
       layout: page
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: "/blog/:num/"
+  limit: 0
+  sort_field: date
+  sort_reverse: true
 plugins:
-  - jekyll/minibundle
   - jekyll-optional-front-matter
+  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-titles-from-headings
+  - jekyll/minibundle
 markdown: Custom
 exclude:
+  - .ruby-version
   - .vscode/
+  - Gemfile
+  - Gemfile.lock
 include:
   - _redirects
