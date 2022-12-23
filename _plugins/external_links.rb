@@ -17,7 +17,7 @@ class ExternalLinksProcessor
   private
 
   def process(html)
-    doc = Nokogiri::HTML.fragment(html)
+    doc = Nokogiri::HTML(html)
     doc.css("a").each do |node|
       next unless (href = node["href"])
       next unless (uri = Addressable::URI.parse(href))

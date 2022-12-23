@@ -24,6 +24,10 @@ defaults:
       sitemap: false
       is_trip: false
       layout: page
+  - scope:
+      path: "blog/*"
+    values:
+      layout: "post"
 autopages:
   enabled: false
 pagination:

@@ -9,7 +9,9 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon-192x192.png" sizes="192x192">
   <link rel="stylesheet" type="text/css" href="{% ministamp _assets/css/base.css /assets/css/base.css %}" media="screen, projection">
-  {%- if page.is_post -%}{% include post_head.html -%}{%- endif %}
+  {%- if page.excerpt_text -%}
+  {% include post_head.html -%}
+  {%- endif -%}
 </head>
 <body>
   {% unless page.cover_image %}
