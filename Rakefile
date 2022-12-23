@@ -35,7 +35,7 @@ task default: :build
 
 desc "Clean generated code"
 task :clean do
-  system "rm -rf blog/_posts blog/_drafts _site assets/blog .jekyll-cache js"
+  system "rm -rf blog/_posts blog/_drafts _site assets/blog .jekyll-cache _assets/js"
 end
 
 desc "Local server"

@@ -8,7 +8,8 @@
   <meta property="copyright" content="&copy; 2006-{{ 'now' | date: "%Y" }} Sam Soffes">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon-192x192.png" sizes="192x192">
-  <link rel="stylesheet" type="text/css" href="/{% ministamp _assets/base.css assets/base.css %}" media="screen, projection">
+  <link rel="stylesheet" type="text/css" href="{% ministamp _assets/css/base.css /assets/css/base.css %}" media="screen, projection">
+  {%- if page.is_post -%}{% include post_head.html -%}{%- endif %}
 </head>
 <body>
   {% unless page.cover_image %}
@@ -24,6 +25,8 @@
   <footer>
     <p>&copy; {{ 'now' | date: "%Y" }} <a href="/" rel="home">{{ site.author }}</a></p>
   </footer>
+  {%- if page.is_gallery %}
+  <script src="{% ministamp _assets/js/gallery.js /assets/js/gallery.js %}"></script>{% endif %}
   {% if jekyll.environment == "production" %}
   {% if site.fathom_id %}
   <script src="https://{{ site.fathom_host | default: cdn.usefathom.com}}/script.js" data-site="{{ site.fathom_id }}" defer></script>
