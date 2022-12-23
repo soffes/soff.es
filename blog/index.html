@@ -1,0 +1,17 @@
+---
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: ":num/"
+  limit: 0
+  sort_field: date
+  sort_reverse: true
+  category: blog
+---
+<section class="posts">
+  {% for post in paginator.posts %}
+  {% include post.html %}
+  {% endfor %}
+</section>
+
+{% pagination %}

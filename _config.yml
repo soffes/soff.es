@@ -24,13 +24,10 @@ defaults:
       sitemap: false
       is_trip: false
       layout: page
+autopages:
+  enabled: false
 pagination:
   enabled: true
-  per_page: 5
-  permalink: "/blog/:num/"
-  limit: 0
-  sort_field: date
-  sort_reverse: true
 plugins:
   - jekyll-optional-front-matter
   - jekyll-paginate-v2
