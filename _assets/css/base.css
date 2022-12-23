@@ -219,7 +219,7 @@ body > header, main > section.posts, main > section.archive, main > nav, body > 
 
 body > header {
   color: var(--light-foreground);
-  margin: 4em auto;
+  margin: 4em auto 2em;
 }
 
 body > header p {
@@ -285,7 +285,7 @@ article header p a {
 }
 
 article > h2, article > h3, article > h4, article > h5, article > h6 {
-  padding: 1em 0 0.2em;
+  padding: 1.2em 0 0.2em;
 }
 
 article ul, article ol {

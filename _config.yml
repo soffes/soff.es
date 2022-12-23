@@ -6,7 +6,7 @@ fathom_id: JXPGBKDQ
 fathom_host: f.soffes.com
 encoding: UTF-8
 strict_front_matter: true
-permalink: /blog/:title
+permalink: "/blog/:slug"
 defaults:
   - scope:
       path: ""
