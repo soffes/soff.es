@@ -14,5 +14,4 @@ group :jekyll_plugins do
   gem "jekyll-optional-front-matter"
   gem "jekyll-paginate-v2"
   gem "jekyll-sitemap"
-  gem "jekyll-titles-from-headings"
 end

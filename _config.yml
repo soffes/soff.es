@@ -36,7 +36,6 @@ plugins:
   - jekyll-optional-front-matter
   - jekyll-paginate-v2
   - jekyll-sitemap
-  - jekyll-titles-from-headings
   - jekyll/minibundle
 markdown: Custom
 exclude:

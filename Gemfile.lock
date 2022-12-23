@@ -54,8 +54,6 @@ GEM
       sass-embedded (~> 1.54)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-titles-from-headings (0.5.3)
-      jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.4.0)
@@ -111,7 +109,6 @@ DEPENDENCIES
   jekyll-optional-front-matter
   jekyll-paginate-v2
   jekyll-sitemap
-  jekyll-titles-from-headings
   mini_magick
   nokogiri
   rake

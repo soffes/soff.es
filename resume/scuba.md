@@ -1,3 +1,7 @@
+---
+title: Scuba Résumé
+---
+
 ## Scuba Résumé
 
 ### Experience

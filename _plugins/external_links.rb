@@ -10,14 +10,14 @@ class ExternalLinksProcessor
   end
 
   def process!
-    @page.output = process(@page.output)
-    @page.data["excerpt"] = process(@page.data["excerpt"]) if @page.data["excerpt"]
+    @page.output = process(@page.output, fragment: false)
+    @page.data["excerpt"] = process(@page.data["excerpt"], fragment: true) if @page.data["excerpt"]
   end
 
   private
 
-  def process(html)
-    doc = Nokogiri::HTML(html)
+  def process(html, fragment:)
+    doc = fragment ? Nokogiri::HTML.fragment(html) : Nokogiri::HTML(html)
     doc.css("a").each do |node|
       next unless (href = node["href"])
       next unless (uri = Addressable::URI.parse(href))
@@ -31,6 +31,6 @@ class ExternalLinksProcessor
   end
 end
 
-Jekyll::Hooks.register :documents, :post_render do |page|
+Jekyll::Hooks.register :posts, :post_render do |page|
   ExternalLinksProcessor.new(page).process!
 end

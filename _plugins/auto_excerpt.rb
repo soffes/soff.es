@@ -5,7 +5,7 @@ require "nokogiri"
 class AutoExcerpts < Jekyll::Generator
   include ActionView::Helpers::TextHelper
 
-  OMITTED_TAGS = %w[h2 h3 div photo-gallery].freeze
+  OMITTED_TAGS = %w[h1 h2 h3 div photo-gallery].freeze
 
   safe true
   priority :low
@@ -29,6 +29,7 @@ class AutoExcerpts < Jekyll::Generator
   def excerpt_for(markdown)
     html = html_for(markdown)
     doc = Nokogiri::HTML.fragment(html)
+
 
     nodes = []
     doc.children.each do |block|

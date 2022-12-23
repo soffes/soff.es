@@ -1,3 +1,7 @@
+---
+title: Résumé
+---
+
 ## Résumé
 
 I’ve been working with iOS since its release in 2008 and macOS before that. Here is some of my past work. Some were full time jobs, some were for clients, and some were my own projects.
