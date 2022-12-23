@@ -25,7 +25,7 @@
     {{ content }}
   </main>
   <footer>
-    <p>&copy; {{ 'now' | date: "%Y" }} <a href="/" rel="home">{{ site.author }}</a></p>
+    {% include footer.html %}
   </footer>
   {%- if page.is_gallery %}
   <script src="{% ministamp _assets/js/gallery.js /assets/js/gallery.js %}"></script>{% endif %}
