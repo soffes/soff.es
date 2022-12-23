@@ -9,6 +9,8 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon-192x192.png" sizes="192x192">
   <link rel="stylesheet" type="text/css" href="{% ministamp _assets/css/base.css /assets/css/base.css %}" media="screen, projection">
+  <link rel="alternate" type="application/rss+xml" title="Sam Soffes - Blog" href="/blog/rss.xml">
+  <link rel="alternate" type="application/json" title="Sam Soffes - Blog" href="/blog/feed.json">
   {%- if page.excerpt_text -%}
   {% include post_head.html -%}
   {%- endif -%}
@@ -16,17 +18,21 @@
 <body>
   {% unless page.cover_image %}
   <header>
-    <h1>
-      <a href="/" rel="home">{{ site.title }}</a>
-    </h1>
+    <h1><a href="/" rel="home" title="{{ site.title }}">{{ site.title }}</a></h1>
+    <p>{{ site.description }}</p>
   </header>
   {% endunless %}
   <main>
-    {{ content }}
+  {{ content }}
   </main>
+  {% unless page.previous %}
   <footer>
+    {% if page.title == "Blog" %}
+    <p><a href="/blog/rss.xml">RSS</a> &bull; <a href="/blog/feed.json">JSON Feed</a> &bull; <a href="/blog/archive">Archive</a></p>
+    {% endif %}
     {% include footer.html %}
   </footer>
+  {% endunless %}
   {%- if page.is_gallery %}
   <script src="{% ministamp _assets/js/gallery.js /assets/js/gallery.js %}"></script>{% endif %}
   {% if jekyll.environment == "production" %}
