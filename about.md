@@ -2,7 +2,7 @@
 title: About
 ---
 
-<img src="/images/sam-soffes.jpg" width="256" height="256" alt="Sam Soffes">
+<img src="/assets/sam-soffes.jpg" width="256" height="256" alt="Sam Soffes">
 
 I am a software engineer mostly working with Apple platforms and the web. Currently, I’m traveling full time.
 

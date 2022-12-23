@@ -645,7 +645,7 @@ article th {
   font-weight: var(--semibold-font-weight);
 }
 
-/* ---- Home ---- */
+/* ---- Resume ---- */
 
 ul.apps {
   max-width: 640px;
@@ -711,6 +711,10 @@ ul.apps img {
   ul.apps img {
     border-radius: 15px;
   }
+}
+
+ul.apps li {
+  list-style: none;
 }
 
 ul.apps li.mac {

@@ -3,15 +3,15 @@ require "nokogiri"
 
 # Jekyll hook to add targets to external links
 class ExternalLinksProcessor
-  def initialize(post)
-    @post = post
-    @site = post.site
+  def initialize(page)
+    @page = page
+    @site = page.site
     @blog_host = Addressable::URI.parse(@site.config["url"]).host
   end
 
   def process!
-    @post.output = process(@post.output)
-    @post.data["excerpt"] = process(@post.data["excerpt"])
+    @page.output = process(@page.output)
+    @page.data["excerpt"] = process(@page.data["excerpt"]) if @page.data["excerpt"]
   end
 
   private
@@ -31,6 +31,6 @@ class ExternalLinksProcessor
   end
 end
 
-Jekyll::Hooks.register :posts, :post_render do |post|
-  ExternalLinksProcessor.new(post).process!
+Jekyll::Hooks.register :documents, :post_render do |page|
+  ExternalLinksProcessor.new(page).process!
 end
