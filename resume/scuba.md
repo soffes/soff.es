@@ -1,10 +1,10 @@
 ## Scuba Résumé
 
-### Scuba Experience
+### Experience
 
 307 dives with 7 years of diving experience and 18 certifications as of December 2022. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
 
-### Scuba Certifications
+### Certifications
 
 #### November 2022 — Playa del Carmen, Mexico
 
@@ -56,4 +56,8 @@
 
 ### Professional Experience
 
-15 years of [software development experience](/resume) with mobile and web applications. Experience leading teams. More details available upon request.
+15 years of [software development experience](/resume) with mobile and web applications. Experience leading teams.
+
+Feel free to email me at [sam@soffes.com](mailto:sam@soffes.com) or read more [about me](/about). 👋
+
+I also have a [software engineering resume](/resume) 🤓
