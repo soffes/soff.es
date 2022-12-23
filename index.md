@@ -1,24 +1,8 @@
----
-# Need this for Jekyll to think this is a page. Silliness.
----
-
 I’m a software engineer traveling the world. You can follow me on <a href="https://twitter.com/soffes" rel="external nofollow" style="color:#1DA1F2">Twitter</a>, see my code on <a href="https://github.com/soffes" rel="external nofollow" style="color:#4078c0">GitHub</a>, and watch my videos on <a href="https://youtube.com/samsoffes" rel="external nofollow" style="color:#cd201f">YouTube</a>. I occasionally <a href="https://soffes.blog" rel="external">blog</a> too.
 
 I’ve been working with iOS since its release in 2008 and macOS before that. Here is some of my past work. Some were full time jobs, some were for clients, and some were my own projects.
 
 <ul class="apps">
-  <li>
-    <a href="https://along.video" rel="external nofollow">
-      <img src="/images/along.svg" alt="Along">
-      <span>Along</span>
-    </a>
-  </li>
-  <li class="mac">
-    <a href="https://usecontrast.com" rel="external nofollow">
-      <img src="/images/contrast.svg" alt="Contrast">
-      <span>Contrast</span>
-    </a>
-  </li>
   <li>
     <a href="https://itunes.apple.com/app/bible/id282935706?mt=8&uo=4&at=1l3vmtU" rel="external nofollow">
       <img src="/images/bible.jpg" alt="Bible">
@@ -41,6 +25,18 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
     <a href="https://lyft.com/driver" rel="external nofollow">
       <img src="/images/driver.png" alt="Lyft Driver">
       <span>Lyft Driver</span>
+    </a>
+  </li>
+  <li class="mac">
+    <a href="https://usecontrast.com" rel="external nofollow">
+      <img src="/images/contrast.svg" alt="Contrast">
+      <span>Contrast</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://along.video" rel="external nofollow">
+      <img src="/images/along.svg" alt="Along">
+      <span>Along</span>
     </a>
   </li>
   <li>
@@ -129,4 +125,4 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
   </li>
 </ul>
 
-Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
+Feel free to email me at [sam@soffes.com](mailto:sam@soffes.com) or read more [about me](/about). 👋

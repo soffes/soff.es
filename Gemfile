@@ -1,11 +1,12 @@
 source "https://rubygems.org"
 
-ruby "3.1.2"
-
 gem "jekyll"
-gem "rake"
+gem "redcarpet"
+gem "rouge"
 
-group :development do
-  gem "standard"
-  gem "webrick"
+group :jekyll_plugins do
+  gem "jekyll-minibundle"
+  gem "jekyll-optional-front-matter"
+  gem "jekyll-sitemap"
+  gem "jekyll-titles-from-headings"
 end

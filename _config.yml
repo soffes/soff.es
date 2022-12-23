@@ -1,19 +1,36 @@
 title: Sam Soffes
-email: sam@soff.es
+description: "🚐 Van life & 🤿 scuba diving"
 author: Sam Soffes
-baseurl: ""
-url: https://soff.es
-timezone: America/Los_Angeles
-encoding: utf-8
+url: https://soffes.com
+fathom_id: JXPGBKDQ
+fathom_host: f.soffes.com
+encoding: UTF-8
 strict_front_matter: true
-exclude:
-  - README.md
-include:
-  - _redirects
-permalink: /:title
+permalink: pretty
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "page"
+  - scope:
+      path: "trips/*"
+    values:
+      sitemap: false
+      is_trip: true
+      layout: post
+  - scope:
+      path: "trips/index.md"
+    values:
+      sitemap: false
+      is_trip: false
+      layout: page
+plugins:
+  - jekyll/minibundle
+  - jekyll-optional-front-matter
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+markdown: Custom
+exclude:
+  - .vscode/
+include:
+  - _redirects
