@@ -1,4 +1,4 @@
-desc "Import published posts"
+desc "Update blog repo and import published posts"
 task :import do
   if File.directory?("tmp/blog")
     sh "cd tmp/blog && git pull origin main && cd .."
@@ -11,16 +11,14 @@ task :import do
 end
 
 namespace :import do
-  desc "Import all local posts"
-  task :local do
-    import_local
+  desc "Import published posts from repo"
+  task :published do
     import_published
   end
 
-  desc "Import local drafts"
-  task :drafts do
-    import_local
-    import_drafts
+  desc "Import all local drafts"
+  task :local do
+    import_local_drafts
   end
 end
 
@@ -64,7 +62,7 @@ task lint: %i[lint:ruby lint:yaml]
 
 private
 
-def import_directory(source, destination)
+def import_directory(source, destination="blog/_posts")
   abort "Missing directory `#{source}`" unless File.directory?(source)
 
   system %(mkdir -p #{destination})
@@ -79,30 +77,23 @@ def import_directory(source, destination)
     end
 
     # Move post
-    md = Dir["#{dir}/*.markdown"].first
-    system %(mv #{md} #{dir}.md)
+    md = Dir["#{dir}/*.{md,markdown}"].first
+    system %(mv "#{md}" "#{dir}.md")
 
     # Copy assets
     if Dir.empty?(dir)
-      system %(rm -rf #{dir})
+      system %(rm -rf "#{dir}")
     else
-      system %(mv #{dir} assets/blog)
+      system %(mv "#{dir}" "assets/blog")
     end
   end
 end
 
-def import_local
+def import_local_drafts
   abort "Expected blog directory at `../blog/`" unless File.directory?("../blog")
-
-  system "rm -rf tmp/blog"
-  system "mkdir -p tmp"
-  system "cp -r ../blog tmp/blog"
+  import_directory("../blog/drafts")
 end
 
 def import_published
-  import_directory("tmp/blog/published", "blog/_posts")
-end
-
-def import_drafts
-  import_directory("tmp/blog/drafts", "blog/_drafts")
+  import_directory("tmp/blog/published", "blog/_drafts")
 end
