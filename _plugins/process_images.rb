@@ -59,7 +59,7 @@ class ImageProcessor
   def process!
     return unless @should_process
 
-    doc = Nokogiri::HTML.fragment(@post.output)
+    doc = Nokogiri::HTML(@post.output)
     doc.css("img").each do |node|
       next unless (src = node["src"])
       next if src.start_with?("http")
