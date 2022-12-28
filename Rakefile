@@ -24,7 +24,7 @@ end
 
 desc "Build"
 task :build do
-  Rake::Task["import"].invoke unless File.directory?("blog/_posts")
+  Rake::Task["import"].invoke
 
   sh "npm run build && bundle exec jekyll build --config _config.yml --trace"
 end
@@ -95,5 +95,5 @@ def import_local_drafts
 end
 
 def import_published
-  import_directory("tmp/blog/published", "blog/_drafts")
+  import_directory("tmp/blog/published", "blog/_posts")
 end
