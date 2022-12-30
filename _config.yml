@@ -32,6 +32,10 @@ defaults:
       path: "blog/_posts/*"
     values:
       category: blog-published
+  - scope:
+      path: "blog/_drafts/*"
+    values:
+      category: draft
 autopages:
   enabled: false
 pagination:

@@ -347,6 +347,13 @@ article a.image-right {
   margin: 0 0 1em 1em;
 }
 
+article div.draft {
+  background-color: var(--mark-background);
+  color: var(--mark-foreground);
+  margin: 0 0 1em;
+  padding: 0.5em 1em;
+}
+
 article div.thanks {
   border-top: 1px solid var(--horizontal-rule);
   color: var(--light-foreground);

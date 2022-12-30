@@ -13,6 +13,11 @@ layout: default
       <p>Posted on <time datetime="{{ page.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ page.date | date: "%B %-e, %Y" }}</time></p>
       {% endunless -%}
     </header>
+    {% if page.category contains "draft" %}
+    <div class="draft">
+      This post is a draft. Thanks for checking it out! Please don't share it yet.
+    </div>
+    {% endif %}
     {{ content }}
     {% if page.thanks %}
     <div class="thanks">
