@@ -23,7 +23,7 @@ desc "Build"
 task :build do
   Rake::Task["import"].invoke
 
-  sh "npm run build && bundle exec jekyll build --config _config.yml --trace"
+  sh "npm run build && bundle exec jekyll build --drafts --config _config.yml --trace"
 end
 
 task default: :build
