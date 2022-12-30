@@ -36,6 +36,7 @@ defaults:
       path: "blog/_drafts/*"
     values:
       category: draft
+      sitemap: false
 autopages:
   enabled: false
 pagination:
