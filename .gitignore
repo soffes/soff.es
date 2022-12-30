@@ -4,6 +4,7 @@ _site
 .jekyll-metadata
 .sass-cache
 assets/blog
+blog/_drafts
 blog/_posts
 _assets/js
 node_modules

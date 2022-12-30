@@ -7,18 +7,15 @@ task :import do
     sh "git clone https://github.com/soffes/blog.git tmp/blog"
   end
 
-  import_published
+  import_directory("tmp/blog/published", "blog/_posts")
+  import_directory("tmp/blog/drafts", "blog/_drafts")
 end
 
 namespace :import do
-  desc "Import published posts from repo"
-  task :published do
-    import_published
-  end
-
   desc "Import all local drafts"
   task :local do
-    import_local_drafts
+    abort "Expected blog directory at `../blog/`" unless File.directory?("../blog")
+    import_directory("../blog/drafts")
   end
 end
 
@@ -87,13 +84,4 @@ def import_directory(source, destination="blog/_posts")
       system %(mv "#{dir}" "assets/blog")
     end
   end
-end
-
-def import_local_drafts
-  abort "Expected blog directory at `../blog/`" unless File.directory?("../blog")
-  import_directory("../blog/drafts")
-end
-
-def import_published
-  import_directory("tmp/blog/published", "blog/_posts")
 end
