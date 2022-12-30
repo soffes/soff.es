@@ -1,10 +1,10 @@
 desc "Update blog repo and import published posts"
 task :import do
   if File.directory?("tmp/blog")
-    sh "cd tmp/blog && git pull origin main && cd .."
+    system "cd tmp/blog && git pull origin main && cd .."
   else
-    sh "mkdir -p tmp"
-    sh "git clone https://github.com/soffes/blog.git tmp/blog"
+    system "mkdir -p tmp"
+    system "git clone https://github.com/soffes/blog.git tmp/blog"
   end
 
   import_directory("tmp/blog/published", "blog/_posts")
@@ -21,7 +21,7 @@ end
 
 desc "Build"
 task :build do
-  Rake::Task["import"].invoke
+  Rake::Task["import"].invoke unless File.directory?("blog/_posts")
 
   sh "npm run build && bundle exec jekyll build --drafts --config _config.yml --trace"
 end
@@ -62,14 +62,15 @@ private
 def import_directory(source, destination="blog/_posts")
   abort "Missing directory `#{source}`" unless File.directory?(source)
 
-  system %(mkdir -p #{destination})
-  system %(mkdir -p assets/blog)
-  system %(cp -r #{source}/* #{destination})
+  system %(rm -rf "#{destination}")
+  system %(mkdir -p "#{destination}")
+  system %(mkdir -p "assets/blog")
+  system %(cp -r #{source}/* "#{destination}")
 
   limit = ENV["LIMIT"]
   Dir["#{destination}/*"].reverse.each_with_index do |dir, i|
     if limit && i >= limit.to_i
-      system %(rm -rf #{dir})
+      system %(rm -rf "#{dir}")
       next
     end
 

@@ -28,6 +28,10 @@ defaults:
       path: "blog/*"
     values:
       layout: "post"
+  - scope:
+      path: "blog/_posts/*"
+    values:
+      category: blog-published
 autopages:
   enabled: false
 pagination:
