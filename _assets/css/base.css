@@ -389,11 +389,11 @@ section.post > div.cover > img {
   width: 100%;
 }
 
-section.post-gallery article {
+body.gallery section.post article, body.gallery > header {
   max-width: 1056px;
 }
 
-section.post-gallery > div.cover {
+body.gallery section.post > div.cover {
   height: 70vh;
 }
 

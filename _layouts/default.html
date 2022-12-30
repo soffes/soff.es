@@ -15,7 +15,7 @@
   {% include post_head.html -%}
   {%- endif -%}
 </head>
-<body>
+<body{% if page.is_gallery %} class="gallery"{% endif %}>
   {% unless page.cover_image %}
   <header>
     <h1><a href="/" rel="home" title="{{ site.title }}">{{ site.title }}</a></h1>
