@@ -83,7 +83,7 @@ class ImageProcessor
   private
 
   def is_production?
-    ENV["RACK_ENV"] == "production"
+    ENV["JEKYLL_ENV"] == "production"
   end
 
   def process_image(node)
