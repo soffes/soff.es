@@ -68,15 +68,6 @@ class ImageProcessor
       process_image(node)
     end
 
-    if is_production?
-      doc.css('meta[property="og:image"], meta[name="twitter:image"]').each do |node|
-        url = Addressable::URI.parse(@site.config["cdn_url"])
-        url.path = Addressable::URI.parse(node["content"]).path
-        url.query = "w=512&dpr=2&auto=format,compress"
-        node["content"] = url.to_s
-      end
-    end
-
     @post.output = doc.to_html
   end
 
@@ -88,7 +79,6 @@ class ImageProcessor
 
   def process_image(node)
     src = node["src"]
-    url = is_production? ? (@site.config["cdn_url"] + src) : src
     srcset = []
     sizes = []
 
