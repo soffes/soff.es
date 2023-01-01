@@ -88,9 +88,9 @@ class ImageProcessor
 
   def process_image(node)
     src = node["src"]
-    url = is_production? ? (@site.config["cdn_url"] + src) : src
-    srcset = []
-    sizes = []
+    # url = is_production? ? (@site.config["cdn_url"] + src) : src
+    # srcset = []
+    # sizes = []
 
     is_cover = node.parent["class"] == "cover"
     up = 1
