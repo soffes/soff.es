@@ -182,7 +182,7 @@ rowTemplate.innerHTML = `
   display: grid;
   width: 100%;
   grid-gap: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 8px;
   cursor: zoom-in;
 }
 
