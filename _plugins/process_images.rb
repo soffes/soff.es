@@ -68,14 +68,14 @@ class ImageProcessor
       process_image(node)
     end
 
-    # if is_production?
-    #   doc.css('meta[property="og:image"], meta[name="twitter:image"]').each do |node|
-    #     url = Addressable::URI.parse(@site.config["cdn_url"])
-    #     url.path = Addressable::URI.parse(node["content"]).path
-    #     url.query = "w=512&dpr=2&auto=format,compress"
-    #     node["content"] = url.to_s
-    #   end
-    # end
+    if is_production?
+      doc.css('meta[property="og:image"], meta[name="twitter:image"]').each do |node|
+        url = Addressable::URI.parse(@site.config["cdn_url"])
+        url.path = Addressable::URI.parse(node["content"]).path
+        url.query = "w=512&dpr=2&auto=format,compress"
+        node["content"] = url.to_s
+      end
+    end
 
     @post.output = doc.to_html
   end
@@ -88,9 +88,9 @@ class ImageProcessor
 
   def process_image(node)
     src = node["src"]
-    # url = is_production? ? (@site.config["cdn_url"] + src) : src
-    # srcset = []
-    # sizes = []
+    url = is_production? ? (@site.config["cdn_url"] + src) : src
+    srcset = []
+    sizes = []
 
     is_cover = node.parent["class"] == "cover"
     up = 1
@@ -103,29 +103,29 @@ class ImageProcessor
       end
     end
 
-    # image_sizes = IMAGE_SIZES[up - 1]
-    # image_sizes.reverse_each do |size|
-    #   # Remove this variant for covers on small phones since it gets pixelated.
-    #   # Ideally, we'd have a separate set of image sizes just for covers, but this is fine for now.
-    #   next if is_cover && size[:max_width] == 320
+    image_sizes = IMAGE_SIZES[up - 1]
+    image_sizes.reverse_each do |size|
+      # Remove this variant for covers on small phones since it gets pixelated.
+      # Ideally, we'd have a separate set of image sizes just for covers, but this is fine for now.
+      next if is_cover && size[:max_width] == 320
 
-    #   size[:scales].reverse_each do |scale|
-    #     srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format,compress #{size[:width] * scale}w"]
-    #   end
+      size[:scales].reverse_each do |scale|
+        srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format,compress #{size[:width] * scale}w"]
+      end
 
-    #   sizes << if size[:max_width] == 1024
-    #     "1024px"
-    #   else
-    #     "(max-width: #{size[:max_width]}px) #{size[:width]}px"
-    #   end
-    # end
+      sizes << if size[:max_width] == 1024
+        "1024px"
+      else
+        "(max-width: #{size[:max_width]}px) #{size[:width]}px"
+      end
+    end
 
 
-    # if is_production?
-    #   node["src"] = "#{url}?w=1024&dpr=2&auto=format,compress"
-    #   node["srcset"] = srcset.join(",")
-    #   node["sizes"] = sizes.join(",")
-    # end
+    if is_production?
+      node["src"] = "#{url}?w=1024&dpr=2&auto=format,compress"
+      node["srcset"] = srcset.join(",")
+      node["sizes"] = sizes.join(",")
+    end
 
     node["loading"] = "lazy" unless node["loading"]
 
