@@ -35,7 +35,7 @@ end
 
 desc "Local server"
 task :server do
-  sh "npm run build && bundle exec jekyll serve --drafts --trace"
+  sh "npm run build && bundle exec jekyll serve --drafts --trace --watch"
 end
 
 namespace :lint do

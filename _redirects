@@ -7,9 +7,14 @@ https://www.soff.es/* https://soffes.com/:splat 301!
 https://soffes.blog/* https://soffes.com/blog/:splat 301!
 https://www.soffes.blog/* https://soffes.com/blog/:splat 301!
 
+https://useredacted.com/*  https://soffes.com/apps/redacted/:splat 301!
+https://www.useredacted.com/*  https://soffes.com/apps/redacted/:splat 301!
+
 /music https://soundcloud.com/soffes
 /talks https://speakerdeck.com/soffes
 /clock https://github.com/soffes/clock-saver
+
+/apps /
 
 /apple-touch-icon.png /apple-touch-icon-192x192.png
 /apple-touch-icon-precomposed.png /apple-touch-icon-192x192.png
