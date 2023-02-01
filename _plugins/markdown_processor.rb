@@ -16,7 +16,7 @@ class CustomMarkdownRenderer < Redcarpet::Render::HTML
 
   def paragraph(text)
     # For some custom tags, it thinks they are paragraphs. Fix that.
-    return text if text.start_with?('<')
+    return text if text.start_with?('<photo-')
 
     "<p>#{text}</p>"
   end
