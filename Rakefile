@@ -60,12 +60,18 @@ task lint: %i[lint:ruby lint:yaml]
 private
 
 def import_directory(source, destination="blog/_posts")
-  abort "Missing directory `#{source}`" unless File.directory?(source)
+  unless File.directory?(source)
+    puts "Missing directory `#{source}`"
+    return
+  end
 
-  system %(rm -rf "#{destination}")
-  system %(mkdir -p "#{destination}")
-  system %(mkdir -p "assets/blog")
-  system %(cp -r #{source}/* "#{destination}")
+  splat = "#{source}/*"
+  return if Dir[splat].empty?
+
+  system %(rm -rf #{destination})
+  system %(mkdir -p #{destination})
+  system %(mkdir -p assets/blog)
+  system %(cp -r #{splat} #{destination})
 
   limit = ENV["LIMIT"]
   Dir["#{destination}/*"].reverse.each_with_index do |dir, i|
@@ -80,9 +86,9 @@ def import_directory(source, destination="blog/_posts")
 
     # Copy assets
     if Dir.empty?(dir)
-      system %(rm -rf "#{dir}")
+      system %(rm -rf #{dir})
     else
-      system %(mv "#{dir}" "assets/blog")
+      system %(mv #{dir} assets/blog)
     end
   end
 end
