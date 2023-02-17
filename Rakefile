@@ -59,7 +59,7 @@ task lint: %i[lint:ruby lint:yaml]
 
 private
 
-def import_directory(source, destination="blog/_posts")
+def import_directory(source, destination = "blog/_posts")
   unless File.directory?(source)
     puts "Missing directory `#{source}`"
     return

@@ -30,7 +30,6 @@ class AutoExcerpts < Jekyll::Generator
     html = html_for(markdown)
     doc = Nokogiri::HTML.fragment(html)
 
-
     nodes = []
     doc.children.each do |block|
       next if block.to_html.strip.empty?

@@ -120,7 +120,6 @@ class ImageProcessor
       end
     end
 
-
     if is_production?
       node["src"] = "#{url}?w=1024&dpr=2&auto=format,compress"
       node["srcset"] = srcset.join(",")

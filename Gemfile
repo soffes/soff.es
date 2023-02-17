@@ -15,3 +15,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate-v2"
   gem "jekyll-sitemap"
 end
+
+group :development do
+  gem "standardrb"
+end
