@@ -66,8 +66,6 @@ This is the all inclusive resort, diving, national park entry, and sanitation ta
 
 If you want extra nights at the hotel, it's $145 per night for single occupancy and $128/person per night for double occupancy. You can shore dive for $9/tank (see below for more on that). If you want to do boat dive extra days, it's $125/day for 2 boat dives.
 
-> If you're one of my students, see below for more information about the extra nights and costs.
-
 ==To reserve your spot, you'll need to send me a $100 deposit.== Text me or message me on WhatsApp at [415-450-6000](tel:+14154506000). On August 1st, you'll need to pay the rest of your balance. I'll remind you before then.
 
 ### Tips
@@ -145,8 +143,6 @@ You may also want a drybag on the boat. I use [this one](https://amzn.to/3uqKXUS
 #### Rentals
 
 You can rent any gear you might need. I'd recommend trying not to rent anything if you can help it though. Please let me know what you want to rent before we arrive.
-
-> If you're one of my students, you don't need to rent anything unless you'd like a wetsuit.
 
 | Item             | Price per Day |
 |------------------|---------------|
