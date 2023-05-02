@@ -5,7 +5,7 @@ cover_image: /trips/cozumel.jpg
 
 ## When
 
-==September 9th–16th, 2023==
+==September 16th–23rd, 2023==
 
 ## Where
 
