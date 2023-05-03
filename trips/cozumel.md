@@ -61,7 +61,7 @@ There are currently 4 people confirmed. With 8 people, we get a private boat. Id
 
 ## Price
 
-==8 days, 7 nights, 5 diving days is **$1,555** for single occupancy.== For double occupancy, it's $1,214/person.
+==8 days, 7 nights, 5 diving days is **$1,555** for single occupancy.== For double occupancy, it's $1,214/person. For a nondiver sharing a room with a diver, it's $896 for them for the week.
 
 This is the all inclusive resort, diving, national park entry, and sanitation tax. You'll need to book your own flights, and tip isn't included.
 
