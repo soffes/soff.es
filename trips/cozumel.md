@@ -5,7 +5,7 @@ cover_image: /trips/cozumel.jpg
 
 ## When
 
-==October 14th-21st, 2023==
+==October 21st-28th, 2023==
 
 ## Where
 
