@@ -4,7 +4,6 @@ author: Sam Soffes
 url: https://soffes.com
 cdn_url: https://soffes.imgix.net
 fathom_id: JXPGBKDQ
-fathom_host: f.soffes.com
 encoding: UTF-8
 strict_front_matter: true
 permalink: "/blog/:slug"
