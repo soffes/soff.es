@@ -43,8 +43,8 @@ cover_image: /trips/cozumel.jpg
   <div class="filled"><!-- Don --></div>
   <div class="filled"><!-- Andrew --></div>
   <div class="filled"><!-- Paul --></div>
-  <div class="need"></div>
-  <div class="need"></div>
+  <div class="filled"><!-- Mac --></div>
+  <div class="filled"><!-- Meghan --></div>
   <div class="need"></div>
   <div class="need"></div>
   <div></div>
