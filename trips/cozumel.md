@@ -57,7 +57,7 @@ cover_image: /trips/cozumel.jpg
   <div></div>
 </div>
 
-There are currently 4 people confirmed. With 8 people, we get a private boat. Ideal group size is 12, and the maximum size is 16.
+There are currently 6 people confirmed. With 8 people, we get a private boat. Ideal group size is 12, and the maximum size is 16.
 
 ## Price
 
