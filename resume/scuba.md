@@ -6,7 +6,7 @@ title: Scuba Résumé
 
 ### Experience
 
-307 dives with 7 years of diving experience and 18 certifications as of December 2022. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
+354 dives with 7 years of diving experience and 18 certifications as of July 2023. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
 
 ### Certifications
 
