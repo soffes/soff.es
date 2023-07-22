@@ -40,11 +40,11 @@ cover_image: /trips/cozumel.jpg
 
 <div class="progress-bar">
   <div class="filled"><!-- Sam --></div>
-  <div class="filled"><!-- Don --></div>
   <div class="filled"><!-- Andrew --></div>
   <div class="filled"><!-- Paul --></div>
   <div class="filled"><!-- Mac --></div>
   <div class="filled"><!-- Meghan --></div>
+  <div class="need"></div>
   <div class="need"></div>
   <div class="need"></div>
   <div></div>
