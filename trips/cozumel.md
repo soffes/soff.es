@@ -284,6 +284,13 @@ A cheap snorkel that isn't a "dry snorkel" is best.
 
 > I dive with a more expensive Scubapro one I don't like that much because it was all the dive shop had when I needed one.
 
+#### SMB
+
+NAUI required that you have a surface marker buoy.
+
+* [DGX Surface Marker Buoy](https://www.divegearexpress.com/dgx-smb-open-bottom-4-ft-1-2-m)
+* Whatever your local dive shop has (one with an over pressure valve is recommended)
+
 ---
 
 Again, if you have questions or need anything, feel free to ask! You can text me or message me on WhatsApp at <a href="tel://+14154506000" class="tel">+1-415-450-6000</a>.
