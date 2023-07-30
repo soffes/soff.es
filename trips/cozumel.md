@@ -7,6 +7,10 @@ cover_image: /trips/cozumel.jpg
 
 ==October 21st-28th, 2023==
 
+I'll be arriving early with my students on October 18th.
+
+> If you are one of my students, see these asides throughout the page. There's a section at the bottom for more information about the training!
+
 ## Where
 
 [El Cid La Ceiba](https://www.elcid.com/el-cid-la-ceiba-resort-cozumel) in Cozumel, Mexico
@@ -67,6 +71,8 @@ This is the all inclusive resort, diving, national park entry, and sanitation ta
 
 If you want extra nights at the hotel, it's $145 per night for single occupancy and $128/person per night for double occupancy. You can shore dive for $9/tank (see below for more on that). If you want to do boat dive extra days, it's $125/day for 2 boat dives.
 
+> If you're one of my students, see below for more information about the extra nights and costs.
+
 ==To reserve your spot, you'll need to send me a $100 deposit.== Text me or message me on WhatsApp at [415-450-6000](tel:+14154506000). On August 1st, you'll need to pay the rest of your balance. I'll remind you before then.
 
 ### Tips
@@ -99,7 +105,9 @@ The easiest way to get to the hotel is take a taxi from the airport (or ferry te
 
 We'll mostly drift diving. If you've never done it before, you're about to be so spoiled. We'll all get in together as a group and let the current gently push us along. As a group, we'll stay together and follow the divemaster. When it's time to come up, we'll ascend and the boat will pick us up. So great.
 
-It's recommended that you have your SMB and reel to signal boats where you are ascending. This isn't required since the divemaster will have one.
+It's recommended that you have your SMB (surface marker buoy or safety sausage) and reel to signal boats where you are ascending. This isn't required since the divemaster will have one.
+
+> If you're one of my students, an SMB is required.
 
 ### Shore Diving
 
@@ -113,9 +121,15 @@ We'll do a boat night dive at one least night. It's $85 for the night dive.
 
 Make sure you have at least one dive light and a tank light if you want to do a night dive.
 
+> If you're one of my students, I'll have lights you can use.
+
 ### Nitrox
 
 It's $120 for the week ($12/tank). Let me know before we arrive if you want to use Nitrox.
+
+I recommend everyone use Nitrox on every dive. If you aren't Nitrox certified and want to be, I'd be happy to teach you. It's really easy!
+
+> If you're one of my students, you'll need to use Nitrox on at least 2 dives.
 
 ### Gear
 
@@ -128,6 +142,8 @@ Here's what you'll need:
 * Regulators
 * Computer
 * Dive light (Recommended but not required during the day. Required at night.)
+
+> If you're taking an open water class, you'll also need a snorkel and SMB.
 
 You may also want a 3mm wetsuit if you get cold. I personally dive with just shorts and a rash guard.
 
@@ -145,6 +161,8 @@ You may also want a drybag on the boat. I use [this one](https://amzn.to/3uqKXUS
 
 You can rent any gear you might need. I'd recommend trying not to rent anything if you can help it though. Please let me know what you want to rent before we arrive.
 
+> If you're one of my students, you don't need to rent anything unless you'd like a wetsuit.
+
 | Item             | Price per Day |
 |------------------|---------------|
 | Regulator        | $12           |
@@ -161,3 +179,111 @@ You can rent any gear you might need. I'd recommend trying not to rent anything 
 ## Questions?
 
 If you have questions or need anything, feel free to ask! You can text me or message me on WhatsApp at <a href="tel://+14154506000" class="tel">+1-415-450-6000</a>.
+
+---
+![Cenote diving](/trips/cave-diving.jpg)
+
+## Cenote Diving
+
+After the main trip, I'm going to the mainland for a bit to do some cave diving. If you want to come, we can do some cavern dives in the cenotes with my cave diving instructor. A cavern dive is a cave dive but not that far from the entrance. It's fully guided and not as scary as it sounds.
+
+You don't need to have any cave experience to join.
+
+$180/day if you want to go. Text me for more information and booking.
+
+---
+
+![](/trips/training.jpg)
+
+## Scuba Training
+
+We'll be doing a [NAUI](https://naui.org) open water and Nitrox course October 19th–22nd. You'll need to fly in on October 18th and we'll get started first thing on the 19th.
+
+The rest of the group will arrive on the 21st while we're in the water. The 22nd will be the first day of the main group's boat diving and our last day of training (from the boat). For the rest of the week, we'll just enjoy boat diving with the rest of the group!
+
+### Price
+
+**Training:** $1,000. This includes your training materials and phyiscal certification card.
+
+**3 extra nights:** $432 for single occupancy and $285/person for double occupancy
+
+**Extra tip:** $30 cash for the shore crew
+
+I also strongly recommend getting diving insurance from [DAN](https://dan.org). They really take care of you if anything happens. Plans start at [$40/yr](https://dan.org/membership-insurance/membership/).
+
+You can also purchase [trip insurance](https://dan.org/membership-insurance/travel-insurance/) from DAN if you'd like. They reimburse you if you can't go diving for whatever reason (weather, sickness, etc). Personally, I usually get this.
+
+## Itinerary
+
+First, we'll do a "classroom" session by the pool. We'll review how to configure our gear and go over some important things before we get in the water the next day.
+
+We'll do four 2 hour confined sessions (aka "pool"). There's a great spot at the hotel for this. We may add additional classroom session in the evening if needed.
+
+Next we'll do a total of 4 open water dives across two days. The first day will be from the shore right in front of hotel and the second will be on the boat with the rest of the group. For that day, we'll hang back a little and take our time to go over everything.
+
+**October 18th:** Arrive in Cozumel. Classroom session in the late afternoon.
+
+**October 19th:** Confined water session 1 & 2
+
+**October 20th:** Confined water session 3 & 4
+
+**October 21st:** Open water session 1 & 2 from the shore
+
+**October 22nd:** Open water session 3 & 4 from the boat
+
+**October 13th–16th:** Boat diving as certified divers!
+
+### eLearning
+
+After we get your deposit taken care of, I'll send you eLearning information. It'll take 8-12 hours. You can get certified as young as 15 years old, so I know you can do it.
+
+### Gear
+
+You'll need to purchase your "personal equipment". I'll provide everything else (except for a wetsuit).
+
+The easiest way to purchase scuba gear is at a local shop. I also like [Dive Gear Express](https://divegearexpress.com). Most higher end scuba things on Amazon are very overpriced.
+
+**I'd expect your total cost to be about $300 for all of this.**
+
+#### Mask
+
+One of the most important pieces of gear. It's important to get one for scuba diving that has an enclosed nose. You'll learn why this is important in the eLearning. If you plan to get prescription lenses down the road, make sure the mask you select will work with them. (It is common to dive with contacts.)
+
+To purchase a mask, it's best to go to a dive shop and try some on. You'll want to make sure it fits your face. I recommend listening to the experts at your local dive shop.
+
+> I personally dive with a [Scubapro Zoom mask](https://amzn.to/3z3dlPo) with an upgraded fabric strap. Fabric straps are preferred but not required since they are less prone to breaking.
+
+#### Fins
+
+To move around in the water, you'll need fins! I require paddle or hinge fins. (No split fins.) Also, you'll need to make sure the fins you get have spring straps (or purchase some compatible spring straps separately for them if you pick some fins that don't come with them).
+
+When purchasing fins, you'll want to make sure your boots fit unless you purchase a full fit fin. It's best to try them on at a dive shop to make sure they fit. I don't recommend full foot fins since you can't use them in cold water.
+
+Here are some I recommend:
+
+* [Scubapro Jet](https://amzn.to/3CWhVjF): $199
+* [OMS Slipstream](https://www.divegearexpress.com/oms-slipstream-fins): $163
+* Scubapro Go (get these at a dive shop)
+
+> I'd recommend the Scubapro Go fins for new divers.
+
+#### Boots
+
+If you don't get full foot fins, you'll need neoprene boots. They are for comfort and warmth. They also protect your feet getting to and from the dive site when you aren't wearing fins. (We'll cover all of that in the eLearning and classroom.)
+
+For warm water, I recommend 3mm short boots.
+
+> I personally dive with [Scubapro Delta 3mm Short Boots](https://amzn.to/3TsiWqD)
+
+#### Snorkel
+
+A cheap snorkel that isn't a "dry snorkel" is best.
+
+* [DGX Ergo Flex](https://www.divegearexpress.com/dgx-ergo-flex-snorkel): $19
+* [Amazon](https://amzn.to/3W3rxC7): $16
+
+> I dive with a more expensive Scubapro one I don't like that much because it was all the dive shop had when I needed one.
+
+---
+
+Again, if you have questions or need anything, feel free to ask! You can text me or message me on WhatsApp at <a href="tel://+14154506000" class="tel">+1-415-450-6000</a>.
