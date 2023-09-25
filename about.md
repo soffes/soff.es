@@ -4,7 +4,7 @@ title: About
 
 <img src="/assets/sam-soffes.jpg" width="256" height="256" alt="Sam Soffes">
 
-I am a software engineer mostly working with Apple platforms and the web. Currently, I’m traveling full time.
+I am a software engineer mostly working with Apple platforms and the web. Currently, I’m living in Sausalito, CA. [Last year](/blog/2022), I traveled full time in my DIY camper van 🚐
 
 When the iPhone SDK first came out in 2008, I wrote this app called [Bible](https://youversion.com/mobile) that launched on day one of the App Store. There are a lot of people using it now—which is really humbling. I used to own a few companies, freelance, and work at a few startups. Some notable ones are Along, GitHub, Lyft, Canvas, Venmo, and Hipstamatic. [Ask me anything on Twitter](https://twitter.com/intent/tweet?screen_name=soffes) if you’re curious.
 
