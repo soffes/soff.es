@@ -6,9 +6,13 @@ title: Scuba Résumé
 
 ### Experience
 
-354 dives with 7 years of diving experience and 18 certifications as of July 2023. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
+360 dives with 7 years of diving experience and 18 certifications as of October 2023. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
 
 ### Certifications
+
+#### September 2023 — Monterey, CA
+
+* NAUI Kelp Restoration Diver #64146C9
 
 #### November 2022 — Playa del Carmen, Mexico
 
