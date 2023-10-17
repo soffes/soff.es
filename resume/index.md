@@ -183,6 +183,6 @@ Created and distributed macOS applications for working with video in live applic
 
 Started working with iOS day one and released an app the first day of the App Store. Released several Swift, Ruby, and Objective-C open source & contributed to several others. Expertise in custom UI, text, graphics, image processing, and networking.
 
-Feel free to email me at [sam@soffes.com](mailto:sam@soffes.com) or read more [about me](/about). 👋
+Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
 
 I also have a [scuba diving resume](/resume/scuba) 🤿

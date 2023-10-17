@@ -30,4 +30,4 @@ Redacted was designed and developed by [Sam Soffes](/).
 
 ### My question wasn't answered. Help!
 
-Just [email me](mailto:support@soffes.com) and I'll get you taken care of!
+Just [email me](mailto:support@soff.es) and I'll get you taken care of!

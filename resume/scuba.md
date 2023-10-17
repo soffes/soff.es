@@ -66,6 +66,6 @@ title: Scuba Résumé
 
 15 years of [software development experience](/resume) with mobile and web applications. Experience leading teams.
 
-Feel free to email me at [sam@soffes.com](mailto:sam@soffes.com) or read more [about me](/about). 👋
+Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
 
 I also have a [software engineering resume](/resume) 🤓
