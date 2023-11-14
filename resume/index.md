@@ -129,27 +129,35 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
   </li>
 </ul>
 
+### Experience
+
+Started working with iOS day one and released an app the first day of the App Store. Released several Swift, Ruby, and Objective-C open source libraries & contributed to several others. Expertise in custom UI, text, graphics, image processing, camera capture, and networking.
+
 ### Work History
+
+#### Sabbatical (2022-2023) — Sausalito, CA
+
+Converted a cargo van into a camper van to live and travel in during [2022](/2022). Became a scuba diving instructor and spent time learning more about creating physical products.
 
 #### Co-founder & CTO (2020-2021) @ [Along](https://along.video) — San Francisco, CA
 
-Lead engineering on all platforms for social video application. Created video encoding pipeline that allowed for video edits without re-encoding.
+Led engineering on iOS, API, and web for social video application. Created video encoding pipeline that allowed for video edits without re-encoding.
 
 #### Staff iOS Engineer (2020) @ [GitHub](https://github.com) — San Francisco, CA
 
-Lead engineering on iOS tooling.
+Led engineering on iOS tooling.
 
 #### Staff iOS Engineer (2017–2020) @ [Lyft](https://lyft.com) — San Francisco, CA
 
-Lead engineering on design systems and created internal tools for mobile infrastructure.
+Led engineering on design systems and created internal tools for mobile infrastructure. Worked on cross-functional products for drivers and riders.
 
 #### iOS Engineer (2015–2016) @ Canvas — San Francisco, CA
 
-Worked on native iOS & macOS realtime collaborative Markdown text editor.
+Worked on native iOS & macOS realtime, collaborative Markdown text editor using operational transformations.
 
 #### iOS Engineer (2015) @ [Venmo](https://venmo.com) — San Francisco, CA
 
-Worked on improving the Venmo iOS application. Leading development on various internal tools.
+Worked on improving the Venmo iOS application. Led development on various internal tools.
 
 #### Founder (2012–2021) @ Nothing Magical — San Francisco, CA
 
@@ -157,11 +165,11 @@ Worked on self-funded company to launch iOS and web applications.  Litely, a cli
 
 #### VP of Engineering (2012–2013) @ Seesaw — San Francisco, CA
 
-First employee. Lead mobile and web engineering on multiple social products.
+First employee. Led mobile and web engineering on multiple social products.
 
 #### Lead iOS Engineer (2011–2012) @ [Hipstamatic](https://hipstamatic.com) — San Francisco, CA
 
-Lead iOS engineering on Hipstamatic, image processing infrastructure, and other new products.
+First employee. Led iOS and API engineering on multiple social products.
 
 #### Software Engineer (2011) @ [Scribd](https://scribd.com) — San Francisco, CA
 
@@ -169,20 +177,20 @@ Worked on team to create iPhone mobile reading application. Worked with recruiti
 
 #### Freelancer (2009–2010) — Dallas, TX
 
-Lead development on several client iOS and Ruby on Rails applications.
+Led development on several client iOS and Ruby on Rails applications.
 
 #### Digerati Polymath (2007–2009) @ [Life.Church](https://life.church) — Edmond, OK
 
-Worked on Bible app for iPhone launching day one of the App Store. Worked on team to create backing web platform now with over 400 million users world wide.
+Worked on Bible app for iPhone launching day one of the App Store. Worked on team to create backing web platform now with over 615 million users world wide.
 
 #### Co-founder (2007–2009) @ Trimonix
 
 Created and distributed macOS applications for working with video in live applications. Acquired 2009.
 
-### Experience
-
-Started working with iOS day one and released an app the first day of the App Store. Released several Swift, Ruby, and Objective-C open source & contributed to several others. Expertise in custom UI, text, graphics, image processing, and networking.
+---
 
 Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
 
 I also have a [scuba diving resume](/resume/scuba) 🤿
+
+<span class="gray">Last updated 11/14/2023</gray>
