@@ -35,10 +35,5 @@
   {% endunless %}
   {%- if page.is_gallery %}
   <script src="{% ministamp _assets/js/gallery.js /assets/js/gallery.js %}"></script>{% endif %}
-  {% if jekyll.environment == "production" %}
-  {% if site.fathom_id %}
-  <script src="https://cdn.usefathom.com/script.js" data-site="{{ site.fathom_id }}" defer></script>
-  {% endif %}
-  {% endif %}
 </body>
 </html>

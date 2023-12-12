@@ -3,7 +3,6 @@ description: "🚐 Van life & 🤿 scuba diving"
 author: Sam Soffes
 url: https://soff.es
 cdn_url: https://soffes.imgix.net
-fathom_id: JXPGBKDQ
 encoding: UTF-8
 strict_front_matter: true
 permalink: "/blog/:slug"
