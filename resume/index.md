@@ -197,4 +197,4 @@ Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about m
 
 I also have a [scuba diving resume](/resume/scuba) 🤿
 
-<span class="gray">Last updated 11/14/2023</gray>
+<span class="gray">Last updated 11/6/2024</gray>
