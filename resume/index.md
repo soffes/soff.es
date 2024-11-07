@@ -135,6 +135,10 @@ Started working with iOS day one and released an app the first day of the App St
 
 ### Work History
 
+#### Staff Software Engineer (2024–Present) @ [Apple](https://apple.com) — San Francisco, CA
+
+Working on the Podcasts app across all of Apple’s platforms.
+
 #### Sabbatical (2022-2023) — Sausalito, CA
 
 Converted a cargo van into a camper van to live and travel in during [2022](/2022). Became a scuba diving instructor and spent time learning more about creating physical products.
