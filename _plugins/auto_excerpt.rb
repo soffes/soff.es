@@ -5,7 +5,7 @@ require "nokogiri"
 class AutoExcerpts < Jekyll::Generator
   include ActionView::Helpers::TextHelper
 
-  OMITTED_TAGS = %w[h1 h2 h3 div photo-gallery].freeze
+  OMITTED_TAGS = %w[h1 h2 h3 div photo-row].freeze
 
   safe true
   priority :low

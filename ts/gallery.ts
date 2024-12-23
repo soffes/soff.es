@@ -159,22 +159,6 @@ class LightboxController {
   }
 }
 
-class PhotoGallery extends HTMLElement {
-  connectedCallback() {
-    this.allImages().forEach((image) => {
-      image.addEventListener("click", (event) => {
-        event.preventDefault();
-        LightboxController.shared.show(image);
-      });
-    });
-  }
-
-  private allImages() {
-    return Array.from(this.querySelectorAll("img"));
-  }
-}
-window.customElements.define("photo-gallery", PhotoGallery);
-
 const rowTemplate = document.createElement("template");
 rowTemplate.innerHTML = `
 <style>
@@ -229,6 +213,11 @@ class PhotoRow extends HTMLElement {
   connectedCallback() {
     let columns = "";
     this.querySelectorAll("img").forEach((image) => {
+      image.addEventListener("click", (event) => {
+        event.preventDefault();
+        LightboxController.shared.show(image);
+      });
+
       image.parentNode!.removeChild(image);
 
       const wrapper = document.createElement("div");
@@ -239,6 +228,12 @@ class PhotoRow extends HTMLElement {
           image.getAttribute("data-height")
       );
       wrapper.appendChild(image);
+
+      image.addEventListener("click", (event) => {
+        event.preventDefault();
+        LightboxController.shared.show(image);
+      });
+
       this.shadowRoot!.appendChild(wrapper);
       columns += "1fr ";
     });

@@ -12,8 +12,14 @@ task :import do
 end
 
 namespace :import do
-  desc "Import all local drafts"
+  desc "Import local posts"
   task :local do
+    abort "Expected blog directory at `../blog/`" unless File.directory?("../blog")
+    import_directory("../blog/published")
+  end
+
+  desc "Import local drafts"
+  task :drafts do
     abort "Expected blog directory at `../blog/`" unless File.directory?("../blog")
     import_directory("../blog/drafts")
   end
