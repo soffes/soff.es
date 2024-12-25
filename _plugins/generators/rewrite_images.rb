@@ -18,10 +18,10 @@ class RewriteImages < Jekyll::Generator
 
   def rewrite(page)
     assets_url = assets_url(page)
-    page.content.gsub!(/(<img.*src=")(?!http)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
-    page.content.gsub!(/(<a.*href=")(?!http)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
-    page.content.gsub!(/\[!\[(.*)\]\((?!http)(.*)\)\]\(/, %([<img src="#{assets_url}\\2" alt="\\1">]\())
-    page.content.gsub!(/!\[(.*)\]\((?!http)(.*)\)/, %(<img src="#{assets_url}\\2" alt="\\1">))
+    page.content.gsub!(/(<img.*src=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
+    page.content.gsub!(/(<a.*href=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
+    page.content.gsub!(/\[!\[(.*)\]\((?!http|\/)(.*)\)\]\(/, %([<img src="#{assets_url}\\2" alt="\\1">]\())
+    page.content.gsub!(/!\[(.*)\]\((?!http|\/)(.*)\)/, %(<img src="#{assets_url}\\2" alt="\\1">))
 
     return unless page.data["cover_image"]
 
