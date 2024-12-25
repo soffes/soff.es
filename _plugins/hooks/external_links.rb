@@ -32,6 +32,8 @@ class ExternalLinksProcessor
 end
 
 Jekyll::Hooks.register :pages, :post_render do |page|
+  next if %w[.json .xml].include?(page.ext)
+
   ExternalLinksProcessor.new(page).process!
 end
 
