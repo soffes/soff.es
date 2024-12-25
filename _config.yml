@@ -40,15 +40,13 @@ plugins:
   - jekyll/minibundle
 markdown: Custom
 exclude:
-  - .github/
-  - .ruby-version
-  - .vscode/
   - Gemfile
   - Gemfile.lock
   - node_modules/
   - package-lock.json
   - package.json
   - Rakefile
+  - README.md
   - tmp/
   - ts/
   - tsconfig.json
