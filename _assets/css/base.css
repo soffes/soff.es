@@ -635,6 +635,10 @@ nav.pagination em {
   border: 0;
 }
 
+photo-row + p {
+  margin-top: 1em;
+}
+
 /* ---- Table ---- */
 
 article table {
