@@ -5,32 +5,22 @@ class RewriteImages < Jekyll::Generator
   def generate(site)
     puts "        - Rewrite Images"
 
-    site.pages.each do |page|
-      rewrite(page)
+    site.documents.each do |page|
+      assets_url = assets_url(page)
+      page.content.gsub!(/(<img.*src=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
+      page.content.gsub!(/(<a.*href=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
+      page.content.gsub!(/\[!\[(.*)\]\((?!http|\/)(.*)\)\]\(/, %([<img src="#{assets_url}\\2" alt="\\1">]\())
+      page.content.gsub!(/!\[(.*)\]\((?!http|\/)(.*)\)/, %(<img src="#{assets_url}\\2" alt="\\1">))
+
+      next unless page.data["cover_image"]
+
+      path = assets_path(page) + page.data["cover_image"]
+      page.data["cover_image"] = assets_url + page.data["cover_image"]
+
+      size = MiniMagick::Image.open(path).dimensions
+      page.data["cover_image_width"] = size[0]
+      page.data["cover_image_height"] = size[1]
     end
-
-    site.posts.docs.each do |page|
-      rewrite(page)
-    end
-  end
-
-  private
-
-  def rewrite(page)
-    assets_url = assets_url(page)
-    page.content.gsub!(/(<img.*src=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
-    page.content.gsub!(/(<a.*href=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
-    page.content.gsub!(/\[!\[(.*)\]\((?!http|\/)(.*)\)\]\(/, %([<img src="#{assets_url}\\2" alt="\\1">]\())
-    page.content.gsub!(/!\[(.*)\]\((?!http|\/)(.*)\)/, %(<img src="#{assets_url}\\2" alt="\\1">))
-
-    return unless page.data["cover_image"]
-
-    path = assets_path(page) + page.data["cover_image"]
-    page.data["cover_image"] = assets_url + page.data["cover_image"]
-
-    size = MiniMagick::Image.open(path).dimensions
-    page.data["cover_image_width"] = size[0]
-    page.data["cover_image_height"] = size[1]
   end
 
   # Relative to site root with trailing `/`

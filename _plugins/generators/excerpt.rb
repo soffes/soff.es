@@ -2,7 +2,7 @@ require "action_view"
 require "nokogiri"
 
 # Jekyll generator to create excepts for posts
-class AutoExcerpts < Jekyll::Generator
+class ExcerptGenerator < Jekyll::Generator
   include ActionView::Helpers::TextHelper
 
   OMITTED_TAGS = %w[h1 h2 h3 div photo-row].freeze
@@ -13,7 +13,7 @@ class AutoExcerpts < Jekyll::Generator
   def generate(site)
     @site = site
 
-    puts "        - Auto Excerpts"
+    puts "        - Excerpts"
 
     site.posts.docs.each do |document|
       nodes = excerpt_for(document.content)

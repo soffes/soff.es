@@ -1,5 +1,5 @@
 # Jekyll generator to process thanks
-class Thanks < Jekyll::Generator
+class ThanksGenerator < Jekyll::Generator
   safe true
 
   def generate(site)

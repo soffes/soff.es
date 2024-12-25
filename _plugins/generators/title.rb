@@ -1,5 +1,5 @@
 # Jekyll generator to automatically extract the title
-class AutoTitle < Jekyll::Generator
+class TitleGenerator < Jekyll::Generator
   safe true
 
   # Regular expression to find `# Some title` at the beginning of the document
