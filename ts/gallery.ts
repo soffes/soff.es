@@ -70,7 +70,7 @@ class LightboxController {
     }
 
     LightboxController.lightbox.parentNode?.removeChild(
-      LightboxController.lightbox
+      LightboxController.lightbox,
     );
     LightboxController.lightbox = null;
   }
@@ -116,7 +116,7 @@ class LightboxController {
 
   private allImages() {
     const images = Array.from(
-      document.querySelectorAll("photo-row")
+      document.querySelectorAll("photo-row"),
     ) as PhotoRow[];
     return images.map((row) => row.images()).flat();
   }
@@ -225,7 +225,7 @@ class PhotoRow extends HTMLElement {
         "--aspect-ratio",
         image.getAttribute("data-width") +
           "/" +
-          image.getAttribute("data-height")
+          image.getAttribute("data-height"),
       );
       wrapper.appendChild(image);
 
