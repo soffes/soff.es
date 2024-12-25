@@ -12,22 +12,9 @@ defaults:
     values:
       layout: "page"
   - scope:
-      path: "trips/*"
-    values:
-      sitemap: false
-      is_trip: true
-      layout: post
-  - scope:
-      path: "trips/index.md"
-    values:
-      sitemap: false
-      is_trip: false
-      layout: page
-  - scope:
       path: "scuba/*"
     values:
       sitemap: false
-      is_trip: true
       layout: post
   - scope:
       path: "blog/*"

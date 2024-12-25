@@ -3,20 +3,6 @@ require "base64"
 require "mini_magick"
 require "nokogiri"
 
-module MiniMagick
-  # Extension on `MiniMagick::Image`
-  class Image
-    def pixel_at(x, y)
-      run_command("convert", "#{path}[1x1+#{x.to_i}+#{y.to_i}]", "txt:").split("\n").each do |line|
-        matches = /^0,0:.*(#[0-9a-fA-F]+)/.match(line)
-        return matches[1] if matches
-      end
-      nil
-    end
-    # rubocop:enable Naming/MethodParameterName
-  end
-end
-
 # Jekyll hook to process images
 class ImageProcessor
   # 4.5", 4.0" (2x):            228w, 140w,  91w,  66w
@@ -50,16 +36,16 @@ class ImageProcessor
     ]
   ].freeze
 
-  def initialize(post, should_process = true)
-    @post = post
-    @site = post.site
+  def initialize(page, should_process = true)
+    @page = page
+    @site = page.site
     @should_process = should_process
   end
 
   def process!
     return unless @should_process
 
-    doc = Nokogiri::HTML(@post.output)
+    doc = Nokogiri::HTML(@page.output)
     doc.css("img").each do |node|
       next unless (src = node["src"])
       next if src.start_with?("http")
@@ -77,7 +63,7 @@ class ImageProcessor
       end
     end
 
-    @post.output = doc.to_html
+    @page.output = doc.to_html
   end
 
   private
@@ -136,7 +122,7 @@ class ImageProcessor
     node["data-width"] = size[0]
     node["data-height"] = size[1]
 
-    # Only do the backgrounds on production since it’s pretty slow
+    # Only do the backgrounds in production since it’s pretty slow
     return unless is_production?
 
     if is_cover
@@ -153,6 +139,19 @@ class ImageProcessor
   end
 end
 
-Jekyll::Hooks.register :posts, :post_render do |post|
-  ImageProcessor.new(post).process!
+module MiniMagick
+  # Extension on `MiniMagick::Image`
+  class Image
+    def pixel_at(x, y)
+      run_command("convert", "#{path}[1x1+#{x.to_i}+#{y.to_i}]", "txt:").split("\n").each do |line|
+        matches = /^0,0:.*(#[0-9a-fA-F]+)/.match(line)
+        return matches[1] if matches
+      end
+      nil
+    end
+  end
+end
+
+Jekyll::Hooks.register :posts, :post_render do |page|
+  ImageProcessor.new(page).process!
 end
