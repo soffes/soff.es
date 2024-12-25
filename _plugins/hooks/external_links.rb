@@ -31,6 +31,10 @@ class ExternalLinksProcessor
   end
 end
 
+Jekyll::Hooks.register :pages, :post_render do |page|
+  ExternalLinksProcessor.new(page).process!
+end
+
 Jekyll::Hooks.register :posts, :post_render do |page|
   ExternalLinksProcessor.new(page).process!
 end

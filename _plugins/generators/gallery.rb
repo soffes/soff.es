@@ -5,7 +5,7 @@ class GalleryGenerator < Jekyll::Generator
   def generate(site)
     puts "        - Gallery"
 
-    site.documents.each do |page|
+    (site.pages + site.posts.docs).each do |page|
       # If it was explicitly set, leave it alone.
       next unless page.data["is_gallery"].nil?
 

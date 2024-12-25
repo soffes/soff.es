@@ -5,7 +5,7 @@ class RewriteImages < Jekyll::Generator
   def generate(site)
     puts "        - Rewrite Images"
 
-    site.documents.each do |page|
+    (site.pages + site.posts.docs).each do |page|
       assets_url = assets_url(page)
       page.content.gsub!(/(<img.*src=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")
       page.content.gsub!(/(<a.*href=")(?!http|\/)([^"]+\.(?:jpg|png|svg))(".*>)/, "\\1#{assets_url}\\2\\3")

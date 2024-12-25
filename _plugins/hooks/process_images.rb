@@ -152,6 +152,10 @@ module MiniMagick
   end
 end
 
-Jekyll::Hooks.register :documents, :post_render do |page|
+Jekyll::Hooks.register :pages, :post_render do |page|
+  ImageProcessor.new(page).process!
+end
+
+Jekyll::Hooks.register :posts, :post_render do |page|
   ImageProcessor.new(page).process!
 end
