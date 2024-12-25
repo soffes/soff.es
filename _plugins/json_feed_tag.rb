@@ -7,7 +7,7 @@ class JsonFeedTag < Liquid::Tag
     feed = {
       version: "https://jsonfeed.org/version/1",
       title: site["title"],
-      description: "This is my blog.",
+      description: site["description"],
       home_page_url: site["url"],
       feed_url: "#{site["url"]}/feed.json",
       icon: "#{site["url"]}/icon.png",
