@@ -1,5 +1,6 @@
 {
   "files.exclude": {
     ".jekyll-cache": true
-  }
+  },
+  "search.useIgnoreFiles": false
 }

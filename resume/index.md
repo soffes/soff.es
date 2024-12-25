@@ -9,121 +9,121 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
 <ul class="apps">
   <li>
     <a href="https://itunes.apple.com/app/bible/id282935706?mt=8&uo=4&at=1l3vmtU" rel="external nofollow">
-      <img src="/assets/resume/bible.jpg" alt="Bible">
+      <img src="bible.jpg" alt="Bible">
       <span>Bible</span>
     </a>
   </li>
   <li>
     <a href="https://github.com/mobile" rel="external nofollow">
-      <img src="/assets/resume/github.png" alt="GitHub">
+      <img src="github.png" alt="GitHub">
       <span>GitHub</span>
     </a>
   </li>
   <li>
     <a href="https://lyft.com/" rel="external nofollow">
-      <img src="/assets/resume/lyft.png" alt="Lyft">
+      <img src="lyft.png" alt="Lyft">
       <span>Lyft</span>
     </a>
   </li>
   <li>
     <a href="https://lyft.com/driver" rel="external nofollow">
-      <img src="/assets/resume/driver.png" alt="Lyft Driver">
+      <img src="driver.png" alt="Lyft Driver">
       <span>Lyft Driver</span>
     </a>
   </li>
   <li class="mac">
     <a href="https://usecontrast.com" rel="external nofollow">
-      <img src="/assets/resume/contrast.svg" alt="Contrast">
+      <img src="contrast.svg" alt="Contrast">
       <span>Contrast</span>
     </a>
   </li>
   <li>
     <a href="https://along.video" rel="external nofollow">
-      <img src="/assets/resume/along.svg" alt="Along">
+      <img src="along.svg" alt="Along">
       <span>Along</span>
     </a>
   </li>
   <li>
     <a href="https://venmo.com/" rel="external nofollow">
-      <img src="/assets/resume/venmo.jpg" alt="Venmo">
+      <img src="venmo.jpg" alt="Venmo">
       <span>Venmo</span>
     </a>
   </li>
   <li>
     <a href="https://itunes.apple.com/app/hipstamatic/id342115564?mt=8&uo=4&at=1l3vmtU" rel="external nofollow">
-      <img src="/assets/resume/hipstamatic.jpg" alt="Hipstamatic">
+      <img src="hipstamatic.jpg" alt="Hipstamatic">
       <span>Hipstamatic</span>
     </a>
   </li>
   <li>
     <a href="https://itunes.apple.com/app/litely/id850707754?mt=8&amp;uo=4&amp;at=1l3vmtU" rel="external nofollow">
-      <img src="/assets/resume/litely.jpg" alt="Litely">
+      <img src="litely.jpg" alt="Litely">
       <span>Litely</span>
     </a>
   </li>
   <li>
     <a href="https://joinhouse.party" rel="external nofollow">
-      <img src="/assets/resume/houseparty.svg" alt="Houseparty">
+      <img src="houseparty.svg" alt="Houseparty">
       <span>Houseparty</span>
     </a>
   </li>
   <li>
     <a href="https://itunes.apple.com/app/over/id535811906?mt=8&amp;uo=4&amp;at=1l3vmtU" rel="external nofollow">
-      <img src="/assets/resume/over.jpg" alt="Over">
+      <img src="over.jpg" alt="Over">
       <span>Over</span>
     </a>
   </li>
   <li>
     <a href="https://soffes.blog/parting-ways-with-cheddar" rel="external">
-      <img src="/assets/resume/cheddar.jpg" alt="Cheddar">
+      <img src="cheddar.jpg" alt="Cheddar">
       <span>Cheddar</span>
     </a>
   </li>
   <li>
     <a href="https://github.com/usecanvas/ios-v1" rel="external nofollow">
-      <img src="/assets/resume/canvas.svg" alt="Canvas">
+      <img src="canvas.svg" alt="Canvas">
       <span>Canvas</span>
     </a>
   </li>
   <li>
     <a href="https://medium.com/@kevinrose/we-re-shutting-down-tiiny-14254524f9b6" rel="external nofollow">
-      <img src="/assets/resume/tiiny.svg" alt="Tiiny">
+      <img src="tiiny.svg" alt="Tiiny">
       <span>Tiiny</span>
     </a>
   </li>
   <li>
     <a href="https://soffes.blog/shares-2" rel="external">
-      <img src="/assets/resume/shares.svg" alt="Shares">
+      <img src="shares.svg" alt="Shares">
       <span>Shares</span>
     </a>
   </li>
   <li>
     <a href="https://blog.ghost.org/roon" rel="external nofollow">
-      <img src="/assets/resume/roon.jpg" alt="Roon">
+      <img src="roon.jpg" alt="Roon">
       <span>Roon</span>
     </a>
   </li>
   <li>
     <a href="https://itunes.apple.com/app/incredibooth/id378754705?mt=8&amp;uo=4&amp;at=1l3vmtU" rel="external nofollow">
-      <img src="/assets/resume/incredibooth.jpg" alt="IncrediBooth">
+      <img src="incredibooth.jpg" alt="IncrediBooth">
       <span>IncrediBooth</span>
     </a>
   </li>
   <li>
     <a href="https://soffes.blog/onward" rel="external">
-      <img src="/assets/resume/seesaw.jpg" alt="Seesaw">
+      <img src="seesaw.jpg" alt="Seesaw">
       <span>Seesaw</span>
     </a>
   </li>
   <li class="mac">
     <a href="http://usewhiskey.com" rel="external nofollow">
-      <img src="/assets/resume/whiskey.png" alt="Whiskey">
+      <img src="whiskey.png" alt="Whiskey">
       <span>Whiskey</span>
     </a>
   </li>
   <li class="mac">
     <a href="https://useredacted.com" rel="external nofollow">
-      <img src="/assets/resume/redacted-mac.svg" alt="Redacted for macOS">
+      <img src="redacted-mac.svg" alt="Redacted for macOS">
       <span>Redacted</span>
     </a>
   </li>

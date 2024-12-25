@@ -1,6 +1,6 @@
 ---
 title: Scuba Training
-cover_image: /scuba/training.jpg
+cover_image: training.jpg
 ---
 
 We'll be doing a [NAUI](https://naui.org) open water and Nitrox course.

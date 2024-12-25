@@ -13,6 +13,8 @@ class AutoExcerpts < Jekyll::Generator
   def generate(site)
     @site = site
 
+    puts "        - Auto Excerpts"
+
     site.posts.docs.each do |document|
       nodes = excerpt_for(document.content)
       document.data["excerpt"] = nodes.map(&:to_html).join
@@ -20,8 +22,6 @@ class AutoExcerpts < Jekyll::Generator
       text = nodes.map(&:text).join(" ").tr("\n", " ").gsub(/\s+/, " ")
       document.data["excerpt_text"] = truncate(text, length: 150, separator: /\s/)
     end
-
-    puts "        - Auto Excerpts"
   end
 
   private
