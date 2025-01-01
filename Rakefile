@@ -90,11 +90,15 @@ def import_directory(source, destination = "blog/_posts")
     md = Dir["#{dir}/*.{md,markdown}"].first
     system %(mv "#{md}" "#{dir}.md")
 
+    # Remove existing assets
+    assets_destination = File.join("assets/blog", File.basename(dir))
+    system %(rm -rf #{assets_destination})
+
     # Copy assets
     if Dir.empty?(dir)
       system %(rm -rf #{dir})
     else
-      system %(mv #{dir} assets/blog)
+      system %(mv #{dir} #{assets_destination})
     end
   end
 end
