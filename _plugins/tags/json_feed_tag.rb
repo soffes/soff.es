@@ -25,7 +25,7 @@ class JsonFeedTag < Liquid::Tag
         id: url,
         url: url,
         title: post["title"],
-        content_html: post.content,
+        content_html: process_content(post.content),
         date_published: Time.at(post.date).to_datetime.rfc3339
       }
 
@@ -41,6 +41,18 @@ class JsonFeedTag < Liquid::Tag
     end
 
     feed.to_json
+  end
+
+  def process_content(content)
+    doc = Nokogiri::HTML::DocumentFragment.parse(content)
+
+    # Change photo-rows to a <div> with <p>s around the images
+    doc.css("photo-row").each do |row|
+      row.name = "div"
+      row.inner_html = row.css("img").map { |i| "<p>#{i.to_html}</p>" }.join("")
+    end
+
+    doc.to_html
   end
 end
 

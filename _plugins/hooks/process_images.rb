@@ -167,6 +167,8 @@ class ImageProcessor
 end
 
 Jekyll::Hooks.register :pages, :post_render do |page|
+  next if %w[.json .xml].include?(page.ext)
+
   ImageProcessor.new(page).process!
 end
 
