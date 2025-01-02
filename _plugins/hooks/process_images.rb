@@ -1,5 +1,7 @@
 require "addressable/uri"
 require "base64"
+require "json"
+require "marcel"
 require "mini_magick"
 require "nokogiri"
 
@@ -36,10 +38,19 @@ class ImageProcessor
     ]
   ].freeze
 
+  CACHE_PATH = "tmp/images.json".freeze
+
   def initialize(page, should_process = true)
     @page = page
     @site = page.site
     @should_process = should_process
+    @cache = {}
+
+    # Load cache
+    if File.exist?(CACHE_PATH)
+      cache = JSON.parse(File.read(CACHE_PATH))
+      @cache = cache if cache.is_a?(Hash)
+    end
   end
 
   def process!
@@ -64,6 +75,8 @@ class ImageProcessor
     end
 
     @page.output = doc.to_html
+
+    save_cache!
   end
 
   private
@@ -114,40 +127,41 @@ class ImageProcessor
 
     node["loading"] = "lazy" unless node["loading"]
 
-    return unless src.end_with?("jpg")
+    path = src.sub(/\A\//, "")
+    info = image_info(path, is_cover: is_cover)
 
-    image = MiniMagick::Image.open(".#{src}")
+    node["data-width"] = info["width"]
+    node["data-height"] = info["height"]
+
+    node["style"] =
+      "background-image:url(#{info["thumbnail"]});" \
+      "background-repeat:no-repeat;background-size:cover"
+  end
+
+  def image_info(path, is_cover:)
+    info = @cache[path]
+    return info if info
+
+    image = MiniMagick::Image.open(path)
 
     size = image.dimensions
-    node["data-width"] = size[0]
-    node["data-height"] = size[1]
+    info = {
+      "width" => size[0],
+      "height" => size[1]
+    }
 
-    # Only do the backgrounds in production since it’s pretty slow
-    return unless is_production?
+    image.resize(is_cover ? "32x32" : "8x8")
+    mime_type = Marcel::MimeType.for(Pathname.new(path))
+    info["thumbnail"] = "data:#{mime_type};base64,#{Base64.strict_encode64(image.to_blob)}"
 
-    if is_cover
-      image.resize("4x4")
-      node["style"] =
-        "background-image:url(data:image/png;base64,#{Base64.urlsafe_encode64(image.to_blob)});" \
-        "background-repeat:no-repeat;background-size:cover"
-    else
-      image.resize("1x1")
-      if (color = image.pixel_at(1, 1))
-        node["style"] = "background-color:#{color.downcase}"
-      end
-    end
+    @cache[path] = info
+    info
   end
-end
 
-module MiniMagick
-  # Extension on `MiniMagick::Image`
-  class Image
-    def pixel_at(x, y)
-      run_command("convert", "#{path}[1x1+#{x.to_i}+#{y.to_i}]", "txt:").split("\n").each do |line|
-        matches = /^0,0:.*(#[0-9a-fA-F]+)/.match(line)
-        return matches[1] if matches
-      end
-      nil
+  def save_cache!
+    json = JSON.pretty_generate(@cache)
+    File.open(CACHE_PATH, "w") do |file|
+      file << json
     end
   end
 end

@@ -41,10 +41,10 @@ GEM
       http_parser.rb (~> 0)
     erubi (1.13.1)
     eventmachine (1.2.7)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm-linux-musl)
-    ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
+    ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
     google-protobuf (4.29.2)
       bigdecimal
@@ -101,17 +101,20 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.6.4)
-    loofah (2.23.1)
+    loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
+    marcel (1.0.4)
     mercenary (0.4.0)
-    mini_magick (4.13.2)
+    mini_magick (5.0.1)
     minitest (5.25.4)
-    nokogiri (1.17.2-arm-linux)
+    nokogiri (1.18.1-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.17.2-arm64-darwin)
+    nokogiri (1.18.1-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-linux)
+    nokogiri (1.18.1-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.1-x86_64-linux-gnu)
       racc (~> 1.4)
     parallel (1.26.3)
     parser (3.3.6.0)
@@ -210,7 +213,8 @@ DEPENDENCIES
   jekyll-optional-front-matter
   jekyll-paginate-v2
   jekyll-sitemap
-  mini_magick (< 5.0)
+  marcel
+  mini_magick
   nokogiri
   rake
   redcarpet
