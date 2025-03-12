@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "actionview"
 gem "addressable"
+gem "csv"
 gem "jekyll"
 gem "marcel"
 gem "mini_magick"

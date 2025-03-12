@@ -67,9 +67,11 @@ class ImageProcessor
 
     if is_production?
       doc.css('meta[property="og:image"], meta[name="twitter:image"]').each do |node|
+        width = doc.css('meta[property="og:image:width"]').first.try(:[], "content") || 1024
+
         url = Addressable::URI.parse(@site.config["cdn_url"])
         url.path = Addressable::URI.parse(node["content"]).path
-        url.query = "w=512&dpr=2&auto=format,compress"
+        url.query = "w=#{width}&auto=format,compress"
         node["content"] = url.to_s
       end
     end
