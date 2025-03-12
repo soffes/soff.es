@@ -14,6 +14,9 @@
   {%- if page.excerpt_text -%}
   {% include post_head.html -%}
   {%- endif -%}
+  {%- if page.og -%}
+  {% include og_head.html -%}
+  {%- endif -%}
 </head>
 <body{% if page.is_gallery %} class="gallery"{% endif %}>
   {% unless page.cover_image %}

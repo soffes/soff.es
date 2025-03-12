@@ -1,5 +1,8 @@
 ---
 title: Résumé
+og:
+  title: Sam Soffes — Résumé
+  image: /assets/og-resume.png
 ---
 
 ## Résumé
