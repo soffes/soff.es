@@ -6,9 +6,13 @@ title: Scuba Résumé
 
 ### Experience
 
-371 dives with 7 years of diving experience and 19 certifications as of November 2023. NAUI instructor #63678. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
+414 dives with 9 years of diving experience and 20 certifications as of May 2025. NAUI instructor #63678. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
 
 ### Certifications
+
+#### May 2025 — Vancouver Island, Canada
+
+* TDI Technical DPV Diver #1700291
 
 #### September 2023 — Monterey, CA
 
@@ -64,7 +68,7 @@ title: Scuba Résumé
 
 ### Professional Experience
 
-15 years of [software development experience](/resume) with mobile and web applications. Experience leading teams.
+18 years of [software development experience](/resume) with mobile and web applications. Experience leading teams.
 
 Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
 
