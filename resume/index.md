@@ -11,6 +11,12 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
 
 <ul class="apps">
   <li>
+    <a href="https://www.apple.com/apple-podcasts/" rel="external nofollow">
+      <img src="podcasts.svg" alt="Podcasts">
+      <span>Podcasts</span>
+    </a>
+  </li>
+  <li>
     <a href="https://itunes.apple.com/app/bible/id282935706?mt=8&uo=4&at=1l3vmtU" rel="external nofollow">
       <img src="bible.jpg" alt="Bible">
       <span>Bible</span>
@@ -34,6 +40,12 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
       <span>Lyft Driver</span>
     </a>
   </li>
+  <li>
+    <a href="https://venmo.com/" rel="external nofollow">
+      <img src="venmo.jpg" alt="Venmo">
+      <span>Venmo</span>
+    </a>
+  </li>
   <li class="mac">
     <a href="https://usecontrast.com" rel="external nofollow">
       <img src="contrast.svg" alt="Contrast">
@@ -44,12 +56,6 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
     <a href="https://along.video" rel="external nofollow">
       <img src="along.svg" alt="Along">
       <span>Along</span>
-    </a>
-  </li>
-  <li>
-    <a href="https://venmo.com/" rel="external nofollow">
-      <img src="venmo.jpg" alt="Venmo">
-      <span>Venmo</span>
     </a>
   </li>
   <li>

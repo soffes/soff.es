@@ -662,7 +662,6 @@ article th {
 /* ---- Resume ---- */
 
 ul.apps {
-  max-width: 640px;
   margin: 3rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));

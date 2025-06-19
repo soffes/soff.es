@@ -162,6 +162,9 @@ class ImageProcessor
 
   def save_cache!
     json = JSON.pretty_generate(@cache)
+
+    FileUtils.mkdir_p(File.dirname(CACHE_PATH))
+
     File.open(CACHE_PATH, "w") do |file|
       file << json
     end
