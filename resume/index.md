@@ -142,11 +142,11 @@ Started working with iOS day one and released an app the first day of the App St
 
 Working on the Podcasts app across all of Apple’s platforms.
 
-#### Sabbatical (2022-2023) — Sausalito, CA
+#### Sabbatical (2022–2023) — Sausalito, CA
 
 Converted a cargo van into a camper van to live and travel in during [2022](/2022). Became a scuba diving instructor and spent time learning more about creating physical products.
 
-#### Co-founder & CTO (2020-2021) @ [Along](https://along.video) — San Francisco, CA
+#### Co-founder & CTO (2020–2021) @ [Along](https://along.video) — San Francisco, CA
 
 Led engineering on iOS, API, and web for social video application. Created video encoding pipeline that allowed for video edits without re-encoding.
 
@@ -198,6 +198,6 @@ Created and distributed macOS applications for working with video in live applic
 
 Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
 
-I also have a [scuba diving resume](/resume/scuba) 🤿
+I also have a [scuba diving résumé](/resume/scuba) 🤿
 
 <span class="gray">Last updated 11/6/2024</gray>
