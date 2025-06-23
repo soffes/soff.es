@@ -6,7 +6,7 @@ title: Scuba Résumé
 
 ### Experience
 
-414 dives with 9 years of diving experience and 20 certifications as of May 2025. NAUI instructor #63678. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
+416 dives with 9 years of diving experience and 20 certifications as of June 2025. NAUI instructor #63678. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
 
 ### Certifications
 
@@ -72,4 +72,4 @@ title: Scuba Résumé
 
 Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about me](/about). 👋
 
-I also have a [software engineering resume](/resume) 🤓
+I also have a [software engineering résumé](/resume) 🤓
