@@ -146,7 +146,7 @@ Started working with iOS day one and released an app the first day of the App St
 
 #### Staff Software Engineer (2024–Present) @ [Apple](https://apple.com) — San Francisco, CA
 
-Working on the Podcasts app across all of Apple’s platforms.
+Working on Podcasts app across several Apple platforms. Led several infrastructure and UI projects. Contributed to SwiftUI.
 
 #### Sabbatical (2022–2023) — Sausalito, CA
 
@@ -206,4 +206,4 @@ Feel free to email me at [sam@soff.es](mailto:sam@soff.es) or read more [about m
 
 I also have a [scuba diving résumé](/resume/scuba) 🤿
 
-<span class="gray">Last updated 11/6/2024</gray>
+<span class="gray">Last updated 7/7/2025</gray>
