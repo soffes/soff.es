@@ -6,7 +6,7 @@ title: Scuba Résumé
 
 ### Experience
 
-416 dives with 9 years of diving experience and 20 certifications as of June 2025. NAUI instructor #63678. Familiar with multiple gear configurations like backplate & wing, doubles, and sidemount.
+400+ dives with 9 years of diving experience and 20 certifications as of July 2025. NAUI instructor #63678. Familiar with multiple gear configurations like backplate & wing and sidemount.
 
 ### Certifications
 
