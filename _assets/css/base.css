@@ -471,6 +471,12 @@ body.gallery section.post article, body.gallery > header {
   max-width: 1056px;
 }
 
+body.gallery p, body.gallery h2, body.gallery h3, body.gallery h4 {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body.gallery section.post > div.cover {
   height: 70vh;
 }
@@ -710,7 +716,11 @@ nav.pagination em {
 }
 
 photo-row + p {
-  margin-top: 1.2em;
+  margin-top: 2em;
+}
+
+p + photo-row {
+  margin-top: 2em;
 }
 
 /* ---- Table ---- */
