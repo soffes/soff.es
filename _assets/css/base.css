@@ -2,13 +2,81 @@
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}section,header,footer,nav,article,aside,figure{display:block;width:100%}mark,time,meter,progress{display:inline}
 
+/* Fonts */
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Mercury Display Regular by Hoefler &amp; Co.
+ * URL: https://www.myfonts.com/collections/hoefler-and-co-foundry
+
+ * Webfont: Mercury Display Italic by Hoefler &amp; Co.
+ * URL: https://www.myfonts.com/collections/hoefler-and-co-foundry
+
+ * Webfont: Mercury Display Semibold by Hoefler &amp; Co.
+ * URL: https://www.myfonts.com/collections/hoefler-and-co-foundry
+
+ * Webfont: Mercury Display Semibold Italic by Hoefler &amp; Co.
+ * URL: https://www.myfonts.com/collections/hoefler-and-co-foundry
+
+ * Webfont: Mercury Display Bold by Hoefler &amp; Co.
+ * URL: https://www.myfonts.com/collections/hoefler-and-co-foundry
+
+ * Webfont: Mercury Display Bold Italic by Hoefler &amp; Co.
+ * URL: https://www.myfonts.com/collections/hoefler-and-co-foundry
+
+ * © 2025 MyFonts Inc. */
+@font-face {
+  font-family: "Mercury";
+  font-style: italic;
+  src: url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayItalic/italic.woff2') format('woff2'), url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayItalic/italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Mercury";
+  font-style: italic;
+  font-weight: bold;
+  src: url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayBoldItalic/italic_bold.woff2') format('woff2'), url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayBoldItalic/italic_bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Mercury";
+  font-weight: bold;
+  src: url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayBold/bold.woff2') format('woff2'), url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayBold/bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Mercury";
+  font-style: italic;
+  font-weight: 600;
+  src: url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplaySemiboldItalic/font.woff2') format('woff2'), url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplaySemiboldItalic/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Mercury";
+  font-weight: 600;
+  src: url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplaySemibold/font.woff2') format('woff2'), url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplaySemibold/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Mercury";
+  src: url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayRegular/font.woff2') format('woff2'), url('https://soffes-assets.s3.us-east-1.amazonaws.com/fonts/mercury/MercuryDisplayRegular/font.woff') format('woff');
+}
+
 /* Variables */
 
 :root {
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family: Mercury, serif;
   --font-weight: normal;
-  --bold-font-weight: 600;
-  --semibold-font-weight: 500;
+  --bold-font-weight: bold;
+  --semibold-font-weight: 600;
 
   --title-font-family: var(--font-family);
   --title-font-weight: var(--bold-font-weight);
@@ -29,9 +97,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   --blockquote-link: #444;
   --brand-color: #f6291d;
   --h1-foreground: #000;
-  --h2-foreground: #111;
-  --h3-foreground: #666;
-  --h4-foreground: #999;
+  --h2-foreground: #666;
+  --h3-foreground: #999;
+  --h4-foreground: #949494;
   --footer-foreground: #aaa;
   --footer-code-foreground: #ddd;
   --table-border: var(--horizontal-rule);
@@ -62,13 +130,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* General */
 
 html {
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body {
   background: var(--body-background);
   color: var(--body-foreground);
-  font-size: 19px;
+  font-size: 24px;
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   line-height: 1.7em;
@@ -86,8 +154,8 @@ a {
 
 a:hover {
   transition-property: border;
-  transition-duration: 0.2s;
-  border-bottom: 1px solid;
+  transition-duration: 0.15s;
+  border-bottom: 2px solid;
 }
 
 a.img-button:hover {
@@ -128,7 +196,7 @@ abbr {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 0 0 1.2em;
 }
 
 hr {
@@ -183,8 +251,9 @@ body > header h1 a, body > header h1 a:hover {
 }
 
 h2 {
+  color: var(--h2-foreground);
   font-size: 1.3em;
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--semibold-font-weight);
 }
 
 h2 a {
@@ -193,19 +262,19 @@ h2 a {
 }
 
 h3 {
-  font-weight: var(--bold-font-weight);
-  color: var(--h3-foregound);
+  font-weight: var(--semibold-font-weight);
+  color: var(--h3-foreground);
   font-size: 1.1em;
 }
 
 h3 a {
-  color: var(--h3-foregound);
+  color: var(--h3-foreground);
   border: 0;
 }
 
 h4 {
   color: var(--h4-foreground);
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--semibold-font-weight);
   margin-bottom: 0.2em;
 }
 
@@ -273,9 +342,14 @@ article header {
 }
 
 article header h2 {
-  font-size: 2em;
+  font-size: 1.7em;
+  font-weight: var(--semibold-font-weight);
   line-height: 1.2em;
-  margin: 1em 0 0.2em;
+  margin: 1em 0 0;
+}
+
+article header h2 a {
+  color: var(--body-foreground);
 }
 
 article header p {
@@ -435,7 +509,7 @@ section.post > footer article header {
 }
 
 section.post > footer article header h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #ccc;
   margin-bottom: 0;
 }
@@ -636,7 +710,7 @@ nav.pagination em {
 }
 
 photo-row + p {
-  margin-top: 1em;
+  margin-top: 1.2em;
 }
 
 /* ---- Table ---- */
