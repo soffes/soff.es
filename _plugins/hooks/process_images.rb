@@ -65,7 +65,7 @@ class ImageProcessor
       process_image(node)
     end
 
-    if is_production?
+    if is_production? && @site.config["cdn_url"]
       doc.css('meta[property="og:image"], meta[name="twitter:image"]').each do |node|
         width = doc.css('meta[property="og:image:width"]').first.try(:[], "content") || 1024
 
@@ -88,10 +88,9 @@ class ImageProcessor
   end
 
   def process_image(node)
+    cdn_url = @site.config["cdn_url"]
     src = node["src"]
-    url = is_production? ? (@site.config["cdn_url"] + src) : src
-    srcset = []
-    sizes = []
+    url = (is_production? && cdn_url) ? (cdn_url + src) : src
 
     is_cover = node.parent["class"] == "cover"
     up = 1
@@ -104,24 +103,27 @@ class ImageProcessor
       end
     end
 
-    image_sizes = IMAGE_SIZES[up - 1]
-    image_sizes.reverse_each do |size|
-      # Remove this variant for covers on small phones since it gets pixelated.
-      # Ideally, we'd have a separate set of image sizes just for covers, but this is fine for now.
-      next if is_cover && size[:max_width] == 320
+    if is_production? && cdn_url
+      srcset = []
+      sizes = []
 
-      size[:scales].reverse_each do |scale|
-        srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format,compress #{size[:width] * scale}w"]
+      image_sizes = IMAGE_SIZES[up - 1]
+      image_sizes.reverse_each do |size|
+        # Remove this variant for covers on small phones since it gets pixelated.
+        # Ideally, we'd have a separate set of image sizes just for covers, but this is fine for now.
+        next if is_cover && size[:max_width] == 320
+
+        size[:scales].reverse_each do |scale|
+          srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format,compress #{size[:width] * scale}w"]
+        end
+
+        sizes << if size[:max_width] == 1024
+          "1024px"
+        else
+          "(max-width: #{size[:max_width]}px) #{size[:width]}px"
+        end
       end
 
-      sizes << if size[:max_width] == 1024
-        "1024px"
-      else
-        "(max-width: #{size[:max_width]}px) #{size[:width]}px"
-      end
-    end
-
-    if is_production?
       node["src"] = "#{url}?w=1024&dpr=2&auto=format,compress"
       node["srcset"] = srcset.join(",")
       node["sizes"] = sizes.join(",")
