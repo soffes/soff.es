@@ -2,7 +2,7 @@ title: Sam Soffes
 description: "Software engineer living in San Francisco, California."
 author: Sam Soffes
 url: https://soff.es
-# cdn_url: https://soffes.imgix.net
+cdn_url: https://soffes.imgix.net
 encoding: UTF-8
 strict_front_matter: true
 permalink: "/blog/:slug"

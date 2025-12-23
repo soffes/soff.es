@@ -106,15 +106,13 @@ class ImageProcessor
     if is_production? && cdn_url
       srcset = []
       sizes = []
-
-      image_sizes = IMAGE_SIZES[up - 1]
-      image_sizes.reverse_each do |size|
+      IMAGE_SIZES[up - 1].reverse_each do |size|
         # Remove this variant for covers on small phones since it gets pixelated.
         # Ideally, we'd have a separate set of image sizes just for covers, but this is fine for now.
         next if is_cover && size[:max_width] == 320
 
         size[:scales].reverse_each do |scale|
-          srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format,compress #{size[:width] * scale}w"]
+          srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format #{size[:width] * scale}w"]
         end
 
         sizes << if size[:max_width] == 1024
