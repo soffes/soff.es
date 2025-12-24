@@ -132,8 +132,8 @@ class ImageProcessor
     path = src.sub(/\A\//, "")
     info = image_info(path, is_cover: is_cover)
 
-    node["data-width"] = info["width"]
-    node["data-height"] = info["height"]
+    node["width"] = info["width"]
+    node["height"] = info["height"]
 
     node["style"] =
       "background-image:url(#{info["thumbnail"]});" \

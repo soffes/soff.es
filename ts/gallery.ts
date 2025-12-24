@@ -223,9 +223,9 @@ class PhotoRow extends HTMLElement {
       const wrapper = document.createElement("div");
       wrapper.style.setProperty(
         "--aspect-ratio",
-        image.getAttribute("data-width") +
+        image.getAttribute("width") +
           "/" +
-          image.getAttribute("data-height"),
+          image.getAttribute("height"),
       );
       wrapper.appendChild(image);
 
