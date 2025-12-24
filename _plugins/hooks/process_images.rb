@@ -127,13 +127,13 @@ class ImageProcessor
       node["sizes"] = sizes.join(",")
     end
 
-    node["loading"] = "lazy" unless node["loading"]
-
     path = src.sub(/\A\//, "")
     info = image_info(path, is_cover: is_cover)
 
     node["width"] = info["width"]
     node["height"] = info["height"]
+
+    node["fetchpriority"] = "high" if is_cover
 
     node["style"] =
       "background-image:url(#{info["thumbnail"]});" \
