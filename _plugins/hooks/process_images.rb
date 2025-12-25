@@ -66,7 +66,7 @@ class ImageProcessor
     end
 
     if is_production? && @site.config["cdn_url"]
-      doc.css('meta[property="og:image"], meta[name="twitter:image"]').each do |node|
+      doc.css('meta[property="og:image"]').each do |node|
         width = doc.css('meta[property="og:image:width"]').first.try(:[], "content") || 1024
 
         url = Addressable::URI.parse(@site.config["cdn_url"])
