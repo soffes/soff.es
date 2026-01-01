@@ -48,8 +48,12 @@ class ImageProcessor
 
     # Load cache
     if File.exist?(CACHE_PATH)
-      cache = JSON.parse(File.read(CACHE_PATH))
-      @cache = cache if cache.is_a?(Hash)
+      begin
+        cache = JSON.parse(File.read(CACHE_PATH))
+        @cache = cache if cache.is_a?(Hash)
+      rescue
+        puts "Failed to load image cache"
+      end
     end
   end
 
