@@ -1,43 +1,13 @@
-require "addressable/uri"
 require "base64"
 require "json"
 require "marcel"
 require "mini_magick"
 require "nokogiri"
+require "uri"
 
 # Jekyll hook to process images
 class ImageProcessor
-  # 4.5", 4.0" (2x):            228w, 140w,  91w,  66w
-  # 4.7", 5.8" (2x, 3x):        343w, 168w, 109w,  80w
-  # 5.5", 6.1", 6.5" (2x, 3x):  382w, 137w, 122w,  90w
-  # Deskop (1x, 2x, 3x):       1024w, 508w, 336w, 250w
-  IMAGE_SIZES = [
-    [
-      {width: 1024, scales: [1, 2], max_width: 1024},
-      {width: 382, scales: [2, 3], max_width: 414},
-      {width: 343, scales: [2, 3], max_width: 375},
-      {width: 228, scales: [2], max_width: 320}
-    ],
-    [
-      {width: 508, scales: [1, 2], max_width: 1024},
-      {width: 137, scales: [2, 3], max_width: 414},
-      {width: 168, scales: [2, 3], max_width: 375},
-      {width: 140, scales: [2], max_width: 320}
-    ],
-    [
-      {width: 336, scales: [1, 2], max_width: 1024},
-      {width: 122, scales: [2, 3], max_width: 414},
-      {width: 109, scales: [2, 3], max_width: 375},
-      {width: 91, scales: [2], max_width: 320}
-    ],
-    [
-      {width: 250, scales: [1, 2], max_width: 1024},
-      {width: 90, scales: [2, 3], max_width: 414},
-      {width: 80, scales: [2, 3], max_width: 375},
-      {width: 66, scales: [2], max_width: 320}
-    ]
-  ].freeze
-
+  IMAGE_WIDTHS = [1025, 512, 256].freeze
   CACHE_PATH = "tmp/images.json".freeze
 
   def initialize(page, should_process = true)
@@ -64,19 +34,15 @@ class ImageProcessor
     doc.css("img").each do |node|
       next unless (src = node["src"])
       next if src.start_with?("http")
-      next unless src.end_with?("png", "jpg")
+      next unless src.end_with?("jpg")
 
       process_image(node)
     end
 
-    if is_production? && @site.config["cdn_url"]
+    if is_production? && (cdn_url = @site.config["cdn_url"])
       doc.css('meta[property="og:image"]').each do |node|
         width = doc.css('meta[property="og:image:width"]').first.try(:[], "content") || 1024
-
-        url = Addressable::URI.parse(@site.config["cdn_url"])
-        url.path = Addressable::URI.parse(node["content"]).path
-        url.query = "w=#{width}&auto=format,compress"
-        node["content"] = url.to_s
+        node["content"] = URI.join(cdn_url, node["content"]).with_width(width).to_s
       end
     end
 
@@ -94,45 +60,24 @@ class ImageProcessor
   def process_image(node)
     cdn_url = @site.config["cdn_url"]
     src = node["src"]
-    url = (is_production? && cdn_url) ? (cdn_url + src) : src
+    url = (is_production? && cdn_url) ? (URI.join(cdn_url, src.delete_prefix("assets/blog")).to_s) : src
 
     is_cover = node.parent["class"] == "cover"
-    up = 1
-    if node.parent.name == "photo-row"
-      count = node.parent.css("img").count
-      if count > 4
-        puts "Error: #{@post.data["slug"]} has invalid photo-row"
-      else
-        up = count
-      end
-    end
-
-    if is_production? && cdn_url
-      srcset = []
-      sizes = []
-      IMAGE_SIZES[up - 1].reverse_each do |size|
-        # Remove this variant for covers on small phones since it gets pixelated.
-        # Ideally, we'd have a separate set of image sizes just for covers, but this is fine for now.
-        next if is_cover && size[:max_width] == 320
-
-        size[:scales].reverse_each do |scale|
-          srcset += ["#{url}?w=#{size[:width]}&dpr=#{scale}&auto=format #{size[:width] * scale}w"]
-        end
-
-        sizes << if size[:max_width] == 1024
-          "1024px"
-        else
-          "(max-width: #{size[:max_width]}px) #{size[:width]}px"
-        end
-      end
-
-      node["src"] = "#{url}?w=1024&dpr=2&auto=format,compress"
-      node["srcset"] = srcset.join(",")
-      node["sizes"] = sizes.join(",")
-    end
 
     path = src.sub(/\A\//, "")
     info = image_info(path, is_cover: is_cover)
+    image_width = info["width"].to_i
+
+    if is_production? && cdn_url
+      srcset = []
+      IMAGE_WIDTHS.reverse_each do |width|
+        next unless width < image_width
+        srcset << %(#{URI.parse(url).with_width(width)} #{width}w)
+      end
+
+      node["src"] = url
+      node["srcset"] = srcset.join(", ")
+    end
 
     node["width"] = info["width"]
     node["height"] = info["height"]
@@ -172,6 +117,35 @@ class ImageProcessor
     File.open(CACHE_PATH, "w") do |file|
       file << json
     end
+  end
+end
+
+module URI
+  class Generic
+    def with_filename_suffix(suffix)
+      return self unless path
+
+      dir = ::File.dirname(path)
+      basename = ::File.basename(path, ".*")
+      ext = ::File.extname(path)
+
+      new_basename = "#{basename}#{suffix}#{ext}"
+      new_path = (dir == ".") ? new_basename : ::File.join(dir, new_basename)
+
+      self.class.build(
+        scheme: scheme,
+        userinfo: userinfo,
+        host: host,
+        port: port,
+        path: new_path,
+        query: query,
+        fragment: fragment
+      )
+    end
+  end
+
+  def with_width(width)
+    with_filename_suffix("-#{width}")
   end
 end
 
