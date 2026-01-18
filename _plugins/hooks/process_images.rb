@@ -9,6 +9,7 @@ require "uri"
 class ImageProcessor
   IMAGE_WIDTHS = [1025, 512, 256].freeze
   CACHE_PATH = "tmp/images.json".freeze
+  CDN_PREFIX = "/assets/blog/".freeze
 
   def initialize(page, should_process = true)
     @page = page
@@ -41,8 +42,9 @@ class ImageProcessor
 
     if is_production? && (cdn_url = @site.config["cdn_url"])
       doc.css('meta[property="og:image"]').each do |node|
+        next unless node["content"].start_with?(CDN_PREFIX)
         width = doc.css('meta[property="og:image:width"]').first.try(:[], "content") || 1024
-        node["content"] = URI.join(cdn_url, node["content"]).with_width(width).to_s
+        node["content"] = URI.join(cdn_url, node["content"].delete_prefix(CDN_PREFIX)).with_width(width).to_s
       end
     end
 
@@ -60,7 +62,6 @@ class ImageProcessor
   def process_image(node)
     cdn_url = @site.config["cdn_url"]
     src = node["src"]
-    url = (is_production? && cdn_url) ? (URI.join(cdn_url, src.delete_prefix("assets/blog")).to_s) : src
 
     is_cover = node.parent["class"] == "cover"
 
@@ -68,14 +69,16 @@ class ImageProcessor
     info = image_info(path, is_cover: is_cover)
     image_width = info["width"].to_i
 
-    if is_production? && cdn_url
+    if is_production? && cdn_url && src.start_with?(CDN_PREFIX)
+      url = URI.join(cdn_url, src.delete_prefix(CDN_PREFIX))
+
       srcset = []
       IMAGE_WIDTHS.reverse_each do |width|
         next unless width < image_width
-        srcset << %(#{URI.parse(url).with_width(width)} #{width}w)
+        srcset << %(#{url.with_width(width)} #{width}w)
       end
 
-      node["src"] = url
+      node["src"] = url.to_s
       node["srcset"] = srcset.join(", ")
     end
 
