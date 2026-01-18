@@ -7,7 +7,7 @@ require "uri"
 
 # Jekyll hook to process images
 class ImageProcessor
-  IMAGE_WIDTHS = [1025, 512, 256].freeze
+  IMAGE_WIDTHS = [1024, 512, 256].freeze
   CACHE_PATH = "tmp/images.json".freeze
   CDN_PREFIX = "/assets/blog/".freeze
 
