@@ -17,6 +17,12 @@ class TitleGenerator < Jekyll::Generator
       next unless (match = document.content.match(REGEX))
 
       document.content.sub!(REGEX, "")
+
+      # Jekyll always fills in a title from the filename, so the only way to
+      # tell whether the front matter set one is to compare against that.
+      # Front matter wins, per the blog repo's README.
+      next unless document.data["title"] == Jekyll::Utils.titleize_slug(document.data["slug"])
+
       document.data["title"] = match[2].to_s
     end
   end
