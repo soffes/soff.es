@@ -11,6 +11,22 @@ class ImageProcessor
   CACHE_PATH = "tmp/images.json".freeze
   CDN_PREFIX = "/assets/blog/".freeze
 
+  # Absolute URL for a site relative path, served from the CDN when it's an
+  # image the CDN actually has.
+  def self.absolute_url(path, site)
+    cdn_url = site.config["cdn_url"]
+
+    if production? && cdn_url && path.start_with?(CDN_PREFIX) && path.end_with?("jpg")
+      URI.join(cdn_url, path.delete_prefix(CDN_PREFIX)).to_s
+    else
+      "#{site.config["url"]}#{path}"
+    end
+  end
+
+  def self.production?
+    ENV["JEKYLL_ENV"] == "production"
+  end
+
   def initialize(page, should_process = true)
     @page = page
     @site = page.site
@@ -41,10 +57,17 @@ class ImageProcessor
     end
 
     if is_production? && (cdn_url = @site.config["cdn_url"])
+      site_url = @site.config["url"].to_s
+
       doc.css('meta[property="og:image"]').each do |node|
-        next unless node["content"].start_with?(CDN_PREFIX)
+        # The template already made this absolute, so strip the site URL back
+        # off before checking whether it's something the CDN serves.
+        path = node["content"].to_s.delete_prefix(site_url)
+        next unless path.start_with?(CDN_PREFIX)
+        next unless path.end_with?("jpg")
+
         width = doc.css('meta[property="og:image:width"]').first.try(:[], "content") || 1024
-        node["content"] = URI.join(cdn_url, node["content"].delete_prefix(CDN_PREFIX)).with_width(width).to_s
+        node["content"] = URI.join(cdn_url, path.delete_prefix(CDN_PREFIX)).with_width(width).to_s
       end
     end
 
@@ -56,7 +79,7 @@ class ImageProcessor
   private
 
   def is_production?
-    ENV["JEKYLL_ENV"] == "production"
+    self.class.production?
   end
 
   def process_image(node)

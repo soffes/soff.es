@@ -229,11 +229,6 @@ class PhotoRow extends HTMLElement {
       );
       wrapper.appendChild(image);
 
-      image.addEventListener("click", (event) => {
-        event.preventDefault();
-        LightboxController.shared.show(image);
-      });
-
       this.shadowRoot!.appendChild(wrapper);
       columns += "1fr ";
     });

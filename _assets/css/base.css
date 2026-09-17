@@ -194,12 +194,12 @@ h2 a {
 
 h3 {
   font-weight: var(--bold-font-weight);
-  color: var(--h3-foregound);
+  color: var(--h3-foreground);
   font-size: 1.1em;
 }
 
 h3 a {
-  color: var(--h3-foregound);
+  color: var(--h3-foreground);
   border: 0;
 }
 
