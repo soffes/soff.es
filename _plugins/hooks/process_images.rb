@@ -11,6 +11,13 @@ class ImageProcessor
   CACHE_PATH = "tmp/images.json".freeze
   CDN_PREFIX = "/assets/blog/".freeze
 
+  # Layout measurements from `base.css`, used to tell the browser how wide
+  # these images actually render.
+  COLUMN_WIDTH = 800
+  GALLERY_COLUMN_WIDTH = 1056
+  GUTTER = 16
+  ROW_GAP = 8
+
   # Absolute URL for a site relative path, served from the CDN when it's an
   # image the CDN actually has.
   def self.absolute_url(path, site)
@@ -51,6 +58,10 @@ class ImageProcessor
     doc.css("img").each do |node|
       next unless (src = node["src"])
       next if src.start_with?("http")
+
+      # Only the cover is on screen at load
+      node["loading"] = "lazy" unless cover?(node)
+
       next unless src.end_with?("jpg")
 
       process_image(node)
@@ -86,7 +97,7 @@ class ImageProcessor
     cdn_url = @site.config["cdn_url"]
     src = node["src"]
 
-    is_cover = node.parent["class"] == "cover"
+    is_cover = cover?(node)
 
     path = src.sub(/\A\//, "")
     info = image_info(path, is_cover: is_cover)
@@ -103,6 +114,10 @@ class ImageProcessor
 
       node["src"] = url.to_s
       node["srcset"] = srcset.join(", ")
+
+      # Without this the browser assumes 100vw and always grabs the widest one.
+      # The cover really is 100vw, so it doesn't need it.
+      node["sizes"] = sizes_for(node) unless is_cover || srcset.empty?
     end
 
     node["width"] = info["width"]
@@ -113,6 +128,22 @@ class ImageProcessor
     node["style"] =
       "background-image:url(#{info["thumbnail"]});" \
       "background-repeat:no-repeat;background-size:cover"
+  end
+
+  def cover?(node)
+    node.parent["class"] == "cover"
+  end
+
+  # `auto` is exact wherever it's supported; the rest is for browsers that
+  # aren't, and mirrors how `base.css` lays the column out.
+  def sizes_for(node)
+    max = @page.data["is_gallery"] ? GALLERY_COLUMN_WIDTH : COLUMN_WIDTH
+    columns = (node.parent.name == "photo-row") ? node.parent.css("img").count : 1
+    reserved = (GUTTER * 2) + (ROW_GAP * (columns - 1))
+
+    fluid = (columns == 1) ? "calc(100vw - #{reserved}px)" : "calc((100vw - #{reserved}px) / #{columns})"
+
+    "auto, (max-width: #{max}px) #{fluid}, #{(max - reserved) / columns}px"
   end
 
   def image_info(path, is_cover:)
