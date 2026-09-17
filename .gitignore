@@ -9,3 +9,6 @@ blog/_posts
 _assets/js
 node_modules
 tmp
+
+# Local Netlify folder
+.netlify

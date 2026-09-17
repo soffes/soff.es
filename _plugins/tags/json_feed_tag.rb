@@ -10,7 +10,7 @@ class JsonFeedTag < Liquid::Tag
       title: site["title"],
       description: site["description"],
       home_page_url: site["url"],
-      feed_url: "#{site["url"]}/feed.json",
+      feed_url: "#{site["url"]}/blog/feed.json",
       icon: "#{site["url"]}/apple-touch-icon-192x192.png",
       favicon: "#{site["url"]}/apple-touch-icon-192x192.png",
       author: {

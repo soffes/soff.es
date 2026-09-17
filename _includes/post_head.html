@@ -1,8 +1,8 @@
 {% assign post = page %}
   <meta property="og:url" content="{{ post.url | prepend: site.url }}">
-  <meta property="description" content="{{ post.excerpt_text }}">
+  <meta name="description" content="{{ post.excerpt_text }}">
 {%- unless post.tags == empty %}
-  <meta property="keywords" content="{{ post.tags | join: "," }}">
+  <meta name="keywords" content="{{ post.tags | join: "," }}">
 {% endunless -%}
   <meta property="og:type" content="article">
   <meta property="og:title" content="{{ post.title }}">
