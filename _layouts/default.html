@@ -12,6 +12,9 @@
   <link rel="alternate" type="application/rss+xml" title="Sam Soffes - Blog" href="/blog/rss.xml">
   <link rel="alternate" type="application/json" title="Sam Soffes - Blog" href="/blog/feed.json">
   <link rel="author" href="/humans.txt">
+  {%- if page.noindex %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
   {%- if page.excerpt_text -%}
   {% include post_head.html -%}
   {%- endif -%}

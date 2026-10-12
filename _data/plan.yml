@@ -1,0 +1,172 @@
+# Drives /plan.
+#
+# Each event takes:
+#   date:        start date (YYYY-MM-DD)
+#   end:         optional end date. Events with one are styled as a span,
+#                events without as a single day
+#   when:        optional text shown instead of the formatted dates
+#   title:       what's happening
+#   location:    place, shown with a pin under the title. Every event has one
+#   type:        kind of activity, shown as a badge: scuba, hiking, family, van,
+#                travel, house, work, party, holiday, errand, life, concert, wedding, or flight.
+#                Flights also get a plane icon in front of the title
+#   status:      leave off when it's firm. Otherwise tentative or loose, which
+#                are drawn dashed instead of filled
+#   notes:       optional list of bullet points
+
+title: Travel Plan
+summary: Back to full time adventuring! Here are my travel plans.
+
+sections:
+  - title: September 2026
+    events:
+      - date: 2026-09-22
+        title: Decision
+        location: San Francisco, CA
+        type: life
+        notes:
+          - Decided to quit my job, sell the house, and go on an adventure!
+
+  - title: October 2026
+    summary: A month of transition. Moving out, quitting my job, and moving back into the van!
+    events:
+      - date: 2026-10-01
+        title: Move out
+        location: San Francisco, CA
+        type: house
+      - date: 2026-10-02
+        title: House Cooling Party
+        location: San Francisco, CA
+        type: party
+      - date: 2026-10-10
+        title: John & Alex's Wedding
+        location: Castro Valley, CA
+        type: wedding
+      - date: 2026-10-14
+        end: 2026-10-15
+        title: Staging
+        location: San Francisco, CA
+        type: house
+      - date: 2026-10-16
+        title: Iron & Wine
+        location: Castro Theatre, San Francisco, CA
+        type: concert
+      - date: 2026-10-23
+        title: Listing goes live
+        location: San Francisco, CA
+        type: house
+      - date: 2026-10-24
+        title: Andrew & Sam's Wedding
+        location: Foresthill, CA
+        type: wedding
+      - date: 2026-10-30
+        title: Last day of work
+        location: San Francisco, CA
+        type: work
+      - date: 2026-10-31
+        title: Halloween party
+        location: San Francisco, CA
+        type: party
+        status: tentative
+
+  - title: November 2026
+    summary: Vanlife begins!
+    events:
+      - date: 2026-11-02
+        end: 2026-11-03
+        title: South Dakota
+        location: Sioux Falls, SD
+        type: errand
+        notes:
+          - Take care of my South Dakota residency and get a new driver's license.
+      - date: 2026-11-03
+        title: Offer day
+        location: San Francisco, CA
+        type: house
+        notes:
+          - Realtor will accept offers all at once.
+      - date: 2026-11-04
+        end: 2026-11-09
+        title: Sausalito / Marin
+        location: Sausalito, CA
+        type: van
+        status: loose
+        notes:
+          - Van projects, reorganize storage, maybe band stuff
+      - date: 2026-11-10
+        end: 2026-11-17
+        title: Yosemite Valley
+        location: Yosemite National Park, CA
+        type: hiking
+        status: tentative
+        notes:
+          - Van camping, day hiking, and maybe solo climbing!
+      - date: 2026-11-14
+        title: Underoath
+        location: The Masonic, San Francisco, CA
+        type: concert
+      - date: 2026-11-23
+        title: Pedro the Lion
+        location: Bottom of the Hill, San Francisco, CA
+        type: concert
+      - date: 2026-11-24
+        title: Closing day
+        location: San Francisco, CA
+        type: house
+        status: tentative
+        notes:
+          - Expected closing day. So fast!
+      - date: 2026-11-24
+        title: Fly to Cancún
+        location: San Francisco, CA
+        type: flight
+      - date: 2026-11-24
+        end: 2026-12-12
+        title: Cave Diving Trip
+        location: Yucatán Peninsula, Mexico
+        type: scuba
+        notes:
+          - Cave diving with Michel. We might do a road trip to Mérida or take a boat over to Cozumel.
+
+  - title: December 2026
+    summary: Scuba diving and holidays.
+    events:
+      - date: 2026-12-12
+        title: Fly to San Francisco
+        location: Cancún, Mexico
+        type: flight
+      - date: 2026-12-18
+        end: 2026-12-28
+        title: Christmas with Family
+        location: Louisville, KY
+        type: family
+
+  - title: "2027"
+    summary: Lots of ideas for the new year! Seriously considering doing the PCT from mid-April to early October.
+    events:
+      - date: 2027-01-01
+        end: 2027-03-15
+        when: January–March
+        title: Southern hemisphere
+        location: New Zealand, Australia, Indonesia
+        type: travel
+        status: tentative
+        notes:
+          - Planning some backpacking, vanning, and scuba diving!
+      - date: 2027-03-15
+        end: 2027-03-31
+        title: Section hike Arizona Trail
+        location: Arizona
+        type: hiking
+        status: tentative
+        notes:
+          - Hike 100–200 miles of the Arizona Trail to prepare for the PCT.
+      - date: 2027-04-15
+        end: 2027-10-05
+        when: Mid-April–early October
+        title: Pacific Crest Trail thru-hike
+        location: California, Oregon, Washington
+        type: hiking
+        status: tentative
+        notes:
+          - Seriously considering this. Still deciding though.

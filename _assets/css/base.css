@@ -741,3 +741,304 @@ ul.apps li.mac img {
   border-radius: 0;
   box-shadow: none;
 }
+
+/* ---- Plan ---- */
+
+.plan {
+  --plan-card: #f6f6f7;
+  --plan-rail: #e4e4e7;
+  --plan-month: #a1a1aa;
+  --plan-muted: #71717a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan {
+    --plan-card: #1b1b1d;
+    --plan-rail: #2c2c30;
+    --plan-month: #71717a;
+    --plan-muted: #a1a1aa;
+  }
+}
+
+/* Each activity type sets a hue. The badge and dot colors derive from it. */
+.plan ol.timeline > li {
+  --hue: 240;
+  --saturation: 0%;
+  --type: hsl(var(--hue) var(--saturation) 34%);
+  --type-background: hsl(var(--hue) var(--saturation) 92%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan ol.timeline > li {
+    --type: hsl(var(--hue) var(--saturation) 72%);
+    --type-background: hsl(var(--hue) var(--saturation) 17%);
+  }
+}
+
+.plan ol.timeline > li.scuba { --hue: 185; --saturation: 85%; }
+.plan ol.timeline > li.flight { --hue: 218; --saturation: 80%; }
+.plan ol.timeline > li.hiking { --hue: 145; --saturation: 60%; }
+.plan ol.timeline > li.family { --hue: 340; --saturation: 70%; }
+.plan ol.timeline > li.van { --hue: 25; --saturation: 85%; }
+.plan ol.timeline > li.travel { --hue: 262; --saturation: 65%; }
+.plan ol.timeline > li.concert { --hue: 305; --saturation: 60%; }
+.plan ol.timeline > li.wedding { --hue: 0; --saturation: 70%; }
+.plan ol.timeline > li.party, .plan ol.timeline > li.holiday { --hue: 42; --saturation: 90%; }
+
+.plan > header {
+  margin-bottom: 3em;
+}
+
+.plan > header p {
+  color: var(--plan-muted);
+  font-size: 1em;
+  line-height: 1.5em;
+  max-width: 34em;
+}
+
+.plan ol.timeline {
+  position: relative;
+  margin: 16px 0;
+}
+
+
+.plan ol.timeline > li {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0 12px 32px;
+}
+
+.plan ol.timeline > li:last-child {
+  padding-bottom: 0;
+}
+
+/* Rail */
+.plan ol.timeline > li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  width: 2px;
+  background: var(--plan-rail);
+}
+
+/* The rail fades to a dashed stub for 16px past each end. */
+.plan ol.timeline:before, .plan ol.timeline:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  width: 2px;
+  height: 16px;
+  background: repeating-linear-gradient(to bottom, var(--plan-rail) 0 4px, transparent 4px 8px);
+}
+
+.plan ol.timeline:before {
+  bottom: 100%;
+}
+
+.plan ol.timeline:after {
+  top: 100%;
+}
+
+/* A single day is a dot on the rail. */
+.plan ol.timeline > li:after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid var(--type);
+  border-radius: 6px;
+  background: var(--type);
+  box-shadow: 0 0 0 3px var(--body-background);
+}
+
+/* A span is a bar running the height of its card. */
+.plan ol.timeline > li.span:after {
+  top: 3px;
+  bottom: 15px;
+  left: 3px;
+  width: 8px;
+  height: auto;
+}
+
+.plan ol.timeline > li.span:last-child:after {
+  bottom: 3px;
+}
+
+/* Anything not locked in is hollow and dashed, like its card. */
+.plan ol.timeline > li.tentative:after, .plan ol.timeline > li.loose:after {
+  background: var(--body-background);
+  border-style: dashed;
+}
+
+/* Month dividers sit in the event column, with the rail running past them. */
+.plan ol.timeline > li.month {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.plan ol.timeline > li.month:first-child {
+  padding-top: 0;
+}
+
+.plan ol.timeline > li.month:after {
+  display: none;
+}
+
+/* A small label with a hairline in the rail's color. */
+.plan li.month h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--plan-month);
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+.plan li.month h3:after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: var(--plan-rail);
+}
+
+.plan li.month p {
+  color: var(--plan-muted);
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+/* Today, added by the script at the bottom of plan.html. */
+.plan ol.timeline > li.today {
+  --type: var(--brand-color);
+  padding-bottom: 14px;
+}
+
+.plan ol.timeline > li.today:after {
+  top: 4px;
+}
+
+.plan li.today div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+  color: var(--brand-color);
+  font-size: 0.7em;
+  font-weight: var(--bold-font-weight);
+  letter-spacing: 0.04em;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.plan li.today div:after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--brand-color);
+}
+
+.plan .card {
+  padding: 2px 0 8px;
+}
+
+.plan li.span .card {
+  background: var(--plan-card);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 14px 18px 16px;
+}
+
+/* A span that isn't locked in gets a dashed outline instead of a fill. */
+.plan li.span.tentative .card, .plan li.span.loose .card {
+  background: transparent;
+  border: 1px dashed var(--plan-rail);
+}
+
+/* Line a day's badge up with the badges inside the cards around it. */
+.plan li.day .meta {
+  padding-right: 19px;
+}
+
+.plan .meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  line-height: 1.4em;
+}
+
+.plan time {
+  color: var(--plan-muted);
+  font-size: 0.75em;
+  font-weight: var(--bold-font-weight);
+  font-variant-numeric: tabular-nums;
+}
+
+.plan .type {
+  flex-shrink: 0;
+  color: var(--type);
+  background: var(--type-background);
+  border-radius: 999px;
+  font-size: 0.65em;
+  font-weight: var(--bold-font-weight);
+  line-height: 1em;
+  padding: 5px 9px;
+}
+
+.plan .card h4 {
+  color: var(--h1-foreground);
+  font-size: 1.1em;
+  line-height: 1.3em;
+  margin: 0;
+}
+
+.plan .card h4 svg {
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.3em;
+  vertical-align: -0.1em;
+  fill: var(--type);
+}
+
+.plan .card p {
+  color: var(--plan-muted);
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 2px 0 0;
+}
+
+.plan .card p.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.plan .card p.location svg {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.plan .card ul {
+  margin: 8px 0 0;
+}
+
+.plan .card ul li {
+  list-style: none;
+  font-size: 0.85em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.plan .card ul li + li {
+  margin-top: 6px;
+}

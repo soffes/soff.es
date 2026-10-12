@@ -1,0 +1,98 @@
+---
+title: Plan
+sitemap: false
+noindex: true
+---
+
+{%- assign plan = site.data.plan %}
+<div class="plan">
+  <header>
+    <h2>{{ plan.title }}</h2>
+    <p>{{ plan.summary }}</p>
+  </header>
+
+  <ol class="timeline">
+    {%- for section in plan.sections %}
+      <li class="month" data-month="{{ section.events.first.date | date: "%Y-%m" }}">
+        <h3>{{ section.title }}</h3>
+        {%- if section.summary %}
+        <p>{{ section.summary }}</p>
+        {%- endif %}
+      </li>
+      {%- for event in section.events %}
+      <li class="{% if event.end %}span{% else %}day{% endif %} {{ event.status }} {{ event.type }}" data-date="{{ event.date | date: "%Y-%m-%d" }}">
+        <div class="card">
+          <div class="meta">
+            <time datetime="{{ event.date | date: "%Y-%m-%d" }}">
+              {%- if event.when -%}
+                {{ event.when }}
+              {%- elsif event.end -%}
+                {%- assign start_month = event.date | date: "%Y%m" -%}
+                {%- assign end_month = event.end | date: "%Y%m" -%}
+                {{ event.date | date: "%b %-d" }}–
+                {%- if start_month == end_month -%}
+                  {{ event.end | date: "%-d" }}
+                {%- else -%}
+                  {{ event.end | date: "%b %-d" }}
+                {%- endif -%}
+              {%- else -%}
+                {{ event.date | date: "%b %-d" }}
+              {%- endif -%}
+            </time>
+            {%- if event.type %}
+            <span class="type">{{ event.type | capitalize }}</span>
+            {%- endif %}
+          </div>
+          <h4>
+            {%- if event.type == "flight" -%}
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path transform="rotate(90 12 12)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+            {%- endif -%}
+            {{ event.title }}</h4>
+          {%- if event.location %}
+          <p class="location"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>{{ event.location }}</p>
+          {%- endif %}
+          {%- if event.notes %}
+          <ul>
+            {%- for note in event.notes %}
+            <li>{{ note }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    {%- endfor %}
+  </ol>
+</div>
+
+<script>
+  // The site is static, so the marker for today is placed in the browser,
+  // just before the first event that hasn't started yet.
+  (function () {
+    var now = new Date();
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    var today = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+
+    var marker = document.createElement("li");
+    marker.className = "today";
+    marker.innerHTML = "<div>Today</div>";
+
+    var events = document.querySelectorAll(".plan ol.timeline > li");
+    for (var i = 0; i < events.length; i++) {
+      if (events[i].getAttribute("data-date") > today) {
+        // Stay above the month divider when today is still in an earlier month.
+        var next = events[i];
+        var divider = next.previousElementSibling;
+        if (divider && divider.getAttribute("data-month") > today.slice(0, 7)) {
+          next = divider;
+        }
+        next.parentNode.insertBefore(marker, next);
+        return;
+      }
+    }
+
+    if (events.length) {
+      events[events.length - 1].parentNode.appendChild(marker);
+    }
+  })();
+</script>
