@@ -3,6 +3,7 @@ description: "Software engineer living in San Francisco, California."
 author: Sam Soffes
 url: https://soff.es
 cdn_url: https://dmr2g5nq1hsk2.cloudfront.net
+fathom_site_id: BXNVYRDU
 encoding: UTF-8
 strict_front_matter: true
 permalink: "/blog/:slug"
