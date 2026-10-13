@@ -46,10 +46,9 @@ exclude:
   - node_modules/
   - package-lock.json
   - package.json
+  - netlify.toml
   - Rakefile
   - README.md
   - tmp/
   - ts/
   - tsconfig.json
-include:
-  - _redirects

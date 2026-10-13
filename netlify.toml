@@ -1,0 +1,1390 @@
+[build.environment]
+  JEKYLL_ENV = "production"
+
+[[redirects]]
+  from = "https://samsoffes.com/*"
+  to = "https://soff.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.samsoffes.com/*"
+  to = "https://soff.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://samsoff.es/*"
+  to = "https://soff.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.samsoff.es/*"
+  to = "https://soff.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://soffes.com/*"
+  to = "https://soff.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.soffes.com/*"
+  to = "https://soff.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://soffes.blog/*"
+  to = "https://soff.es/blog/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.soffes.blog/*"
+  to = "https://soff.es/blog/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://useredacted.com/*"
+  to = "https://soff.es/apps/redacted/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.useredacted.com/*"
+  to = "https://soff.es/apps/redacted/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/music"
+  to = "https://soundcloud.com/soffes"
+
+[[redirects]]
+  from = "/talks"
+  to = "https://speakerdeck.com/soffes"
+
+[[redirects]]
+  from = "/clock"
+  to = "https://github.com/soffes/clock-saver"
+
+[[redirects]]
+  from = "/apps"
+  to = "/"
+
+[[redirects]]
+  from = "/apple-touch-icon.png"
+  to = "/apple-touch-icon-192x192.png"
+
+[[redirects]]
+  from = "/apple-touch-icon-precomposed.png"
+  to = "/apple-touch-icon-192x192.png"
+
+[[redirects]]
+  from = "/cv"
+  to = "/resume"
+
+[[redirects]]
+  from = "/rss.xml"
+  to = "/blog/rss.xml"
+
+[[redirects]]
+  from = "/feed.json"
+  to = "/blog/feed.json"
+
+[[redirects]]
+  from = "/archive"
+  to = "/blog/archive"
+
+[[redirects]]
+  from = "/post/*"
+  to = "/blog/:splat"
+
+[[redirects]]
+  from = "/posts/*"
+  to = "/blog/:splat"
+
+[[redirects]]
+  from = "/the-motorola-rokr"
+  to = "/blog/the-motorola-rokr"
+
+[[redirects]]
+  from = "/ipod-scare"
+  to = "/blog/ipod-scare"
+
+[[redirects]]
+  from = "/apple-boot-camp-public-beta1"
+  to = "/blog/apple-boot-camp-public-beta1"
+
+[[redirects]]
+  from = "/quote-of-the-week"
+  to = "/blog/quote-of-the-week"
+
+[[redirects]]
+  from = "/i-hate-apple"
+  to = "/blog/i-hate-apple"
+
+[[redirects]]
+  from = "/quote-of-the-week-2006-06-17"
+  to = "/blog/quote-of-the-week-2006-06-17"
+
+[[redirects]]
+  from = "/quote-of-the-week-2006-06-19"
+  to = "/blog/quote-of-the-week-2006-06-19"
+
+[[redirects]]
+  from = "/my-new-favorite-guitar-tuning"
+  to = "/blog/my-new-favorite-guitar-tuning"
+
+[[redirects]]
+  from = "/shake"
+  to = "/blog/shake"
+
+[[redirects]]
+  from = "/quote-of-the-week-2"
+  to = "/blog/quote-of-the-week-2"
+
+[[redirects]]
+  from = "/new-bravia-video"
+  to = "/blog/new-bravia-video"
+
+[[redirects]]
+  from = "/web-20-look-coming"
+  to = "/blog/web-20-look-coming"
+
+[[redirects]]
+  from = "/wwdc-2006-and-new-at-apple"
+  to = "/blog/wwdc-2006-and-new-at-apple"
+
+[[redirects]]
+  from = "/treo-600"
+  to = "/blog/treo-600"
+
+[[redirects]]
+  from = "/facebook-makes-me-smile"
+  to = "/blog/facebook-makes-me-smile"
+
+[[redirects]]
+  from = "/idvd-6-awesome-crap"
+  to = "/blog/idvd-6-awesome-crap"
+
+[[redirects]]
+  from = "/new-get-a-mac-ads"
+  to = "/blog/new-get-a-mac-ads"
+
+[[redirects]]
+  from = "/using-garageband-as-a-guitar-pedal"
+  to = "/blog/using-garageband-as-a-guitar-pedal"
+
+[[redirects]]
+  from = "/i-got-accepted-to-taylor-university"
+  to = "/blog/i-got-accepted-to-taylor-university"
+
+[[redirects]]
+  from = "/my-quote-of-the-week-4"
+  to = "/blog/my-quote-of-the-week-4"
+
+[[redirects]]
+  from = "/my-quote-of-the-week-3"
+  to = "/blog/my-quote-of-the-week-3"
+
+[[redirects]]
+  from = "/why-i-click-google-ads"
+  to = "/blog/why-i-click-google-ads"
+
+[[redirects]]
+  from = "/my-quote-of-the-week-2"
+  to = "/blog/my-quote-of-the-week-2"
+
+[[redirects]]
+  from = "/quote-of-the-week-3"
+  to = "/blog/quote-of-the-week-3"
+
+[[redirects]]
+  from = "/famous-quote-of-the-week"
+  to = "/blog/famous-quote-of-the-week"
+
+[[redirects]]
+  from = "/apple-is-amazing"
+  to = "/blog/apple-is-amazing"
+
+[[redirects]]
+  from = "/my-quote-of-the-week"
+  to = "/blog/my-quote-of-the-week"
+
+[[redirects]]
+  from = "/apple-slaps-vista-in-the-face"
+  to = "/blog/apple-slaps-vista-in-the-face"
+
+[[redirects]]
+  from = "/i-give-up"
+  to = "/blog/i-give-up"
+
+[[redirects]]
+  from = "/i-got-an-iphone"
+  to = "/blog/i-got-an-iphone"
+
+[[redirects]]
+  from = "/coming-soon"
+  to = "/blog/coming-soon"
+
+[[redirects]]
+  from = "/the-oo-page"
+  to = "/blog/the-oo-page"
+
+[[redirects]]
+  from = "/sidebar-widgets"
+  to = "/blog/sidebar-widgets"
+
+[[redirects]]
+  from = "/internet-explorer-is-stupid"
+  to = "/blog/internet-explorer-is-stupid"
+
+[[redirects]]
+  from = "/iphone-update-1-1-1-and-installer-app"
+  to = "/blog/iphone-update-1-1-1-and-installer-app"
+
+[[redirects]]
+  from = "/installer-app-on-iphone-1-1-1-finally"
+  to = "/blog/installer-app-on-iphone-1-1-1-finally"
+
+[[redirects]]
+  from = "/logic-pro-studio-is-awesome"
+  to = "/blog/logic-pro-studio-is-awesome"
+
+[[redirects]]
+  from = "/goodbye-codeigniter-hello-expressionenginer"
+  to = "/blog/goodbye-codeigniter-hello-expressionenginer"
+
+[[redirects]]
+  from = "/xbox-360-and-hd-tv"
+  to = "/blog/xbox-360-and-hd-tv"
+
+[[redirects]]
+  from = "/new-design-coming-soon-with-sifr"
+  to = "/blog/new-design-coming-soon-with-sifr"
+
+[[redirects]]
+  from = "/lets-end-the-browser-war-and-just-comply-with-standards"
+  to = "/blog/lets-end-the-browser-war-and-just-comply-with-standards"
+
+[[redirects]]
+  from = "/i-love-panic"
+  to = "/blog/i-love-panic"
+
+[[redirects]]
+  from = "/ie-firefox-why-would-you-want-this"
+  to = "/blog/ie-firefox-why-would-you-want-this"
+
+[[redirects]]
+  from = "/my-name-is-kevin-smith-only-at-gamestop-though"
+  to = "/blog/my-name-is-kevin-smith-only-at-gamestop-though"
+
+[[redirects]]
+  from = "/google-is-awesome"
+  to = "/blog/google-is-awesome"
+
+[[redirects]]
+  from = "/life-updates"
+  to = "/blog/life-updates"
+
+[[redirects]]
+  from = "/new-contact-information"
+  to = "/blog/new-contact-information"
+
+[[redirects]]
+  from = "/data-portability"
+  to = "/blog/data-portability"
+
+[[redirects]]
+  from = "/expressionengine-kills-my-pagerank"
+  to = "/blog/expressionengine-kills-my-pagerank"
+
+[[redirects]]
+  from = "/social-graph-api"
+  to = "/blog/social-graph-api"
+
+[[redirects]]
+  from = "/the-idisk-sucks"
+  to = "/blog/the-idisk-sucks"
+
+[[redirects]]
+  from = "/first-countdown-maker-sale"
+  to = "/blog/first-countdown-maker-sale"
+
+[[redirects]]
+  from = "/i-am-addicted-to-redoing-my-blog"
+  to = "/blog/i-am-addicted-to-redoing-my-blog"
+
+[[redirects]]
+  from = "/yay-for-rss-and-kohana"
+  to = "/blog/yay-for-rss-and-kohana"
+
+[[redirects]]
+  from = "/the-experiment"
+  to = "/blog/the-experiment"
+
+[[redirects]]
+  from = "/glad-i-chose-programmer-over-musician"
+  to = "/blog/glad-i-chose-programmer-over-musician"
+
+[[redirects]]
+  from = "/simple-pagination-and-commenting-ideas"
+  to = "/blog/simple-pagination-and-commenting-ideas"
+
+[[redirects]]
+  from = "/3-easy-steps-to-optimize-web-apps-for-iphone"
+  to = "/blog/3-easy-steps-to-optimize-web-apps-for-iphone"
+
+[[redirects]]
+  from = "/five-instead-of-four"
+  to = "/blog/five-instead-of-four"
+
+[[redirects]]
+  from = "/music-podcast-and-years"
+  to = "/blog/music-podcast-and-years"
+
+[[redirects]]
+  from = "/twitter-from-quicksilver"
+  to = "/blog/twitter-from-quicksilver"
+
+[[redirects]]
+  from = "/samsoffes"
+  to = "/blog/samsoffes"
+
+[[redirects]]
+  from = "/being-19-with-a-career-sucks"
+  to = "/blog/being-19-with-a-career-sucks"
+
+[[redirects]]
+  from = "/soundcloud-is-pretty-sweet"
+  to = "/blog/soundcloud-is-pretty-sweet"
+
+[[redirects]]
+  from = "/how-to-sync-your-itunes-with-dropbox-in-3-steps"
+  to = "/blog/how-to-sync-your-itunes-with-dropbox-in-3-steps"
+
+[[redirects]]
+  from = "/fun-unicode-domains"
+  to = "/blog/fun-unicode-domains"
+
+[[redirects]]
+  from = "/video-why-i-love-remember-the-milk"
+  to = "/blog/video-why-i-love-remember-the-milk"
+
+[[redirects]]
+  from = "/back-to-wordpress"
+  to = "/blog/back-to-wordpress"
+
+[[redirects]]
+  from = "/new-music-to-wait-a-lifetime"
+  to = "/blog/new-music-to-wait-a-lifetime"
+
+[[redirects]]
+  from = "/why-a-mac-app-store-would-suck"
+  to = "/blog/why-a-mac-app-store-would-suck"
+
+[[redirects]]
+  from = "/eleven-at-night"
+  to = "/blog/eleven-at-night"
+
+[[redirects]]
+  from = "/counting-to-infinity"
+  to = "/blog/counting-to-infinity"
+
+[[redirects]]
+  from = "/hello-world-again"
+  to = "/blog/hello-world-again"
+
+[[redirects]]
+  from = "/iphone-plist-tutorial"
+  to = "/blog/iphone-plist-tutorial"
+
+[[redirects]]
+  from = "/linus-torvalds-on-git"
+  to = "/blog/linus-torvalds-on-git"
+
+[[redirects]]
+  from = "/openbeta-and-okccoco"
+  to = "/blog/openbeta-and-okccoco"
+
+[[redirects]]
+  from = "/my-take-on-using-ruby-on-rails"
+  to = "/blog/my-take-on-using-ruby-on-rails"
+
+[[redirects]]
+  from = "/i-dont-have-a-boss-anymore"
+  to = "/blog/i-dont-have-a-boss-anymore"
+
+[[redirects]]
+  from = "/moving-to-louisville"
+  to = "/blog/moving-to-louisville"
+
+[[redirects]]
+  from = "/scratch-that-im-staying-in-oklahoma-city"
+  to = "/blog/scratch-that-im-staying-in-oklahoma-city"
+
+[[redirects]]
+  from = "/why-i-do-not-profit-share"
+  to = "/blog/why-i-do-not-profit-share"
+
+[[redirects]]
+  from = "/web-services-with-cocoa-surprise"
+  to = "/blog/web-services-with-cocoa-surprise"
+
+[[redirects]]
+  from = "/how-to-tether-iphone-3-0-without-jailbreaking"
+  to = "/blog/how-to-tether-iphone-3-0-without-jailbreaking"
+
+[[redirects]]
+  from = "/cocoa-makes-it-easy"
+  to = "/blog/cocoa-makes-it-easy"
+
+[[redirects]]
+  from = "/mobilelex-2009"
+  to = "/blog/mobilelex-2009"
+
+[[redirects]]
+  from = "/moving-to-dallas"
+  to = "/blog/moving-to-dallas"
+
+[[redirects]]
+  from = "/new-blog-on-github-and-jekyll"
+  to = "/blog/new-blog-on-github-and-jekyll"
+
+[[redirects]]
+  from = "/i-like-gowalla"
+  to = "/blog/i-like-gowalla"
+
+[[redirects]]
+  from = "/iphone-push-development-issues"
+  to = "/blog/iphone-push-development-issues"
+
+[[redirects]]
+  from = "/markdownr-com"
+  to = "/blog/markdownr-com"
+
+[[redirects]]
+  from = "/parsing-json-with-the-iphones-private-json-framework"
+  to = "/blog/parsing-json-with-the-iphones-private-json-framework"
+
+[[redirects]]
+  from = "/iphone-json-benchmarks"
+  to = "/blog/iphone-json-benchmarks"
+
+[[redirects]]
+  from = "/easy-deployment-with-heroku"
+  to = "/blog/easy-deployment-with-heroku"
+
+[[redirects]]
+  from = "/i-released-an-iphone-push-notification-gem"
+  to = "/blog/i-released-an-iphone-push-notification-gem"
+
+[[redirects]]
+  from = "/customize-uikit-with-method-swizzling"
+  to = "/blog/customize-uikit-with-method-swizzling"
+
+[[redirects]]
+  from = "/app-store-approval-process"
+  to = "/blog/app-store-approval-process"
+
+[[redirects]]
+  from = "/screencast-reuse-code-across-iphone-applications-with-a-static-library-and-git"
+  to = "/blog/screencast-reuse-code-across-iphone-applications-with-a-static-library-and-git"
+
+[[redirects]]
+  from = "/running-rails-local-development-with-nginx-postgres-and-passenger-with-homebrew"
+  to = "/blog/running-rails-local-development-with-nginx-postgres-and-passenger-with-homebrew"
+
+[[redirects]]
+  from = "/app-store-rejection"
+  to = "/blog/app-store-rejection"
+
+[[redirects]]
+  from = "/moved-to-heroku"
+  to = "/blog/moved-to-heroku"
+
+[[redirects]]
+  from = "/trying-to-teach-web-development"
+  to = "/blog/trying-to-teach-web-development"
+
+[[redirects]]
+  from = "/rejected-for-cleverness"
+  to = "/blog/rejected-for-cleverness"
+
+[[redirects]]
+  from = "/what-i-do"
+  to = "/blog/what-i-do"
+
+[[redirects]]
+  from = "/old-people-and-the-other-side"
+  to = "/blog/old-people-and-the-other-side"
+
+[[redirects]]
+  from = "/hosting-frustrations"
+  to = "/blog/hosting-frustrations"
+
+[[redirects]]
+  from = "/archiving-nsmanagedobject-with-nscoding"
+  to = "/blog/archiving-nsmanagedobject-with-nscoding"
+
+[[redirects]]
+  from = "/homepage-albums"
+  to = "/blog/homepage-albums"
+
+[[redirects]]
+  from = "/new-server-script"
+  to = "/blog/new-server-script"
+
+[[redirects]]
+  from = "/wwdc-2010-predictions"
+  to = "/blog/wwdc-2010-predictions"
+
+[[redirects]]
+  from = "/two-videos-you-need-to-watch"
+  to = "/blog/two-videos-you-need-to-watch"
+
+[[redirects]]
+  from = "/updated-iphone-json-benchmarks"
+  to = "/blog/updated-iphone-json-benchmarks"
+
+[[redirects]]
+  from = "/archiving-objective-c-objects-with-nscoding"
+  to = "/blog/archiving-objective-c-objects-with-nscoding"
+
+[[redirects]]
+  from = "/hello-internet-iphone-4"
+  to = "/blog/hello-internet-iphone-4"
+
+[[redirects]]
+  from = "/hello-internet-old-spice-guy-and-retweet-contests"
+  to = "/blog/hello-internet-old-spice-guy-and-retweet-contests"
+
+[[redirects]]
+  from = "/how-to-learn-rails"
+  to = "/blog/how-to-learn-rails"
+
+[[redirects]]
+  from = "/hello-internet-pro-apps"
+  to = "/blog/hello-internet-pro-apps"
+
+[[redirects]]
+  from = "/sync-your-fonts-with-dropbox-tutorial"
+  to = "/blog/sync-your-fonts-with-dropbox-tutorial"
+
+[[redirects]]
+  from = "/hello-internet-iphone-screens"
+  to = "/blog/hello-internet-iphone-screens"
+
+[[redirects]]
+  from = "/hello-internet-apple"
+  to = "/blog/hello-internet-apple"
+
+[[redirects]]
+  from = "/on-my-own-again"
+  to = "/blog/on-my-own-again"
+
+[[redirects]]
+  from = "/thoughts-on-writing-code-for-money"
+  to = "/blog/thoughts-on-writing-code-for-money"
+
+[[redirects]]
+  from = "/hello-internet-throwback-mountian-dew"
+  to = "/blog/hello-internet-throwback-mountian-dew"
+
+[[redirects]]
+  from = "/web-app-vs-native-app"
+  to = "/blog/web-app-vs-native-app"
+
+[[redirects]]
+  from = "/hello-internet-microcell"
+  to = "/blog/hello-internet-microcell"
+
+[[redirects]]
+  from = "/hello-internet-the-government"
+  to = "/blog/hello-internet-the-government"
+
+[[redirects]]
+  from = "/hello-internet-mac-app-store"
+  to = "/blog/hello-internet-mac-app-store"
+
+[[redirects]]
+  from = "/hello-internet-twitter"
+  to = "/blog/hello-internet-twitter"
+
+[[redirects]]
+  from = "/why-crazy-column-designs-are-bad"
+  to = "/blog/why-crazy-column-designs-are-bad"
+
+[[redirects]]
+  from = "/im-moving-to-san-francisco"
+  to = "/blog/im-moving-to-san-francisco"
+
+[[redirects]]
+  from = "/miracles-happen"
+  to = "/blog/miracles-happen"
+
+[[redirects]]
+  from = "/shapes-app"
+  to = "/blog/shapes-app"
+
+[[redirects]]
+  from = "/some-sstoolkit-additions"
+  to = "/blog/some-sstoolkit-additions"
+
+[[redirects]]
+  from = "/52-profiles-video"
+  to = "/blog/52-profiles-video"
+
+[[redirects]]
+  from = "/how-to-drastically-improve-your-app-with-an-afternoon-and-instruments"
+  to = "/blog/how-to-drastically-improve-your-app-with-an-afternoon-and-instruments"
+
+[[redirects]]
+  from = "/typical-sam"
+  to = "/blog/typical-sam"
+
+[[redirects]]
+  from = "/clean-up-your-project"
+  to = "/blog/clean-up-your-project"
+
+[[redirects]]
+  from = "/custom-cloud-app-viso"
+  to = "/blog/custom-cloud-app-viso"
+
+[[redirects]]
+  from = "/four-years"
+  to = "/blog/four-years"
+
+[[redirects]]
+  from = "/moving-on"
+  to = "/blog/moving-on"
+
+[[redirects]]
+  from = "/hipstamatic"
+  to = "/blog/hipstamatic"
+
+[[redirects]]
+  from = "/compass-and-rails-3-1"
+  to = "/blog/compass-and-rails-3-1"
+
+[[redirects]]
+  from = "/notebooks"
+  to = "/blog/notebooks"
+
+[[redirects]]
+  from = "/hey-synthetic"
+  to = "/blog/hey-synthetic"
+
+[[redirects]]
+  from = "/how-to-rock-at-craigs-list"
+  to = "/blog/how-to-rock-at-craigs-list"
+
+[[redirects]]
+  from = "/the-worst-recruiters"
+  to = "/blog/the-worst-recruiters"
+
+[[redirects]]
+  from = "/face-detection-at-hipstamatic"
+  to = "/blog/face-detection-at-hipstamatic"
+
+[[redirects]]
+  from = "/removed-facebook-comments"
+  to = "/blog/removed-facebook-comments"
+
+[[redirects]]
+  from = "/easy-syntax-highlighting"
+  to = "/blog/easy-syntax-highlighting"
+
+[[redirects]]
+  from = "/make-ichat-better"
+  to = "/blog/make-ichat-better"
+
+[[redirects]]
+  from = "/genius-launch"
+  to = "/blog/genius-launch"
+
+[[redirects]]
+  from = "/how-to-install-ruby-193"
+  to = "/blog/how-to-install-ruby-193"
+
+[[redirects]]
+  from = "/my-deploy-script"
+  to = "/blog/my-deploy-script"
+
+[[redirects]]
+  from = "/open-source-is-rewarding"
+  to = "/blog/open-source-is-rewarding"
+
+[[redirects]]
+  from = "/always-initialize-to-nil"
+  to = "/blog/always-initialize-to-nil"
+
+[[redirects]]
+  from = "/uitableviewcell-silly-magic"
+  to = "/blog/uitableviewcell-silly-magic"
+
+[[redirects]]
+  from = "/on-managing-money"
+  to = "/blog/on-managing-money"
+
+[[redirects]]
+  from = "/automatic-reference-counting"
+  to = "/blog/automatic-reference-counting"
+
+[[redirects]]
+  from = "/constantly-changing"
+  to = "/blog/constantly-changing"
+
+[[redirects]]
+  from = "/here-we-go-again"
+  to = "/blog/here-we-go-again"
+
+[[redirects]]
+  from = "/hello-internet-selling-my-stuff"
+  to = "/blog/hello-internet-selling-my-stuff"
+
+[[redirects]]
+  from = "/image-optimization-on-ios"
+  to = "/blog/image-optimization-on-ios"
+
+[[redirects]]
+  from = "/introducing-shares"
+  to = "/blog/introducing-shares"
+
+[[redirects]]
+  from = "/hire-sam"
+  to = "/blog/hire-sam"
+
+[[redirects]]
+  from = "/unjarring-the-responsive-web"
+  to = "/blog/unjarring-the-responsive-web"
+
+[[redirects]]
+  from = "/dont-forget-the-little-things"
+  to = "/blog/dont-forget-the-little-things"
+
+[[redirects]]
+  from = "/announcing-cheddar"
+  to = "/blog/announcing-cheddar"
+
+[[redirects]]
+  from = "/the-industry-podcast-8"
+  to = "/blog/the-industry-podcast-8"
+
+[[redirects]]
+  from = "/rubymotion-review"
+  to = "/blog/rubymotion-review"
+
+[[redirects]]
+  from = "/progress-in-ios"
+  to = "/blog/progress-in-ios"
+
+[[redirects]]
+  from = "/cheddar-lessons-so-far"
+  to = "/blog/cheddar-lessons-so-far"
+
+[[redirects]]
+  from = "/google-knowledge-graph"
+  to = "/blog/google-knowledge-graph"
+
+[[redirects]]
+  from = "/ruby-in-the-browser"
+  to = "/blog/ruby-in-the-browser"
+
+[[redirects]]
+  from = "/sass-vs-less"
+  to = "/blog/sass-vs-less"
+
+[[redirects]]
+  from = "/sspulltorefresh"
+  to = "/blog/sspulltorefresh"
+
+[[redirects]]
+  from = "/strapless-ipod-nano-watch"
+  to = "/blog/strapless-ipod-nano-watch"
+
+[[redirects]]
+  from = "/the-balance"
+  to = "/blog/the-balance"
+
+[[redirects]]
+  from = "/zendesk-careers-video"
+  to = "/blog/zendesk-careers-video"
+
+[[redirects]]
+  from = "/webkit-css-variables"
+  to = "/blog/webkit-css-variables"
+
+[[redirects]]
+  from = "/why-the-facebook-ipo-matters"
+  to = "/blog/why-the-facebook-ipo-matters"
+
+[[redirects]]
+  from = "/coda-2"
+  to = "/blog/coda-2"
+
+[[redirects]]
+  from = "/pulp-25"
+  to = "/blog/pulp-25"
+
+[[redirects]]
+  from = "/having-less"
+  to = "/blog/having-less"
+
+[[redirects]]
+  from = "/part-of-rubymotion-open-sourced"
+  to = "/blog/part-of-rubymotion-open-sourced"
+
+[[redirects]]
+  from = "/my-grid-system"
+  to = "/blog/my-grid-system"
+
+[[redirects]]
+  from = "/using-people"
+  to = "/blog/using-people"
+
+[[redirects]]
+  from = "/dealing-with-emoji"
+  to = "/blog/dealing-with-emoji"
+
+[[redirects]]
+  from = "/learn-ios"
+  to = "/blog/learn-ios"
+
+[[redirects]]
+  from = "/staying-strong"
+  to = "/blog/staying-strong"
+
+[[redirects]]
+  from = "/yammer-sells-for-12-billon"
+  to = "/blog/yammer-sells-for-12-billon"
+
+[[redirects]]
+  from = "/developer-and-designer"
+  to = "/blog/developer-and-designer"
+
+[[redirects]]
+  from = "/dont-censor-me"
+  to = "/blog/dont-censor-me"
+
+[[redirects]]
+  from = "/boredom-and-change"
+  to = "/blog/boredom-and-change"
+
+[[redirects]]
+  from = "/ask-me-something-about-cheddar"
+  to = "/blog/ask-me-something-about-cheddar"
+
+[[redirects]]
+  from = "/scaling-cheddar"
+  to = "/blog/scaling-cheddar"
+
+[[redirects]]
+  from = "/founders-talk-interview"
+  to = "/blog/founders-talk-interview"
+
+[[redirects]]
+  from = "/behind-cheddars-server"
+  to = "/blog/behind-cheddars-server"
+
+[[redirects]]
+  from = "/hello-internet-nexus-7"
+  to = "/blog/hello-internet-nexus-7"
+
+[[redirects]]
+  from = "/acquisitions"
+  to = "/blog/acquisitions"
+
+[[redirects]]
+  from = "/those-were-the-days"
+  to = "/blog/those-were-the-days"
+
+[[redirects]]
+  from = "/how-to-learn"
+  to = "/blog/how-to-learn"
+
+[[redirects]]
+  from = "/retiring-at-25"
+  to = "/blog/retiring-at-25"
+
+[[redirects]]
+  from = "/the-tech-block-podcast-73112"
+  to = "/blog/the-tech-block-podcast-73112"
+
+[[redirects]]
+  from = "/founders-talk-part-1"
+  to = "/blog/founders-talk-part-1"
+
+[[redirects]]
+  from = "/wrangling-svgs"
+  to = "/blog/wrangling-svgs"
+
+[[redirects]]
+  from = "/one-thousand-dollars-an-hour"
+  to = "/blog/one-thousand-dollars-an-hour"
+
+[[redirects]]
+  from = "/founders-talk-part-2"
+  to = "/blog/founders-talk-part-2"
+
+[[redirects]]
+  from = "/app-net-is-dreaming-small"
+  to = "/blog/app-net-is-dreaming-small"
+
+[[redirects]]
+  from = "/the-east-wing"
+  to = "/blog/the-east-wing"
+
+[[redirects]]
+  from = "/developer-id-and-10-8"
+  to = "/blog/developer-id-and-10-8"
+
+[[redirects]]
+  from = "/testing-retina-graphics-with-resolutiontab"
+  to = "/blog/testing-retina-graphics-with-resolutiontab"
+
+[[redirects]]
+  from = "/a-good-talk-show-episode-1"
+  to = "/blog/a-good-talk-show-episode-1"
+
+[[redirects]]
+  from = "/reverse-minimalism"
+  to = "/blog/reverse-minimalism"
+
+[[redirects]]
+  from = "/changes"
+  to = "/blog/changes"
+
+[[redirects]]
+  from = "/founders-talk-part-3"
+  to = "/blog/founders-talk-part-3"
+
+[[redirects]]
+  from = "/ship-it"
+  to = "/blog/ship-it"
+
+[[redirects]]
+  from = "/mac-app-store"
+  to = "/blog/mac-app-store"
+
+[[redirects]]
+  from = "/superconf"
+  to = "/blog/superconf"
+
+[[redirects]]
+  from = "/introducing-quesadilla"
+  to = "/blog/introducing-quesadilla"
+
+[[redirects]]
+  from = "/hello-world"
+  to = "/blog/hello-world"
+
+[[redirects]]
+  from = "/new-blog"
+  to = "/blog/new-blog"
+
+[[redirects]]
+  from = "/ipad-stylus-review"
+  to = "/blog/ipad-stylus-review"
+
+[[redirects]]
+  from = "/sublime-text-configuration"
+  to = "/blog/sublime-text-configuration"
+
+[[redirects]]
+  from = "/springboard-episode-3"
+  to = "/blog/springboard-episode-3"
+
+[[redirects]]
+  from = "/how-to-build-a-ruby-gem"
+  to = "/blog/how-to-build-a-ruby-gem"
+
+[[redirects]]
+  from = "/how-i-design-for-ios"
+  to = "/blog/how-i-design-for-ios"
+
+[[redirects]]
+  from = "/why-i-dont-use-interface-builder"
+  to = "/blog/why-i-dont-use-interface-builder"
+
+[[redirects]]
+  from = "/my-dna"
+  to = "/blog/my-dna"
+
+[[redirects]]
+  from = "/engagement"
+  to = "/blog/engagement"
+
+[[redirects]]
+  from = "/wwdc-2013-predictions"
+  to = "/blog/wwdc-2013-predictions"
+
+[[redirects]]
+  from = "/space"
+  to = "/blog/space"
+
+[[redirects]]
+  from = "/new-homepage"
+  to = "/blog/new-homepage"
+
+[[redirects]]
+  from = "/polish"
+  to = "/blog/polish"
+
+[[redirects]]
+  from = "/parting-ways-with-cheddar"
+  to = "/blog/parting-ways-with-cheddar"
+
+[[redirects]]
+  from = "/tearing-up-the-carpet"
+  to = "/blog/tearing-up-the-carpet"
+
+[[redirects]]
+  from = "/making-roon-faster"
+  to = "/blog/making-roon-faster"
+
+[[redirects]]
+  from = "/sleep-schedule"
+  to = "/blog/sleep-schedule"
+
+[[redirects]]
+  from = "/setting-up-open-source-and-live-coding-part-1"
+  to = "/blog/setting-up-open-source-and-live-coding-part-1"
+
+[[redirects]]
+  from = "/setting-up-open-source-and-live-coding-part-2"
+  to = "/blog/setting-up-open-source-and-live-coding-part-2"
+
+[[redirects]]
+  from = "/everlapse"
+  to = "/blog/everlapse"
+
+[[redirects]]
+  from = "/fat"
+  to = "/blog/fat"
+
+[[redirects]]
+  from = "/onward"
+  to = "/blog/onward"
+
+[[redirects]]
+  from = "/founders-talk-part-4"
+  to = "/blog/founders-talk-part-4"
+
+[[redirects]]
+  from = "/shares-2"
+  to = "/blog/shares-2"
+
+[[redirects]]
+  from = "/motivation"
+  to = "/blog/motivation"
+
+[[redirects]]
+  from = "/picking-good-clients"
+  to = "/blog/picking-good-clients"
+
+[[redirects]]
+  from = "/snapchat"
+  to = "/blog/snapchat"
+
+[[redirects]]
+  from = "/tin-can"
+  to = "/blog/tin-can"
+
+[[redirects]]
+  from = "/custom-controls-in-footage"
+  to = "/blog/custom-controls-in-footage"
+
+[[redirects]]
+  from = "/raising-your-profile"
+  to = "/blog/raising-your-profile"
+
+[[redirects]]
+  from = "/does-free-diminish-value"
+  to = "/blog/does-free-diminish-value"
+
+[[redirects]]
+  from = "/valio-con-2013"
+  to = "/blog/valio-con-2013"
+
+[[redirects]]
+  from = "/coins"
+  to = "/blog/coins"
+
+[[redirects]]
+  from = "/happy-monday"
+  to = "/blog/happy-monday"
+
+[[redirects]]
+  from = "/the-east-wing-part-3"
+  to = "/blog/the-east-wing-part-3"
+
+[[redirects]]
+  from = "/how-to-hold-a-pencil"
+  to = "/blog/how-to-hold-a-pencil"
+
+[[redirects]]
+  from = "/parting-ways-with-execute-ios"
+  to = "/blog/parting-ways-with-execute-ios"
+
+[[redirects]]
+  from = "/ios-resources"
+  to = "/blog/ios-resources"
+
+[[redirects]]
+  from = "/sstoolkit-2-0"
+  to = "/blog/sstoolkit-2-0"
+
+[[redirects]]
+  from = "/twenty-five"
+  to = "/blog/twenty-five"
+
+[[redirects]]
+  from = "/coit-tower"
+  to = "/blog/coit-tower"
+
+[[redirects]]
+  from = "/coins-for-android"
+  to = "/blog/coins-for-android"
+
+[[redirects]]
+  from = "/apple-developer-tools"
+  to = "/blog/apple-developer-tools"
+
+[[redirects]]
+  from = "/litely"
+  to = "/blog/litely"
+
+[[redirects]]
+  from = "/the-mother-futon-news"
+  to = "/blog/the-mother-futon-news"
+
+[[redirects]]
+  from = "/quantum-data-teleportation"
+  to = "/blog/quantum-data-teleportation"
+
+[[redirects]]
+  from = "/swift"
+  to = "/blog/swift"
+
+[[redirects]]
+  from = "/four-questions"
+  to = "/blog/four-questions"
+
+[[redirects]]
+  from = "/value-of-beta"
+  to = "/blog/value-of-beta"
+
+[[redirects]]
+  from = "/questions-part-2"
+  to = "/blog/questions-part-2"
+
+[[redirects]]
+  from = "/personal-sam"
+  to = "/blog/personal-sam"
+
+[[redirects]]
+  from = "/nsregularexpression-notes"
+  to = "/blog/nsregularexpression-notes"
+
+[[redirects]]
+  from = "/desk-headphones"
+  to = "/blog/desk-headphones"
+
+[[redirects]]
+  from = "/redacted-for-mac-launch"
+  to = "/blog/redacted-for-mac-launch"
+
+[[redirects]]
+  from = "/automatic-ui-updates-with-value-types"
+  to = "/blog/automatic-ui-updates-with-value-types"
+
+[[redirects]]
+  from = "/syntaxkit"
+  to = "/blog/syntaxkit"
+
+[[redirects]]
+  from = "/network-testing-in-swift-with-dvr"
+  to = "/blog/network-testing-in-swift-with-dvr"
+
+[[redirects]]
+  from = "/string-homogeneousness"
+  to = "/blog/string-homogeneousness"
+
+[[redirects]]
+  from = "/nerd-blog"
+  to = "/blog/nerd-blog"
+
+[[redirects]]
+  from = "/static"
+  to = "/blog/static"
+
+[[redirects]]
+  from = "/what-color-is-it"
+  to = "/blog/what-color-is-it"
+
+[[redirects]]
+  from = "/automated-bundle-version"
+  to = "/blog/automated-bundle-version"
+
+[[redirects]]
+  from = "/widest-roman-prime"
+  to = "/blog/widest-roman-prime"
+
+[[redirects]]
+  from = "/mic-setup"
+  to = "/blog/mic-setup"
+
+[[redirects]]
+  from = "/share-confirmation"
+  to = "/blog/share-confirmation"
+
+[[redirects]]
+  from = "/cancel-borderless-window"
+  to = "/blog/cancel-borderless-window"
+
+[[redirects]]
+  from = "/automating-simple-things"
+  to = "/blog/automating-simple-things"
+
+[[redirects]]
+  from = "/aggressively-hiding-the-cursor"
+  to = "/blog/aggressively-hiding-the-cursor"
+
+[[redirects]]
+  from = "/bundle-command-line-tool-in-macos-app"
+  to = "/blog/bundle-command-line-tool-in-macos-app"
+
+[[redirects]]
+  from = "/custom-mechanical-keyboard"
+  to = "/blog/custom-mechanical-keyboard"
+
+[[redirects]]
+  from = "/maximum-effort"
+  to = "/blog/maximum-effort"
+
+[[redirects]]
+  from = "/staying-positive"
+  to = "/blog/staying-positive"
+
+[[redirects]]
+  from = "/static-blog"
+  to = "/blog/static-blog"
+
+[[redirects]]
+  from = "/work-life-balance"
+  to = "/blog/work-life-balance"
+
+[[redirects]]
+  from = "/thirty"
+  to = "/blog/thirty"
+
+[[redirects]]
+  from = "/great"
+  to = "/blog/great"
+
+[[redirects]]
+  from = "/walking-to-work"
+  to = "/blog/walking-to-work"
+
+[[redirects]]
+  from = "/i-dont-care"
+  to = "/blog/i-dont-care"
+
+[[redirects]]
+  from = "/lost-coast"
+  to = "/blog/lost-coast"
+
+[[redirects]]
+  from = "/dark-mode-stylesheet"
+  to = "/blog/dark-mode-stylesheet"
+
+[[redirects]]
+  from = "/tahoe-rim-trail"
+  to = "/blog/tahoe-rim-trail"
+
+[[redirects]]
+  from = "/california-riding-and-hiking-trail"
+  to = "/blog/california-riding-and-hiking-trail"
+
+[[redirects]]
+  from = "/taking-a-break"
+  to = "/blog/taking-a-break"
+
+[[redirects]]
+  from = "/diving-in-cozumel"
+  to = "/blog/diving-in-cozumel"
+
+[[redirects]]
+  from = "/quickly-opening-projects-in-xcode"
+  to = "/blog/quickly-opening-projects-in-xcode"
+
+[[redirects]]
+  from = "/home-assistant-sonos-and-siri"
+  to = "/blog/home-assistant-sonos-and-siri"
+
+[[redirects]]
+  from = "/thirty-one"
+  to = "/blog/thirty-one"
+
+[[redirects]]
+  from = "/debugging-json-data-in-lldb"
+  to = "/blog/debugging-json-data-in-lldb"
+
+[[redirects]]
+  from = "/homebrew-on-apple-silicon"
+  to = "/blog/homebrew-on-apple-silicon"
+
+[[redirects]]
+  from = "/2020"
+  to = "/blog/2020"
+
+[[redirects]]
+  from = "/ruby-on-apple-silicon"
+  to = "/blog/ruby-on-apple-silicon"
+
+[[redirects]]
+  from = "/thirty-two"
+  to = "/blog/thirty-two"
+
+[[redirects]]
+  from = "/deep-hobbies"
+  to = "/blog/deep-hobbies"
+
+[[redirects]]
+  from = "/diving-in-the-philippines"
+  to = "/blog/diving-in-the-philippines"
+
+[[redirects]]
+  from = "/impact"
+  to = "/blog/impact"
+
+[[redirects]]
+  from = "/thirty-three"
+  to = "/blog/thirty-three"
+
+[[redirects]]
+  from = "/cozumel-2022"
+  to = "/blog/cozumel-2022"
+
+[[redirects]]
+  from = "/2022"
+  to = "/blog/2022"
+
+[[redirects]]
+  from = "/2023"
+  to = "/blog/2023"
+
+[[redirects]]
+  from = "/2024"
+  to = "/blog/2024"
+
+[[redirects]]
+  from = "/2025"
+  to = "/blog/2025"

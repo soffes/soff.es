@@ -21,7 +21,7 @@
   {%- if page.og -%}
   {% include og_head.html -%}
   {%- endif -%}
-  {%- if site.fathom_site_id %}
+  {%- if site.fathom_site_id and jekyll.environment == "production" %}
   <script src="https://cdn.usefathom.com/script.js" data-site="{{ site.fathom_site_id }}" defer></script>
   {%- endif -%}
 </head>
