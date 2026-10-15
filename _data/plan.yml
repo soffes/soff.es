@@ -72,27 +72,19 @@ sections:
   - title: November 2026
     summary: Vanlife begins!
     events:
-      - date: 2026-11-02
-        end: 2026-11-03
-        title: South Dakota
-        location: Sioux Falls, SD
-        type: errand
-        notes:
-          - Take care of my South Dakota residency and get a new driver's license. You can't live in a mailbox in California. South Dakota is cool with it though. This is what I did last time I lived in the van.
       - date: 2026-11-03
         title: Offer day
         location: San Francisco, CA
         type: house
         notes:
           - Realtor will accept offers all at once.
-      - date: 2026-11-04
-        end: 2026-11-09
-        title: Sausalito / Marin
-        location: Sausalito, CA
-        type: van
-        status: loose
+      - date: 2026-11-05
+        end: 2026-11-06
+        title: South Dakota
+        location: Sioux Falls, SD
+        type: errand
         notes:
-          - Van projects, reorganize storage, maybe band stuff
+          - Take care of my South Dakota residency and get a new driver's license. You can't live in a mailbox in California. South Dakota is cool with it though. This is what I did last time I lived in the van.
       - date: 2026-11-10
         end: 2026-11-17
         title: Yosemite Valley
@@ -101,6 +93,10 @@ sections:
         status: tentative
         notes:
           - Van camping, day hiking, and maybe solo climbing!
+      - date: 2026-11-12
+        title: Band of Horses
+        location: Regency Ballroom, San Francisco, CA
+        type: concert
       - date: 2026-11-14
         title: Underoath
         location: The Masonic, San Francisco, CA
