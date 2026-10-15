@@ -21,9 +21,6 @@
   {%- if page.og -%}
   {% include og_head.html -%}
   {%- endif -%}
-  {%- if site.fathom_site_id and jekyll.environment == "production" %}
-  <script src="https://cdn.usefathom.com/script.js" data-site="{{ site.fathom_site_id }}" defer></script>
-  {%- endif -%}
   {%- if site.cloudflare_analytics_token and jekyll.environment == "production" %}
   <script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}' defer></script>
   {%- endif -%}
