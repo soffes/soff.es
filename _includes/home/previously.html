@@ -6,5 +6,6 @@
     <li><img src="{{ app.icon }}" alt="{{ app.name | escape }}" title="{{ app.name | escape }}" width="200" height="200"></li>
     {%- endfor %}
   </ul>
-  <p>{{ previously.summary }} <span class="arrow">Résumé&nbsp;&rarr;</span></p>
+  <p class="summary">{{ previously.summary }}</p>
+  <p class="footnote"><span class="arrow">Résumé&nbsp;&rarr;</span></p>
 </a>

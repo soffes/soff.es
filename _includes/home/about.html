@@ -7,7 +7,7 @@
     <ul class="socials">
       {%- for social in site.data.socials %}
       <li>
-        <a href="{{ social.url }}" rel="me" aria-label="{{ social.name | escape }}" title="{{ social.name | escape }}">
+        <a href="{{ social.url }}" rel="me" aria-label="{{ social.name | escape }}" title="{{ social.name | escape }}"{% if social.color %} style="--brand: {{ social.color }}"{% endif %}>
           {%- include icons/{{ social.icon }}.svg -%}
         </a>
       </li>

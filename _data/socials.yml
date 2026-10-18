@@ -1,21 +1,28 @@
 # Social icons on the homepage. `icon` must match a file in _includes/icons
 # (without .svg). Kept in sync by hand with soffes.link.
+#   color:  optional CSS color for hover, usually the service's brand color.
+#           Defaults to the link color.
 
 - name: Instagram
   icon: instagram
   url: https://instagram.com/soffes
+  color: "#e1306c"
 - name: YouTube
   icon: youtube
   url: https://youtube.com/@soffes
+  color: "#ff0033"
 - name: Threads
   icon: threads
   url: https://threads.com/@soffes
+  color: var(--h1-foreground)
 - name: TikTok
   icon: tiktok
   url: https://tiktok.com/@samsoffes
+  color: "#fe2c55"
 - name: GitHub
   icon: github
   url: https://github.com/soffes
+  color: var(--h1-foreground)
 - name: Email
   icon: email
   url: mailto:sam@soff.es

@@ -1076,9 +1076,8 @@ body.home main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "about about now adventure"
-    "gallery gallery gallery interests"
-    "gallery gallery gallery previously"
-    "years years recent recent";
+    "gallery gallery gallery gallery"
+    "years years recent previously";
   gap: 16px;
 }
 
@@ -1089,9 +1088,8 @@ body.home main {
       "about about"
       "now adventure"
       "gallery gallery"
-      "interests previously"
       "years years"
-      "recent recent";
+      "recent previously";
   }
 }
 
@@ -1102,7 +1100,7 @@ body.home main {
 
   .bento {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "about" "now" "adventure" "gallery" "interests" "previously" "years" "recent";
+    grid-template-areas: "about" "now" "adventure" "gallery" "years" "recent" "previously";
     gap: 12px;
   }
 }
@@ -1238,10 +1236,11 @@ body.home main {
   color: var(--light-link-foreground);
   border: 0;
   border-radius: 50%;
+  transition: color 0.15s ease;
 }
 
 .bento .socials a:hover {
-  color: var(--link-foreground);
+  color: var(--brand, var(--link-foreground));
   border: 0;
 }
 
@@ -1441,7 +1440,7 @@ body.home main {
   }
 }
 
-/* Interests */
+/* Interests. Not on the homepage right now, but kept for later. */
 
 .bento .interests {
   grid-area: interests;
@@ -1503,14 +1502,21 @@ body.home main {
   box-shadow: 0 0 0 1px var(--card-rail);
 }
 
-.bento .previously p {
+.bento .previously .summary {
   margin-top: 1em;
   color: var(--card-muted);
 }
 
+/* The whole card is the link, so its footnote lights up like a real one when
+   anywhere on the card is hovered. */
 .bento .previously .arrow {
+  border-bottom: 1px solid transparent;
+  transition: border 0.2s;
+}
+
+.bento a.previously:hover .arrow {
   color: var(--link-foreground);
-  white-space: nowrap;
+  border-bottom-color: currentColor;
 }
 
 /* Years in review */
