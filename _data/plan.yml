@@ -47,10 +47,6 @@ sections:
         title: Staging
         location: San Francisco, CA
         type: house
-      - date: 2026-10-16
-        title: Iron & Wine
-        location: Castro Theatre, San Francisco, CA
-        type: concert
       - date: 2026-10-23
         title: Listing goes live
         location: San Francisco, CA
@@ -63,11 +59,6 @@ sections:
         title: Last day of work
         location: San Francisco, CA
         type: work
-      - date: 2026-10-31
-        title: Halloween party
-        location: San Francisco, CA
-        type: party
-        status: tentative
 
   - title: November 2026
     summary: Vanlife begins!
