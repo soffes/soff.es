@@ -1050,7 +1050,6 @@ body.home {
   --card-background: #f6f6f7;
   --card-rail: #e4e4e7;
   --card-muted: #71717a;
-  --card-shadow: rgba(0, 0, 0, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1058,7 +1057,6 @@ body.home {
     --card-background: #1b1b1d;
     --card-rail: #2c2c30;
     --card-muted: #a1a1aa;
-    --card-shadow: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -1077,7 +1075,7 @@ body.home main {
   grid-template-areas:
     "about about now adventure"
     "gallery gallery gallery gallery"
-    "years years recent previously";
+    "years years years previously";
   gap: 16px;
 }
 
@@ -1088,8 +1086,7 @@ body.home main {
       "about about"
       "now adventure"
       "gallery gallery"
-      "years years"
-      "recent previously";
+      "years previously";
   }
 }
 
@@ -1100,7 +1097,7 @@ body.home main {
 
   .bento {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "about" "now" "adventure" "gallery" "years" "recent" "previously";
+    grid-template-areas: "about" "now" "adventure" "gallery" "years" "previously";
     gap: 12px;
   }
 }
@@ -1125,17 +1122,6 @@ body.home main {
 
 .bento a.card, .bento a.card:hover {
   border-bottom: 1px solid transparent;
-}
-
-.bento a.card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .bento a.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px var(--card-shadow);
-  }
 }
 
 .bento .label {
@@ -1525,23 +1511,34 @@ body.home main {
   grid-area: years;
 }
 
-.bento .years ul {
+/* Always at least three across, with 4:3 covers. */
+.bento .years > ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(90px, calc((100% - 16px) / 3)), 1fr));
   gap: 8px;
 }
 
 .bento .years a {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 0;
   border-radius: 12px;
+  container-type: inline-size;
 }
 
 .bento .years a:hover {
   border: 0;
+}
+
+.bento .years .hero {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .bento .years img {
@@ -1549,16 +1546,14 @@ body.home main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .bento .years a:hover img {
-    transform: scale(1.05);
-  }
+.bento .years .hero img {
+  position: absolute;
+  inset: 0;
 }
 
-.bento .years a span {
+.bento .years .hero span {
   position: absolute;
   left: 0;
   right: 0;
@@ -1569,7 +1564,90 @@ body.home main {
   font-weight: var(--bold-font-weight);
 }
 
-/* From the blog */
+/* When the card is wide enough, the years stretch to fill the row and two
+   rows of photos from each one fill the space, like the latest photos card.
+   Narrow years show two across and wide ones three, with the last one saying
+   how many more there are. */
+.bento .years .strip {
+  display: none;
+}
+
+/* Beside Previously but too narrow for photo rows, the years stack as wide
+   banners that share the card's height. */
+@media all and (min-width: 600px) and (max-width: 723px) {
+  .bento .years > ul {
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bento .years a {
+    height: 100%;
+    min-height: 64px;
+    aspect-ratio: auto;
+  }
+}
+
+@media all and (min-width: 724px) {
+  .bento .years > ul {
+    flex: 1;
+  }
+
+  .bento .years a {
+    height: 100%;
+  }
+
+  .bento .years .strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+  }
+
+  .bento .years .strip li {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .bento .years .strip li:nth-child(n+5) {
+    display: none;
+  }
+
+  .bento .years .strip li[data-more-narrow]:after {
+    content: attr(data-more-narrow);
+  }
+
+  @container (min-width: 180px) {
+    .bento .years .strip {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bento .years .strip li:nth-child(n+5) {
+      display: block;
+    }
+
+    .bento .years .strip li[data-more-narrow]:after {
+      content: none;
+    }
+
+    .bento .years .strip li[data-more-wide]:after {
+      content: attr(data-more-wide);
+    }
+  }
+
+  .bento .years .strip li:after {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: var(--bold-font-weight);
+  }
+}
+
+/* From the blog. Not on the homepage right now, but kept for later. */
 
 .bento .recent {
   grid-area: recent;

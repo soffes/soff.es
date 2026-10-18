@@ -1,6 +1,9 @@
 ---
 layout: default
 home: true
+og:
+  title: Sam Soffes
+  image: /assets/og-home.png
 ---
 
 {%- assign posts = site.posts | where_exp: "post", "post.category != 'draft'" %}
@@ -11,7 +14,6 @@ home: true
   {% include home/adventure.html %}
   {% include home/gallery.html post=featured %}
   {% include home/years.html posts=posts featured=featured %}
-  {% include home/recent.html posts=posts %}
   {% include home/previously.html %}
 </div>
 {% include home/plan_script.html %}

@@ -59,8 +59,8 @@ class ImageProcessor
       next unless (src = node["src"])
       next if src.start_with?("http")
 
-      # Only the cover is on screen at load
-      node["loading"] = "lazy" unless cover?(node)
+      # Only the cover is on screen at load, unless the template says otherwise
+      node["loading"] ||= "lazy" unless cover?(node)
 
       next unless src.end_with?("jpg")
 

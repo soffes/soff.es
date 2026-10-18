@@ -4,10 +4,22 @@
   <ul>
     {%- for post in years %}
     {%- if post.url == include.featured.url %}{% continue %}{% endif %}
+    {%- assign all = post | post_photos %}
+    {%- assign photos = all | spread: 6, post.cover_image %}
+    {%- comment %} The last photo showing says how many more there are. Narrow years show 4, wide ones 6, plus the cover. {% endcomment %}
+    {%- assign more_narrow = all.size | minus: 5 %}
+    {%- assign more_wide = all.size | minus: 7 %}
     <li>
       <a href="{{ post.url }}">
-        <img src="{{ post.cover_image }}" alt="" data-sizes="(max-width: 600px) 33vw, 200px">
-        <span>{{ post.title }}</span>
+        <div class="hero">
+          <img src="{{ post.cover_image }}" alt="" data-sizes="(max-width: 600px) 33vw, 260px">
+          <span>{{ post.title }}</span>
+        </div>
+        <ul class="strip">
+          {%- for photo in photos %}
+          <li{% if forloop.index == 4 and more_narrow > 0 %} data-more-narrow="+{{ more_narrow }}"{% endif %}{% if forloop.index == 6 and more_wide > 0 %} data-more-wide="+{{ more_wide }}"{% endif %}><img src="{{ photo }}" alt="" data-sizes="(max-width: 900px) 10vw, 90px"></li>
+          {%- endfor %}
+        </ul>
       </a>
     </li>
     {%- endfor %}
