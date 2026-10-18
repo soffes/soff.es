@@ -1,0 +1,15 @@
+{%- assign years = include.posts | where: "is_year_review", true | where_exp: "post", "post.cover_image" %}
+<section class="card years">
+  <span class="label">{% include icons/calendar.svg %}Year in Review</span>
+  <ul>
+    {%- for post in years %}
+    {%- if post.url == include.featured.url %}{% continue %}{% endif %}
+    <li>
+      <a href="{{ post.url }}">
+        <img src="{{ post.cover_image }}" alt="" data-sizes="(max-width: 600px) 33vw, 200px">
+        <span>{{ post.title }}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

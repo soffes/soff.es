@@ -117,8 +117,11 @@ class ImageProcessor
 
       # Without this the browser assumes 100vw and always grabs the widest one.
       # The cover really is 100vw, so it doesn't need it.
-      node["sizes"] = sizes_for(node) unless is_cover || srcset.empty?
+      node["sizes"] = node["data-sizes"] || sizes_for(node) unless is_cover || srcset.empty?
     end
+
+    # Templates that aren't laid out like a post column say their own size.
+    node.remove_attribute("data-sizes")
 
     node["width"] = info["width"]
     node["height"] = info["height"]

@@ -760,8 +760,9 @@ ul.apps li.mac img {
   }
 }
 
-/* Each activity type sets a hue. The badge and dot colors derive from it. */
-.plan ol.timeline > li {
+/* Each activity type sets a hue. The badge and dot colors derive from it.
+   The homepage colors its pills and chips the same way with `data-type`. */
+.plan ol.timeline > li, .home [data-type] {
   --hue: 240;
   --saturation: 0%;
   --type: hsl(var(--hue) var(--saturation) 34%);
@@ -769,21 +770,21 @@ ul.apps li.mac img {
 }
 
 @media (prefers-color-scheme: dark) {
-  .plan ol.timeline > li {
+  .plan ol.timeline > li, .home [data-type] {
     --type: hsl(var(--hue) var(--saturation) 72%);
     --type-background: hsl(var(--hue) var(--saturation) 17%);
   }
 }
 
-.plan ol.timeline > li.scuba { --hue: 185; --saturation: 85%; }
-.plan ol.timeline > li.flight { --hue: 218; --saturation: 80%; }
-.plan ol.timeline > li.hiking { --hue: 145; --saturation: 60%; }
-.plan ol.timeline > li.family { --hue: 340; --saturation: 70%; }
-.plan ol.timeline > li.van { --hue: 25; --saturation: 85%; }
-.plan ol.timeline > li.travel { --hue: 262; --saturation: 65%; }
-.plan ol.timeline > li.concert { --hue: 305; --saturation: 60%; }
-.plan ol.timeline > li.wedding { --hue: 0; --saturation: 70%; }
-.plan ol.timeline > li.party, .plan ol.timeline > li.holiday { --hue: 42; --saturation: 90%; }
+.plan ol.timeline > li.scuba, .home [data-type="scuba"] { --hue: 185; --saturation: 85%; }
+.plan ol.timeline > li.flight, .home [data-type="flight"] { --hue: 218; --saturation: 80%; }
+.plan ol.timeline > li.hiking, .home [data-type="hiking"] { --hue: 145; --saturation: 60%; }
+.plan ol.timeline > li.family, .home [data-type="family"] { --hue: 340; --saturation: 70%; }
+.plan ol.timeline > li.van, .home [data-type="van"] { --hue: 25; --saturation: 85%; }
+.plan ol.timeline > li.travel, .home [data-type="travel"] { --hue: 262; --saturation: 65%; }
+.plan ol.timeline > li.concert, .home [data-type="concert"] { --hue: 305; --saturation: 60%; }
+.plan ol.timeline > li.wedding, .home [data-type="wedding"] { --hue: 0; --saturation: 70%; }
+.plan ol.timeline > li.party, .plan ol.timeline > li.holiday, .home [data-type="party"], .home [data-type="holiday"] { --hue: 42; --saturation: 90%; }
 
 .plan > header {
   margin-bottom: 3em;
@@ -1041,4 +1042,548 @@ ul.apps li.mac img {
 
 .plan .card ul li + li {
   margin-top: 6px;
+}
+
+/* ---- Home ---- */
+
+body.home {
+  --card-background: #f6f6f7;
+  --card-rail: #e4e4e7;
+  --card-muted: #71717a;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.home {
+    --card-background: #1b1b1d;
+    --card-rail: #2c2c30;
+    --card-muted: #a1a1aa;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+  }
+}
+
+body.home main {
+  max-width: 1056px;
+  margin: 3em auto 0;
+  padding: 0 16px;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  box-sizing: border-box;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    "about about now adventure"
+    "gallery gallery gallery interests"
+    "gallery gallery gallery previously"
+    "years years recent recent";
+  gap: 16px;
+}
+
+@media all and (max-width: 899px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "about about"
+      "now adventure"
+      "gallery gallery"
+      "interests previously"
+      "years years"
+      "recent recent";
+  }
+}
+
+@media all and (max-width: 599px) {
+  body.home main {
+    margin-top: 16px;
+  }
+
+  .bento {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "about" "now" "adventure" "gallery" "interests" "previously" "years" "recent";
+    gap: 12px;
+  }
+}
+
+.bento .card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 20px 22px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: var(--card-background);
+  color: var(--body-foreground);
+  font-size: 0.85em;
+  line-height: 1.5em;
+}
+
+.bento [hidden] {
+  display: none !important;
+}
+
+.bento a.card, .bento a.card:hover {
+  border-bottom: 1px solid transparent;
+}
+
+.bento a.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .bento a.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--card-shadow);
+  }
+}
+
+.bento .label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.6em;
+  color: var(--card-muted);
+  font-size: 0.9em;
+  font-weight: var(--semibold-font-weight);
+  line-height: 1.3em;
+}
+
+.bento .label svg {
+  flex-shrink: 0;
+  width: 1.05em;
+  height: 1.05em;
+}
+
+.bento h2 {
+  color: var(--h1-foreground);
+  font-size: 1.4em;
+  line-height: 1.2em;
+}
+
+.bento p {
+  margin: 0;
+}
+
+.bento ul li {
+  list-style: none;
+}
+
+.bento .footnote {
+  margin-top: auto;
+  padding-top: 1em;
+  color: var(--card-muted);
+  font-size: 0.85em;
+}
+
+.bento .footnote a {
+  color: var(--card-muted);
+}
+
+.bento .footnote a:hover {
+  color: var(--link-foreground);
+}
+
+/* A small colored badge, like the ones on /plan */
+.bento .type {
+  flex-shrink: 0;
+  color: var(--type);
+  background: var(--type-background);
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: var(--bold-font-weight);
+  line-height: 1em;
+  padding: 5px 9px;
+}
+
+/* About */
+
+.bento .about {
+  grid-area: about;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 24px;
+}
+
+.bento .about .avatar {
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bento .about h1 {
+  color: var(--brand-color);
+  font-size: 1.8em;
+  margin: 0 0 0.4em;
+}
+
+.bento .about .more {
+  margin-top: 0.5em;
+}
+
+.bento .socials {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.75em 0 0 -6px;
+}
+
+.bento .socials a {
+  display: block;
+  padding: 6px;
+  color: var(--light-link-foreground);
+  border: 0;
+  border-radius: 50%;
+}
+
+.bento .socials a:hover {
+  color: var(--link-foreground);
+  border: 0;
+}
+
+.bento .socials svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+@media all and (max-width: 599px) {
+  .bento .about {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bento .about .avatar {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+/* Now / Next */
+
+.bento .now {
+  grid-area: now;
+}
+
+.bento .now dl > div + div {
+  margin-top: 1.25em;
+}
+
+.bento .now dt.label {
+  margin-bottom: 0.3em;
+}
+
+.bento .now dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.bento .now .place {
+  color: var(--h1-foreground);
+  font-size: 1.2em;
+  font-weight: var(--bold-font-weight);
+  line-height: 1.3em;
+}
+
+.bento .now .when {
+  flex-basis: 100%;
+  color: var(--card-muted);
+}
+
+/* Next adventure, tinted with its type */
+
+.bento .adventure {
+  grid-area: adventure;
+  background: var(--type-background);
+}
+
+.bento .adventure.tentative {
+  background: transparent;
+  border: 1px dashed var(--card-rail);
+}
+
+.bento .adventure .label {
+  color: var(--type);
+}
+
+.bento .adventure h2 {
+  font-size: 1.25em;
+  line-height: 1.3em;
+}
+
+.bento .adventure .place {
+  margin-top: 0.25em;
+  color: var(--card-muted);
+}
+
+.bento .adventure .when {
+  margin-top: auto;
+  padding-top: 1em;
+  color: var(--type);
+  font-weight: var(--bold-font-weight);
+}
+
+.bento .adventure .progress {
+  margin-top: 1em;
+}
+
+.bento .adventure .progress div {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--card-rail);
+  overflow: hidden;
+}
+
+.bento .adventure .progress span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--type);
+}
+
+.bento .adventure .progress p {
+  margin-top: 0.4em;
+  color: var(--card-muted);
+  font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Latest gallery */
+
+.bento .gallery {
+  grid-area: gallery;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bento .gallery .hero {
+  position: relative;
+  flex: 1;
+  min-height: 320px;
+}
+
+.bento .gallery .hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bento .gallery .caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 64px 24px 18px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+  color: #fff;
+}
+
+.bento .gallery .caption .label {
+  margin-bottom: 0.2em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bento .gallery .caption h2 {
+  color: #fff;
+  font-size: 2em;
+}
+
+.bento .gallery .caption p {
+  margin-top: 0.3em;
+  font-weight: var(--semibold-font-weight);
+}
+
+/* Edge to edge under the hero. The card's corners round off the bottom. */
+.bento .gallery .thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3px;
+  padding-top: 3px;
+}
+
+.bento .gallery .thumbs li {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.bento .gallery .thumbs img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bento .gallery .thumbs li[data-more]:after {
+  content: attr(data-more);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: var(--bold-font-weight);
+}
+
+@media all and (max-width: 599px) {
+  .bento .gallery .hero {
+    min-height: 240px;
+  }
+}
+
+/* Interests */
+
+.bento .interests {
+  grid-area: interests;
+}
+
+.bento .interests ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bento .interests li {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--type, var(--body-foreground));
+  background: var(--type-background, var(--body-background));
+  font-size: 0.9em;
+  font-weight: var(--bold-font-weight);
+  line-height: 1.3em;
+}
+
+/* Previously */
+
+.bento .previously {
+  grid-area: previously;
+  container-type: inline-size;
+}
+
+/* The column count follows the card's width so the rows stay full. Three
+   across shows three rows and four across shows two. Anything past that is
+   hidden, so the order in home.yml is the priority. */
+.bento .previously ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.bento .previously li:nth-child(n+10) {
+  display: none;
+}
+
+@container (min-width: 250px) {
+  .bento .previously ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 300px;
+  }
+
+  .bento .previously li:nth-child(n+9) {
+    display: none;
+  }
+}
+
+.bento .previously img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  box-shadow: 0 0 0 1px var(--card-rail);
+}
+
+.bento .previously p {
+  margin-top: 1em;
+  color: var(--card-muted);
+}
+
+.bento .previously .arrow {
+  color: var(--link-foreground);
+  white-space: nowrap;
+}
+
+/* Years in review */
+
+.bento .years {
+  grid-area: years;
+}
+
+.bento .years ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.bento .years a {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+}
+
+.bento .years a:hover {
+  border: 0;
+}
+
+.bento .years img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .bento .years a:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.bento .years a span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 10px 6px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.55));
+  color: #fff;
+  font-weight: var(--bold-font-weight);
+}
+
+/* From the blog */
+
+.bento .recent {
+  grid-area: recent;
+}
+
+.bento .recent li + li {
+  margin-top: 0.75em;
+}
+
+.bento .recent li a {
+  color: var(--h1-foreground);
+  font-weight: var(--semibold-font-weight);
+}
+
+.bento .recent li a:hover {
+  color: var(--link-foreground);
+}
+
+.bento .recent time {
+  display: block;
+  color: var(--card-muted);
+  font-size: 0.85em;
 }

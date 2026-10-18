@@ -1,0 +1,21 @@
+# Social icons on the homepage. `icon` must match a file in _includes/icons
+# (without .svg). Kept in sync by hand with soffes.link.
+
+- name: Instagram
+  icon: instagram
+  url: https://instagram.com/soffes
+- name: YouTube
+  icon: youtube
+  url: https://youtube.com/@soffes
+- name: Threads
+  icon: threads
+  url: https://threads.com/@soffes
+- name: TikTok
+  icon: tiktok
+  url: https://tiktok.com/@samsoffes
+- name: GitHub
+  icon: github
+  url: https://github.com/soffes
+- name: Email
+  icon: email
+  url: mailto:sam@soff.es

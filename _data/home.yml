@@ -1,0 +1,48 @@
+# Drives the homepage. Now / Soon and the next adventure come from plan.yml,
+# and the photos and posts come from the blog.
+
+blurb: >-
+  I’m a software engineer who’d rather be outside. I’ve made apps since the
+  first day of the App Store and spent the last few years at Apple. Now I’m
+  trading city life for my DIY camper van again to dive, hike, and see what’s
+  out there.
+
+# Shown as chips.
+#   type:  optional plan.yml type, used for the chip's color
+interests:
+  - name: Scuba diving
+    type: scuba
+  - name: Hiking
+    type: hiking
+  - name: Backpacking
+    type: hiking
+  - name: Climbing
+    type: party
+  - name: Van life
+    type: van
+  - name: iOS
+    type: flight
+
+previously:
+  summary: Some of the apps I’ve worked on, most recently Podcasts at Apple.
+  apps:
+    - name: Podcasts
+      icon: /resume/podcasts.jpg
+    - name: Lyft
+      icon: /resume/lyft.png
+    - name: GitHub
+      icon: /resume/github.png
+    - name: Bible
+      icon: /resume/bible.jpg
+    - name: Hipstamatic
+      icon: /resume/hipstamatic.jpg
+    - name: Litely
+      icon: /resume/litely.jpg
+    - name: Houseparty
+      icon: /resume/houseparty.svg
+    - name: Cheddar
+      icon: /resume/cheddar.jpg
+    - name: Along
+      icon: /resume/along.svg
+    - name: Whiskey
+      icon: /resume/whiskey.png

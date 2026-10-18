@@ -1,0 +1,10 @@
+{%- assign previously = site.data.home.previously %}
+<a class="card previously" href="/resume">
+  <span class="label">{% include icons/briefcase.svg %}Previously</span>
+  <ul>
+    {%- for app in previously.apps %}
+    <li><img src="{{ app.icon }}" alt="{{ app.name | escape }}" title="{{ app.name | escape }}" width="200" height="200"></li>
+    {%- endfor %}
+  </ul>
+  <p>{{ previously.summary }} <span class="arrow">Résumé&nbsp;&rarr;</span></p>
+</a>

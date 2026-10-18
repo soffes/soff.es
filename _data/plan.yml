@@ -10,9 +10,17 @@
 #   type:        kind of activity, shown as a badge: scuba, hiking, family, van,
 #                travel, house, work, party, holiday, errand, life, concert, wedding, or flight.
 #                Flights also get a plane icon in front of the title
+#   to:          flights only. Where the flight lands, so the homepage knows
+#                where I am after it
 #   status:      leave off when it's firm. Otherwise tentative or loose, which
 #                are drawn dashed instead of filled
 #   notes:       optional list of bullet points
+#   progress:    optional, shown as a bar on the homepage while the event is
+#                happening. Takes done, total, and unit, e.g. for the PCT:
+#                {done: 1204, total: 2650, unit: miles}
+#
+# The homepage shows where I am now and where I'm going next from this, but
+# only the city (venues are dropped) and never the exact dates.
 
 title: Travel Plan
 summary: Back to full time adventuring! Here are my travel plans.
@@ -106,6 +114,7 @@ sections:
       - date: 2026-11-24
         title: Fly to Cancún
         location: San Francisco, CA
+        to: Cancún, Mexico
         type: flight
       - date: 2026-11-24
         end: 2026-12-12
@@ -121,6 +130,7 @@ sections:
       - date: 2026-12-12
         title: Fly to San Francisco
         location: Cancún, Mexico
+        to: San Francisco, CA
         type: flight
       - date: 2026-12-18
         end: 2026-12-28

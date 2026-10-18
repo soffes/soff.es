@@ -1,0 +1,17 @@
+<section class="card about">
+  <img class="avatar" src="/assets/sam-soffes.jpg" alt="Sam Soffes" width="112" height="112">
+  <div>
+    <h1>Sam Soffes</h1>
+    <p>{{ site.data.home.blurb }}</p>
+    <p class="more"><a href="/about">More about me&nbsp;&rarr;</a></p>
+    <ul class="socials">
+      {%- for social in site.data.socials %}
+      <li>
+        <a href="{{ social.url }}" rel="me" aria-label="{{ social.name | escape }}" title="{{ social.name | escape }}">
+          {%- include icons/{{ social.icon }}.svg -%}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

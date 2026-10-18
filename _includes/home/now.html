@@ -1,0 +1,15 @@
+{%- assign plan = site.data.plan %}
+<section class="card now">
+  <dl>
+    <div>
+      <dt class="label">{% include icons/pin.svg %}Now</dt>
+      <dd><span class="place" data-now-place>&nbsp;</span><span class="type" data-now-type hidden></span></dd>
+    </div>
+    <div>
+      <dt class="label">{% include icons/clock.svg %}Soon</dt>
+      <dd><span class="place" data-next-place>&nbsp;</span><span class="when" data-next-when></span></dd>
+    </div>
+  </dl>
+  <noscript><p>See <a href="/plan">my travel plan</a>.</p></noscript>
+  <p class="footnote">Plan updated {{ plan.updated | date: "%b %-d" }} &middot; <a href="/plan">Full plan&nbsp;&rarr;</a></p>
+</section>

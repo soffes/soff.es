@@ -1,0 +1,8 @@
+<section class="card interests">
+  <span class="label">{% include icons/heart.svg %}Into</span>
+  <ul>
+    {%- for interest in site.data.home.interests %}
+    <li data-type="{{ interest.type }}">{{ interest.name }}</li>
+    {%- endfor %}
+  </ul>
+</section>

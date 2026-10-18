@@ -1,0 +1,18 @@
+---
+layout: default
+home: true
+---
+
+{%- assign posts = site.posts | where_exp: "post", "post.category != 'draft'" %}
+{%- assign featured = posts | where: "is_gallery", true | first %}
+<div class="bento">
+  {% include home/about.html %}
+  {% include home/now.html %}
+  {% include home/adventure.html %}
+  {% include home/gallery.html post=featured %}
+  {% include home/interests.html %}
+  {% include home/previously.html %}
+  {% include home/years.html posts=posts featured=featured %}
+  {% include home/recent.html posts=posts %}
+</div>
+{% include home/plan_script.html %}

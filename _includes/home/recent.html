@@ -1,0 +1,13 @@
+{%- assign recent = include.posts | where_exp: "post", "post.is_year_review != true" %}
+<section class="card recent">
+  <span class="label">{% include icons/pen.svg %}From the Blog</span>
+  <ul>
+    {%- for post in recent limit: 3 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %Y" }}</time>
+    </li>
+    {%- endfor %}
+  </ul>
+  <p class="footnote"><a href="/blog">All posts&nbsp;&rarr;</a></p>
+</section>

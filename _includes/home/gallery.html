@@ -1,0 +1,23 @@
+{%- assign post = include.post %}
+{%- if post %}
+{%- assign photos = post | post_photos %}
+{%- assign cover = post.cover_image | default: photos.first %}
+{%- assign thumbs = photos | spread: 4, cover %}
+{%- assign shown = thumbs.size | plus: 1 %}
+{%- assign more = photos.size | minus: shown %}
+<a class="card gallery" href="{{ post.url }}">
+  <div class="hero">
+    <img src="{{ cover }}" alt="" data-sizes="(max-width: 900px) 100vw, 780px">
+    <div class="caption">
+      <span class="label">{% include icons/camera.svg %}Latest Photos</span>
+      <h2>{{ post.title }}</h2>
+      <p>See all {{ photos.size }} photos&nbsp;&rarr;</p>
+    </div>
+  </div>
+  <ul class="thumbs">
+    {%- for photo in thumbs %}
+    <li{% if forloop.last and more > 0 %} data-more="+{{ more }}"{% endif %}><img src="{{ photo }}" alt="" data-sizes="(max-width: 600px) 25vw, 200px"></li>
+    {%- endfor %}
+  </ul>
+</a>
+{%- endif %}

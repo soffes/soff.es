@@ -25,8 +25,8 @@
   <script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}' defer></script>
   {%- endif -%}
 </head>
-<body{% if page.is_gallery %} class="gallery"{% endif %}>
-  {% unless page.cover_image %}
+<body{% if page.is_gallery %} class="gallery"{% elsif page.home %} class="home"{% endif %}>
+  {% unless page.cover_image or page.home %}
   <header>
     <h1><a href="/" rel="home" title="{{ site.title }}">{{ site.title }}</a></h1>
   </header>

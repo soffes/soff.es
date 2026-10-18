@@ -1,0 +1,122 @@
+<script type="application/json" id="plan-events">{{ site.data.plan | plan_json }}</script>
+<script>
+  // The site is static, so Now / Soon and the next adventure are picked in the
+  // browser, the same way plan.html places its Today marker. Only cities and
+  // rough months are shown, never exact dates.
+  (function () {
+    var events = JSON.parse(document.getElementById("plan-events").textContent);
+    var now = new Date();
+    {%- if jekyll.environment != "production" %}
+
+    // Pretend it's another day with `?today=2026-11-24`.
+    var override = new URLSearchParams(window.location.search).get("today");
+    if (override) {
+      now = new Date(override + "T12:00:00");
+    }
+    {%- endif %}
+
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+    var today = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+
+    var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var TYPES = { scuba: "Scuba", hiking: "Hiking", family: "Family", van: "Van life", travel: "Travel", wedding: "Wedding", party: "Party", holiday: "Holiday" };
+
+    var endOf = function (event) { return event.end || event.start; };
+    var placeOf = function (event) { return event.to || event.place; };
+
+    // "later this month", "next month", "in December", or "in March 2028"
+    var roughly = function (date) {
+      var year = parseInt(date.slice(0, 4), 10);
+      var month = parseInt(date.slice(5, 7), 10) - 1;
+      var apart = (year - now.getFullYear()) * 12 + month - now.getMonth();
+
+      if (apart <= 0) return "later this month";
+      if (apart === 1) return "next month";
+      if (year === now.getFullYear()) return "in " + MONTHS[month];
+      return "in " + MONTHS[month] + " " + year;
+    };
+
+    var set = function (selector, text) {
+      var node = document.querySelector(selector);
+      if (node) node.textContent = text;
+      return node;
+    };
+
+    // Now is whatever's happening today, with the latest start winning when
+    // things overlap. Between events, it's wherever the last one left off.
+    var current = null;
+    var last = null;
+    events.forEach(function (event) {
+      if (event.start > today) return;
+
+      if (endOf(event) >= today && (!current || event.start >= current.start)) {
+        current = event;
+      }
+
+      if (!last || endOf(event) > endOf(last) || (endOf(event) === endOf(last) && event.start >= last.start)) {
+        last = event;
+      }
+    });
+
+    var here = current || last;
+    if (here) {
+      if (current && current.type === "flight") {
+        set("[data-now-place]", "On the way to " + current.to);
+      } else {
+        set("[data-now-place]", placeOf(here));
+
+        var type = current && TYPES[current.type];
+        if (type) {
+          var pill = set("[data-now-type]", type);
+          pill.setAttribute("data-type", current.type);
+          pill.hidden = false;
+        }
+      }
+    }
+
+    // Soon is the first place that isn't here. Flights are just how I get
+    // there.
+    var next = null;
+    events.forEach(function (event) {
+      if (next || event.start <= today || event.type === "flight") return;
+      if (here && event.place === placeOf(here)) return;
+      next = event;
+    });
+
+    if (next) {
+      set("[data-next-place]", next.place);
+      set("[data-next-when]", roughly(next.start) + (next.status ? ", maybe" : ""));
+    } else {
+      set("[data-next-place]", "To be decided");
+    }
+
+    // The next adventure is the first one that hasn't finished yet.
+    var adventure = null;
+    events.forEach(function (event) {
+      if (adventure || !event.title || endOf(event) < today) return;
+      adventure = event;
+    });
+
+    var card = document.querySelector("[data-adventure]");
+    if (adventure && card) {
+      var happening = adventure.start <= today;
+
+      card.setAttribute("data-type", adventure.type);
+      card.classList.toggle("tentative", !!adventure.status);
+      set("[data-adventure-title]", adventure.title);
+      set("[data-adventure-place]", adventure.place);
+      set("[data-adventure-when]", happening ? "Happening now" : (adventure.when || roughly(adventure.start)) + (adventure.status ? ", maybe" : ""));
+
+      var progress = adventure.progress;
+      if (happening && progress && progress.total) {
+        var bar = card.querySelector("[data-adventure-progress]");
+        var percent = Math.min(100, Math.max(0, progress.done / progress.total * 100));
+        bar.querySelector("span").style.width = percent + "%";
+        bar.querySelector("p").textContent = progress.done.toLocaleString() + " of " + progress.total.toLocaleString() + (progress.unit ? " " + progress.unit : "");
+        bar.hidden = false;
+      }
+
+      card.hidden = false;
+    }
+  })();
+</script>

@@ -12,7 +12,7 @@ I’ve been working with iOS since its release in 2008 and macOS before that. He
 <ul class="apps">
   <li>
     <a href="https://www.apple.com/apple-podcasts/" rel="external nofollow">
-      <img src="podcasts.svg" alt="Podcasts">
+      <img src="podcasts.jpg" alt="Podcasts">
       <span>Podcasts</span>
     </a>
   </li>
