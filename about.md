@@ -2,7 +2,7 @@
 title: About
 ---
 
-<img src="/assets/sam-soffes.jpg" width="256" height="256" alt="Sam Soffes">
+<img src="/assets/sam-soffes-about.jpg" alt="Sam Soffes">
 
 I’m a software engineer who’d rather be outside. I just left my job at Apple to travel the world in my DIY camper van 🚐. You can see where I’m headed on [my plan](/plan).
 
