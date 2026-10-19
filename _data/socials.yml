@@ -2,27 +2,35 @@
 # (without .svg). Kept in sync by hand with soffes.link.
 #   color:  optional CSS color for hover, usually the service's brand color.
 #           Defaults to the link color.
+#   social: true for social networks. The "Follow along" section on /plan only
+#           shows those, so GitHub and email are left out there.
 
 - name: Instagram
   icon: instagram
   url: https://instagram.com/soffes
+  social: true
   color: "#e1306c"
 - name: YouTube
   icon: youtube
   url: https://youtube.com/@soffes
+  social: true
   color: "#ff0033"
 - name: Threads
   icon: threads
   url: https://threads.com/@soffes
+  social: true
   color: var(--h1-foreground)
 - name: TikTok
   icon: tiktok
   url: https://tiktok.com/@samsoffes
+  social: true
   color: "#fe2c55"
 - name: GitHub
   icon: github
   url: https://github.com/soffes
+  social: false
   color: var(--h1-foreground)
 - name: Email
   icon: email
   url: mailto:sam@soff.es
+  social: false

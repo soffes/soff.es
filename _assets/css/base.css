@@ -877,6 +877,92 @@ ul.apps li.mac img {
   border-style: dashed;
 }
 
+/* Follow along: a full-bleed band at the bottom, like the next post on the
+   blog, in soffes.link's green. It also holds the copyright. */
+.plan-follow {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1em 0 0;
+  padding: 3em 0 1em;
+  background: #24402c;
+  color: #fff;
+}
+
+.plan-follow > div {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  box-sizing: border-box;
+}
+
+/* Centered as a block, with the heading flush with the buttons' left edge. */
+.plan-follow .follow {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Same size as the event titles. */
+.plan-follow h3 {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.plan-follow ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0.75em 0 3em;
+}
+
+.plan-follow li {
+  list-style: none;
+}
+
+.plan-follow a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 12px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.8em;
+  font-weight: var(--semibold-font-weight);
+  line-height: 20px;
+  transition: background-color 0.15s ease;
+}
+
+.plan-follow a:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border: 0;
+}
+
+.plan-follow svg {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.plan-follow p.copyright {
+  text-align: center;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.plan-follow p.copyright a {
+  color: rgba(255, 255, 255, 0.6);
+  background: none;
+  padding: 0;
+  display: inline;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
 /* Month dividers sit in the event column, with the rail running past them. */
 .plan ol.timeline > li.month {
   padding-top: 2em;
@@ -980,7 +1066,6 @@ ul.apps li.mac img {
   color: var(--plan-muted);
   font-size: 0.75em;
   font-weight: var(--bold-font-weight);
-  font-variant-numeric: tabular-nums;
 }
 
 .plan .type {

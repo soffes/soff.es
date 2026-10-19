@@ -1,10 +1,14 @@
 ---
 title: Plan
+layout: default
 sitemap: false
 noindex: true
+is_footer_hidden: true
 ---
 
 {%- assign plan = site.data.plan %}
+<section class="posts">
+<article>
 <div class="plan">
   <header>
     <h2>{{ plan.title }}</h2>
@@ -64,6 +68,28 @@ noindex: true
     {%- endfor %}
   </ol>
 </div>
+</article>
+</section>
+
+<section class="plan-follow">
+  <div>
+    <div class="follow">
+      <h3>Follow along</h3>
+      <ul>
+        {%- assign socials = site.data.socials | where: "social", true %}
+        {%- for social in socials %}
+        <li>
+          <a href="{{ social.url }}">
+            {%- include icons/{{ social.icon }}.svg -%}
+            {{ social.name }}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {% include footer.html %}
+  </div>
+</section>
 
 <script>
   // The site is static, so the marker for today is placed in the browser,
