@@ -884,7 +884,8 @@ ul.apps li.mac img {
   width: 100%;
   margin: 1em 0 0;
   padding: 3em 0 1em;
-  background: #24402c;
+  /* Contour lines of Mt Tamalpais, from assets/plan-topo.svg. */
+  background: url(/assets/plan-topo.svg) center / cover no-repeat, #24402c;
   color: #fff;
 }
 
@@ -927,7 +928,7 @@ ul.apps li.mac img {
   gap: 8px;
   padding: 8px 16px 8px 12px;
   color: #fff;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.18);
   border: 0;
   border-radius: 999px;
   font-size: 0.8em;
@@ -937,7 +938,7 @@ ul.apps li.mac img {
 }
 
 .plan-follow a:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.28);
   border: 0;
 }
 
