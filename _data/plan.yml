@@ -71,6 +71,13 @@ sections:
   - title: November 2026
     summary: Vanlife begins!
     events:
+      - date: 2026-11-02
+        end: 2026-11-04
+        title: Van Upgrades
+        location: Santa Rosa, CA
+        type: build
+        notes:
+          - Doing some van upgrades for a few days. Staying at a friend's place so I can use his tools!
       - date: 2026-11-03
         title: Offer day
         location: San Francisco, CA
