@@ -17,12 +17,20 @@ is_footer_hidden: true
 
   <ol class="timeline">
     {%- for section in plan.sections %}
-      <li class="month" data-month="{{ section.events.first.date | date: "%Y-%m" }}">
-        <h3>{{ section.title }}</h3>
-        {%- if section.summary %}
-        <p>{{ section.summary }}</p>
-        {%- endif %}
-      </li>
+      {%- assign through = "" %}
+      {%- for event in section.events %}
+        {%- assign last = event.end | default: event.date | date: "%Y-%m" %}
+        {%- if last > through %}{% assign through = last %}{% endif %}
+      {%- endfor %}
+      <li class="month" data-month="{{ section.events.first.date | date: "%Y-%m" }}" data-through="{{ through }}">
+        <details open>
+          <summary>
+            <h3><span class="toggle" aria-hidden="true"></span>{{ section.title }}</h3>
+            {%- if section.summary %}
+            <p>{{ section.summary }}</p>
+            {%- endif %}
+          </summary>
+          <ol class="events">
       {%- for event in section.events %}
       <li class="{% if event.end %}span{% else %}day{% endif %} {{ event.status }} {{ event.type }}" data-date="{{ event.date | date: "%Y-%m-%d" }}">
         <div class="card">
@@ -65,6 +73,9 @@ is_footer_hidden: true
         </div>
       </li>
       {%- endfor %}
+          </ol>
+        </details>
+      </li>
     {%- endfor %}
   </ol>
 </div>
@@ -99,17 +110,28 @@ is_footer_hidden: true
     var pad = function (n) { return (n < 10 ? "0" : "") + n; };
     var today = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
 
+    var month = today.slice(0, 7);
+    var timeline = document.querySelector(".plan ol.timeline");
+
+    // Months that are over start collapsed. Without the script they stay open.
+    var months = timeline.querySelectorAll("li.month");
+    for (var i = 0; i < months.length; i++) {
+      if (months[i].getAttribute("data-through") < month) {
+        months[i].querySelector("details").open = false;
+      }
+    }
+
     var marker = document.createElement("li");
     marker.className = "today";
     marker.innerHTML = "<div>Today</div>";
 
-    var events = document.querySelectorAll(".plan ol.timeline > li");
+    var events = timeline.querySelectorAll("ol.events > li");
     for (var i = 0; i < events.length; i++) {
       if (events[i].getAttribute("data-date") > today) {
         // Stay above the month divider when today is still in an earlier month.
         var next = events[i];
-        var divider = next.previousElementSibling;
-        if (divider && divider.getAttribute("data-month") > today.slice(0, 7)) {
+        var divider = next.closest("li.month");
+        if (!next.previousElementSibling && divider.getAttribute("data-month") > month) {
           next = divider;
         }
         next.parentNode.insertBefore(marker, next);
@@ -117,8 +139,6 @@ is_footer_hidden: true
       }
     }
 
-    if (events.length) {
-      events[events.length - 1].parentNode.appendChild(marker);
-    }
+    timeline.appendChild(marker);
   })();
 </script>

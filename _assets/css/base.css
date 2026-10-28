@@ -762,7 +762,7 @@ ul.apps li.mac img {
 
 /* Each activity type sets a hue. The badge and dot colors derive from it.
    The homepage colors its pills and chips the same way with `data-type`. */
-.plan ol.timeline > li, .home [data-type] {
+.plan ol.timeline > li, .plan ol.events > li, .home [data-type] {
   --hue: 240;
   --saturation: 0%;
   --type: hsl(var(--hue) var(--saturation) 34%);
@@ -770,21 +770,21 @@ ul.apps li.mac img {
 }
 
 @media (prefers-color-scheme: dark) {
-  .plan ol.timeline > li, .home [data-type] {
+  .plan ol.timeline > li, .plan ol.events > li, .home [data-type] {
     --type: hsl(var(--hue) var(--saturation) 72%);
     --type-background: hsl(var(--hue) var(--saturation) 17%);
   }
 }
 
-.plan ol.timeline > li.scuba, .home [data-type="scuba"] { --hue: 185; --saturation: 85%; }
-.plan ol.timeline > li.flight, .home [data-type="flight"] { --hue: 218; --saturation: 80%; }
-.plan ol.timeline > li.hiking, .home [data-type="hiking"] { --hue: 145; --saturation: 60%; }
-.plan ol.timeline > li.family, .home [data-type="family"] { --hue: 340; --saturation: 70%; }
-.plan ol.timeline > li.van, .home [data-type="van"] { --hue: 25; --saturation: 85%; }
-.plan ol.timeline > li.travel, .home [data-type="travel"] { --hue: 262; --saturation: 65%; }
-.plan ol.timeline > li.concert, .home [data-type="concert"] { --hue: 305; --saturation: 60%; }
-.plan ol.timeline > li.wedding, .home [data-type="wedding"] { --hue: 0; --saturation: 70%; }
-.plan ol.timeline > li.party, .plan ol.timeline > li.holiday, .home [data-type="party"], .home [data-type="holiday"] { --hue: 42; --saturation: 90%; }
+.plan ol.events > li.scuba, .home [data-type="scuba"] { --hue: 185; --saturation: 85%; }
+.plan ol.events > li.flight, .home [data-type="flight"] { --hue: 218; --saturation: 80%; }
+.plan ol.events > li.hiking, .home [data-type="hiking"] { --hue: 145; --saturation: 60%; }
+.plan ol.events > li.family, .home [data-type="family"] { --hue: 340; --saturation: 70%; }
+.plan ol.events > li.van, .home [data-type="van"] { --hue: 25; --saturation: 85%; }
+.plan ol.events > li.travel, .home [data-type="travel"] { --hue: 262; --saturation: 65%; }
+.plan ol.events > li.concert, .home [data-type="concert"] { --hue: 305; --saturation: 60%; }
+.plan ol.events > li.wedding, .home [data-type="wedding"] { --hue: 0; --saturation: 70%; }
+.plan ol.events > li.party, .plan ol.events > li.holiday, .home [data-type="party"], .home [data-type="holiday"] { --hue: 42; --saturation: 90%; }
 
 .plan > header {
   margin-bottom: 3em;
@@ -802,20 +802,25 @@ ul.apps li.mac img {
   margin: 16px 0;
 }
 
+/* Each month's events are nested in it, pulled back out to the rail. */
+.plan ol.events {
+  margin: 0 0 0 -32px;
+  padding: 0;
+}
 
-.plan ol.timeline > li {
+.plan ol.timeline > li, .plan ol.events > li {
   list-style: none;
   position: relative;
   margin: 0;
   padding: 0 0 12px 32px;
 }
 
-.plan ol.timeline > li:last-child {
+.plan ol.timeline > li:last-child, .plan ol.events > li:last-child {
   padding-bottom: 0;
 }
 
 /* Rail */
-.plan ol.timeline > li:before {
+.plan ol.timeline > li:before, .plan ol.events > li:before {
   content: "";
   position: absolute;
   top: 0;
@@ -844,7 +849,7 @@ ul.apps li.mac img {
 }
 
 /* A single day is a dot on the rail. */
-.plan ol.timeline > li:after {
+.plan ol.timeline > li:after, .plan ol.events > li:after {
   content: "";
   position: absolute;
   top: 9px;
@@ -859,7 +864,7 @@ ul.apps li.mac img {
 }
 
 /* A span is a bar running the height of its card. */
-.plan ol.timeline > li.span:after {
+.plan ol.events > li.span:after {
   top: 3px;
   bottom: 15px;
   left: 3px;
@@ -867,12 +872,12 @@ ul.apps li.mac img {
   height: auto;
 }
 
-.plan ol.timeline > li.span:last-child:after {
+.plan ol.events > li.span:last-child:after {
   bottom: 3px;
 }
 
 /* Anything not locked in is hollow and dashed, like its card. */
-.plan ol.timeline > li.tentative:after, .plan ol.timeline > li.loose:after {
+.plan ol.events > li.tentative:after, .plan ol.events > li.loose:after {
   background: var(--body-background);
   border-style: dashed;
 }
@@ -964,10 +969,10 @@ ul.apps li.mac img {
   font-size: inherit;
 }
 
-/* Month dividers sit in the event column, with the rail running past them. */
+/* Month dividers sit in the event column, with the rail running past them.
+   Each is a disclosure, and months that are over start collapsed. */
 .plan ol.timeline > li.month {
   padding-top: 2em;
-  padding-bottom: 1em;
 }
 
 .plan ol.timeline > li.month:first-child {
@@ -978,8 +983,34 @@ ul.apps li.mac img {
   display: none;
 }
 
+.plan li.month summary {
+  display: block;
+  margin-bottom: 1em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.plan li.month summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan li.month details:not([open]) summary {
+  margin-bottom: 0;
+}
+
+/* Collapsed months are just their name. */
+.plan li.month details:not([open]) summary p {
+  display: none;
+}
+
+/* Collapsed months stack closer together. */
+.plan ol.timeline > li.month:has(> details:not([open])) + li.month {
+  padding-top: 1em;
+}
+
 /* A small label with a hairline in the rail's color. */
-.plan li.month h3 {
+.plan li.month summary h3 {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -988,14 +1019,46 @@ ul.apps li.mac img {
   line-height: 1.5em;
 }
 
-.plan li.month h3:after {
+.plan li.month summary:hover h3 {
+  color: var(--plan-muted);
+}
+
+/* Each month is an open circle on the rail, with a dash in it when it's
+   collapsed. */
+.plan li.month .toggle {
+  position: absolute;
+  top: 50%;
+  left: -33px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  box-sizing: border-box;
+  border: 2px solid var(--plan-rail);
+  border-radius: 8px;
+  background: var(--body-background);
+  box-shadow: 0 0 0 3px var(--body-background);
+}
+
+.plan li.month details:not([open]) .toggle:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 2px;
+  margin: -1px 0 0 -3px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.plan li.month summary h3:after {
   content: "";
   flex: 1;
   height: 2px;
   background: var(--plan-rail);
 }
 
-.plan li.month p {
+.plan li.month summary p {
   color: var(--plan-muted);
   font-size: 0.8em;
   line-height: 1.5em;
@@ -1003,12 +1066,12 @@ ul.apps li.mac img {
 }
 
 /* Today, added by the script at the bottom of plan.html. */
-.plan ol.timeline > li.today {
+.plan ol.timeline > li.today, .plan ol.events > li.today {
   --type: var(--brand-color);
   padding-bottom: 14px;
 }
 
-.plan ol.timeline > li.today:after {
+.plan ol.timeline > li.today:after, .plan ol.events > li.today:after {
   top: 4px;
 }
 
