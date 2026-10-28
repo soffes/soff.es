@@ -72,13 +72,6 @@ sections:
     summary: Vanlife begins!
     events:
       - date: 2026-11-02
-        end: 2026-11-04
-        title: Van Upgrades
-        location: Santa Rosa, CA
-        type: build
-        notes:
-          - Doing some van upgrades for a few days. Staying at a friend's place so I can use his tools!
-      - date: 2026-11-03
         title: Offer day
         location: San Francisco, CA
         type: house
@@ -91,14 +84,13 @@ sections:
         type: errand
         notes:
           - Take care of my South Dakota residency and get a new driver's license. You can't live in a mailbox in California. South Dakota is cool with it though. This is what I did last time I lived in the van.
-      - date: 2026-11-10
-        end: 2026-11-17
-        title: Yosemite Valley
-        location: Yosemite National Park, CA
-        type: hiking
-        status: tentative
+      - date: 2026-11-07
+        end: 2026-11-10
+        title: Diving in Monterey
+        location: Monterey, CA
+        type: scuba
         notes:
-          - Van camping, day hiking, and maybe solo climbing!
+          - Practicing with my DPV before upcoming cave trip.
       - date: 2026-11-12
         title: Band of Horses
         location: Regency Ballroom, San Francisco, CA
@@ -107,6 +99,14 @@ sections:
         title: Underoath
         location: The Masonic, San Francisco, CA
         type: concert
+      - date: 2026-11-15
+        end: 2026-11-20
+        title: Yosemite Valley
+        location: Yosemite National Park, CA
+        type: hiking
+        status: tentative
+        notes:
+          - Van camping, day hiking, and maybe solo climbing!
       - date: 2026-11-23
         title: Pedro the Lion
         location: Bottom of the Hill, San Francisco, CA
