@@ -78,12 +78,22 @@ sections:
         notes:
           - Realtor will accept offers all at once.
       - date: 2026-11-05
+        title: Fly to Sioux Falls
+        location: San Francisco, CA
+        to: Sioux Falls, SD
+        type: flight
+      - date: 2026-11-05
         end: 2026-11-06
-        title: South Dakota
+        title: South Dakota Trip
         location: Sioux Falls, SD
         type: errand
         notes:
           - Take care of my South Dakota residency and get a new driver's license. You can't live in a mailbox in California. South Dakota is cool with it though. This is what I did last time I lived in the van.
+      - date: 2026-11-06
+        title: Fly to San Francisco
+        location: Sioux Falls, SD
+        to: San Francisco, CA
+        type: flight
       - date: 2026-11-07
         end: 2026-11-10
         title: Diving in Monterey
@@ -104,14 +114,13 @@ sections:
         title: Yosemite Valley
         location: Yosemite National Park, CA
         type: hiking
-        status: tentative
         notes:
           - Van camping, day hiking, and maybe solo climbing!
       - date: 2026-11-23
         title: Pedro the Lion
         location: Bottom of the Hill, San Francisco, CA
         type: concert
-      - date: 2026-11-24
+      - date: 2026-11-23
         title: Closing day
         location: San Francisco, CA
         type: house
@@ -148,23 +157,33 @@ sections:
   - title: "2027"
     summary: Lots of ideas for the new year! Seriously considering doing the PCT from mid-April to early October.
     events:
-      - date: 2027-01-01
-        end: 2027-03-15
-        when: January–March
-        title: Southern hemisphere
-        location: New Zealand, Australia, Indonesia
-        type: travel
-        status: tentative
-        notes:
-          - Planning some backpacking, vanning, and scuba diving!
-      - date: 2027-03-15
-        end: 2027-03-31
-        title: Section hike Arizona Trail
-        location: Arizona
+      - date: 2027-01-15
+        end: 2027-02-01
+        when: Late January
+        title: Backpacking Te Araroa
+        location: Nelson Lakes National Park, New Zealand
         type: hiking
         status: tentative
         notes:
-          - Hike 100–200 miles of the Arizona Trail to prepare for the PCT.
+          - Backpack 100–200 miles of Te Araroa.
+      - date: 2027-02-01
+        end: 2027-02-28
+        when: February
+        title: Vanlife in New Zealand
+        location: South Island, New Zealand
+        type: travel
+        status: tentative
+        notes:
+          - Rent a van and explore the South Island. Maybe some of the North Island too, to see Hobbiton.
+      - date: 2027-03-01
+        end: 2027-03-15
+        when: Early March
+        title: Liveaboard in Indonesia
+        location: Raja Ampat, Indonesia
+        type: scuba
+        status: tentative
+        notes:
+          - Hoping to go scuba diving with friends on a liveaboard in Indonesia!
       - date: 2027-04-15
         end: 2027-10-05
         when: Mid-April–early October
