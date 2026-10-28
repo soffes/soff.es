@@ -68,6 +68,11 @@ sections:
         title: Last day of work
         location: San Francisco, CA
         type: work
+      - date: 2026-10-31
+        title: Halloween
+        location: San Francisco, CA
+        type: party
+      - date: 2026-10-10
 
   - title: November 2026
     summary: Vanlife begins!
