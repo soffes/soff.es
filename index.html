@@ -8,11 +8,23 @@ og:
 
 {%- assign posts = site.posts | where_exp: "post", "post.category != 'draft'" %}
 {%- assign featured = posts | where: "is_gallery", true | first %}
-<div class="bento">
+
+{%- comment %} The latest photos and latest video share the first two media
+rows. Whichever is newer goes first. {% endcomment %}
+{%- assign video_day = site.data.youtube.date | date: "%Y%m%d" | plus: 0 %}
+{%- assign photos_day = featured.date | date: "%Y%m%d" | plus: 0 %}
+{%- if video_day >= photos_day %}{% assign video_first = true %}{% endif %}
+<div class="bento{% if video_first %} video-first{% endif %}">
   {% include home/about.html %}
   {% include home/now.html %}
   {% include home/adventure.html %}
+  {%- if video_first %}
+  {% include home/video.html %}
   {% include home/gallery.html post=featured %}
+  {%- else %}
+  {% include home/gallery.html post=featured %}
+  {% include home/video.html %}
+  {%- endif %}
   {% include home/years.html posts=posts featured=featured %}
   {% include home/previously.html %}
 </div>

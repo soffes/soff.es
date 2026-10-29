@@ -1,0 +1,21 @@
+{%- assign video = site.data.youtube %}
+{%- if video.id %}
+<a class="card video" href="https://www.youtube.com/watch?v={{ video.id }}">
+  <div class="thumbnail">
+    <img src="https://i.ytimg.com/vi/{{ video.id }}/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+    <span class="play">{% include icons/play.svg %}</span>
+    {%- if video.duration %}
+    <span class="duration">{{ video.duration }}</span>
+    {%- endif %}
+  </div>
+  <div class="details">
+    <span class="label">{% include icons/video.svg %}Latest Video</span>
+    <h2>{{ video.title }}</h2>
+    <p class="date"><time datetime="{{ video.date | date: "%Y-%m-%d" }}">{{ video.date | date: "%B %Y" }}</time></p>
+    {%- if video.description %}
+    <p class="description">{{ video.description }}</p>
+    {%- endif %}
+    <p class="footnote"><span class="arrow">Watch on YouTube&nbsp;&rarr;</span></p>
+  </div>
+</a>
+{%- endif %}

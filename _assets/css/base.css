@@ -790,6 +790,15 @@ ul.apps li.mac img {
   margin-bottom: 3em;
 }
 
+/* Indented to line up with the text inside the cards above it: the
+   timeline's 32px, plus a card's 1px border and 18px padding. */
+.plan > p.updated {
+  margin: 2.5em 0 0;
+  padding-left: 51px;
+  color: var(--plan-muted);
+  font-size: 0.8em;
+}
+
 .plan > header p {
   color: var(--plan-muted);
   font-size: 1em;
@@ -1223,7 +1232,8 @@ body.home main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "about about now adventure"
-    "gallery gallery gallery gallery"
+    "media1 media1 media1 media1"
+    "media2 media2 media2 media2"
     "years years years previously";
   gap: 16px;
 }
@@ -1234,7 +1244,8 @@ body.home main {
     grid-template-areas:
       "about about"
       "now adventure"
-      "gallery gallery"
+      "media1 media1"
+      "media2 media2"
       "years previously";
   }
 }
@@ -1246,7 +1257,7 @@ body.home main {
 
   .bento {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "about" "now" "adventure" "gallery" "years" "previously";
+    grid-template-areas: "about" "now" "adventure" "media1" "media2" "years" "previously";
     gap: 12px;
   }
 }
@@ -1317,6 +1328,18 @@ body.home main {
 
 .bento .footnote a:hover {
   color: var(--link-foreground);
+}
+
+/* When the whole card is the link, its footnote lights up like a real one
+   when anywhere on the card is hovered. */
+.bento a.card .arrow {
+  border-bottom: 1px solid transparent;
+  transition: border 0.2s;
+}
+
+.bento a.card:hover .arrow {
+  color: var(--link-foreground);
+  border-bottom-color: currentColor;
 }
 
 /* A small colored badge, like the ones on /plan */
@@ -1490,8 +1513,17 @@ body.home main {
 
 /* Latest gallery */
 
+/* The latest photos and latest video trade places so the newer one comes
+   first. See index.html. */
+.bento .gallery, .bento.video-first .video {
+  grid-area: media1;
+}
+
+.bento .video, .bento.video-first .gallery {
+  grid-area: media2;
+}
+
 .bento .gallery {
-  grid-area: gallery;
   padding: 0;
   overflow: hidden;
 }
@@ -1575,6 +1607,99 @@ body.home main {
   }
 }
 
+/* Latest video. The thumbnail sits beside the details, or above them on
+   phones. */
+
+.bento .video {
+  flex-direction: row;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bento .video .thumbnail {
+  position: relative;
+  flex: 0 0 60%;
+  aspect-ratio: 16 / 9;
+}
+
+.bento .video .thumbnail img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bento .video .play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
+
+.bento .video .play svg {
+  width: 26px;
+  height: 26px;
+}
+
+.bento .video .duration {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: var(--semibold-font-weight);
+  font-variant-numeric: tabular-nums;
+  line-height: 1em;
+}
+
+.bento .video .details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px 22px;
+}
+
+.bento .video h2 {
+  font-size: 1.6em;
+}
+
+.bento .video .date {
+  margin-top: 0.4em;
+  color: var(--card-muted);
+}
+
+.bento .video .description {
+  display: -webkit-box;
+  margin-top: 0.75em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+@media all and (max-width: 599px) {
+  .bento .video {
+    flex-direction: column;
+  }
+
+  .bento .video .thumbnail {
+    flex: none;
+  }
+}
+
 /* Interests. Not on the homepage right now, but kept for later. */
 
 .bento .interests {
@@ -1640,18 +1765,6 @@ body.home main {
 .bento .previously .summary {
   margin-top: 1em;
   color: var(--card-muted);
-}
-
-/* The whole card is the link, so its footnote lights up like a real one when
-   anywhere on the card is hovered. */
-.bento .previously .arrow {
-  border-bottom: 1px solid transparent;
-  transition: border 0.2s;
-}
-
-.bento a.previously:hover .arrow {
-  color: var(--link-foreground);
-  border-bottom-color: currentColor;
 }
 
 /* Years in review */

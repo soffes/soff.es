@@ -24,7 +24,9 @@ class ExternalLinksProcessor
       next if !uri.host || uri.host == @blog_host
 
       node["target"] = "_blank"
-      node["rel"] = "noopener"
+
+      # Keep what's there, like `me` for Mastodon verification
+      node["rel"] = (node["rel"].to_s.split | ["noopener"]).join(" ")
     end
 
     doc.to_html

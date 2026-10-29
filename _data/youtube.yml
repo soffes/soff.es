@@ -1,0 +1,15 @@
+# The latest video on the homepage. Update it when you post a new one. The
+# thumbnail loads from YouTube.
+#   id:           from the watch URL, youtube.com/watch?v=<id>
+#   duration:     optional, shown on the thumbnail
+#   description:  optional, usually the first paragraph of the YouTube
+#                 description
+
+id: 2KNCyWgiVJA
+title: Moving Out
+date: 2026-10-29
+duration: "7:35"
+description: >-
+  Just quit my job and sold my house to adventure full time in my van. Decided
+  to make a quick walkthrough of the house right before I left for the last
+  time. Spent 2.5 years working on it.
