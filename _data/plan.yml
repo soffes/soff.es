@@ -68,11 +68,6 @@ sections:
         title: Last day of work
         location: San Francisco, CA
         type: work
-      - date: 2026-10-31
-        title: Halloween
-        location: San Francisco, CA
-        type: party
-      - date: 2026-10-10
 
   - title: November 2026
     summary: Vanlife begins!
@@ -83,23 +78,6 @@ sections:
         type: house
         notes:
           - Realtor will accept offers all at once.
-      - date: 2026-11-05
-        title: Fly to Sioux Falls
-        location: San Francisco, CA
-        to: Sioux Falls, SD
-        type: flight
-      - date: 2026-11-05
-        end: 2026-11-06
-        title: South Dakota Trip
-        location: Sioux Falls, SD
-        type: errand
-        notes:
-          - Take care of my South Dakota residency and get a new driver's license. You can't live in a mailbox in California. South Dakota is cool with it though. This is what I did last time I lived in the van.
-      - date: 2026-11-06
-        title: Fly to San Francisco
-        location: Sioux Falls, SD
-        to: San Francisco, CA
-        type: flight
       - date: 2026-11-07
         end: 2026-11-10
         title: Diving in Monterey
