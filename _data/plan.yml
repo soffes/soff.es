@@ -60,7 +60,8 @@ sections:
         title: Listing goes live
         location: San Francisco, CA
         type: house
-      - date: 2026-10-24
+      - date: 2026-10-21
+        end: 2026-10-25
         title: Andrew & Sam's Wedding
         location: Foresthill, CA
         type: wedding
@@ -78,13 +79,13 @@ sections:
         type: house
         notes:
           - Realtor will accept offers all at once.
-      - date: 2026-11-07
-        end: 2026-11-10
-        title: Diving in Monterey
-        location: Monterey, CA
-        type: scuba
+      - date: 2026-11-06
+        end: 2026-11-14
+        title: Van Upgrades
+        location: San Rafael, CA
+        type: van
         notes:
-          - Practicing with my DPV before upcoming cave trip.
+          - Hanging out near SF and working on the van since I have a few things in the city this week.
       - date: 2026-11-12
         title: Band of Horses
         location: Regency Ballroom, San Francisco, CA
@@ -100,43 +101,66 @@ sections:
         type: hiking
         notes:
           - Van camping, day hiking, and maybe solo climbing!
+      - date: 2026-11-16
+        title: Closing day
+        location: San Francisco, CA
+        type: house
+        notes:
+          - House is sold!
       - date: 2026-11-23
         title: Pedro the Lion
         location: Bottom of the Hill, San Francisco, CA
         type: concert
-      - date: 2026-11-23
-        title: Closing day
-        location: San Francisco, CA
-        type: house
-        status: tentative
-        notes:
-          - Expected closing day. So fast!
       - date: 2026-11-24
         title: Fly to Cancún
         location: San Francisco, CA
         to: Cancún, Mexico
         type: flight
-      - date: 2026-11-24
-        end: 2026-12-12
-        title: Cave Diving Trip
+      - date: 2026-11-25
+        end: 2026-11-27
+        title: Cave Diving in Mérida
         location: Yucatán Peninsula, Mexico
         type: scuba
         notes:
-          - Cave diving with Michel. We might do a road trip to Mérida or take a boat over to Cozumel.
+          - Road tripping from Cancún with Michel to Mérida and headed to Valladolid. Going to do some cave DPV diving!
 
   - title: December 2026
     summary: Scuba diving and holidays.
     events:
+      - date: 2026-11-28
+        end: 2026-12-07
+        title: Scientific Jungle Cave Expedition
+        location: Puerto Aventuras, Mexico
+        type: scuba
+        notes:
+          - My friend, Mac, is flying in from San Francisco to join Michel and me. We going to help some scientists explore the jungle. Should be intense!
+      - date: 2026-12-08
+        end: 2026-12-12
+        title: Cave Diving in Tulum
+        location: Tulum, Mexico
+        type: scuba
+        notes:
+          - Some classic cave diving before heading back to San Francsico. Mac is going to join for a few days too!
       - date: 2026-12-12
         title: Fly to San Francisco
         location: Cancún, Mexico
         to: San Francisco, CA
         type: flight
       - date: 2026-12-18
+        title: Fly to Louisville
+        location: San Francisco, CA
+        to: Louisville, KY
+        type: flight
+      - date: 2026-12-18
         end: 2026-12-28
         title: Christmas with Family
         location: Louisville, KY
         type: family
+      - date: 2026-12-28
+        title: Fly to San Francisco, CA
+        location: Louisville, KY
+        to: San Francisco, CA
+        type: flight
 
   - title: "2027"
     summary: Lots of ideas for the new year! Seriously considering doing the PCT from mid-April to early October.
@@ -168,12 +192,10 @@ sections:
         status: tentative
         notes:
           - Hoping to go scuba diving with friends on a liveaboard in Indonesia!
-      - date: 2027-04-15
-        end: 2027-10-05
-        when: Mid-April–early October
-        title: Pacific Crest Trail thru-hike
+      - date: 2027-03-28
+        end: 2027-09-30
+        title: Pacific Crest Trail
         location: California, Oregon, Washington
         type: hiking
-        status: tentative
         notes:
-          - Seriously considering this. Still deciding though.
+          - My permit is pending review! Planning to start March 28th!

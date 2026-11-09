@@ -32,7 +32,7 @@ is_footer_hidden: true
           </summary>
           <ol class="events">
       {%- for event in section.events %}
-      <li class="{% if event.end %}span{% else %}day{% endif %} {{ event.status }} {{ event.type }}" data-date="{{ event.date | date: "%Y-%m-%d" }}">
+      <li class="{% if event.end %}span{% else %}day{% endif %} {{ event.status }} {{ event.type }}" data-date="{{ event.date | date: "%Y-%m-%d" }}"{% if event.end %} data-end="{{ event.end | date: "%Y-%m-%d" }}"{% endif %}>
         <div class="card">
           <div class="meta">
             <time datetime="{{ event.date | date: "%Y-%m-%d" }}">
@@ -106,7 +106,8 @@ is_footer_hidden: true
 
 <script>
   // The site is static, so the marker for today is placed in the browser,
-  // just before the first event that hasn't started yet.
+  // just before the first event that hasn't started yet, or before a
+  // multi-day event that's happening now.
   (function () {
     var now = new Date();
     var pad = function (n) { return (n < 10 ? "0" : "") + n; };
@@ -129,7 +130,8 @@ is_footer_hidden: true
 
     var events = timeline.querySelectorAll("ol.events > li");
     for (var i = 0; i < events.length; i++) {
-      if (events[i].getAttribute("data-date") > today) {
+      var end = events[i].getAttribute("data-end");
+      if (events[i].getAttribute("data-date") > today || (end && end >= today)) {
         // Stay above the month divider when today is still in an earlier month.
         var next = events[i];
         var divider = next.closest("li.month");
